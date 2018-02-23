@@ -10,265 +10,126 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"> 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>管控系统 | 权限系统</title>
+<meta charset="utf-8">   
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<title>市一医院 | 医疗质量监管网络平台</title>
 <!-- Tell the browser to be responsive to screen width -->
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<style>
+    .color-palette {
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+    }
+
+    .color-palette-set {
+      margin-bottom: 15px;
+    }
+
+    .color-palette span {
+      display: block;
+      font-size: 12px;
+    }
+
+    .color-palette:hover span {
+      display: block;
+    }
+
+    .color-palette-box h4 {
+      position: absolute;
+      top: 100%;
+      left: 25px;
+      margin-top: -40px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 12px;
+      display: block;
+      z-index: 7;
+    }
+  </style>
+   <link rel="stylesheet" href="<%=basePath%>Bootstrap_AdminLTE_2.3.6/plugins/select2/select2.min.css">
 </head> 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="skin-blue layout-top-nav">	
 	<div class="wrapper"> 
 
-		<jsp:include page="head.jsp" />    
-		<!-- Left side column. contains the logo and sidebar -->     
-		<c:import url="/system/menuData.html"></c:import>  
+		<c:import url="/system/menuDataTop.html"></c:import>
 		<!-- Content Wrapper. Contains page content -->	 
 		<div class="content-wrapper">
-			<!-- Content Header (Page header) -->
-			<section class="content-header">
-				<h1>
-					管控系统 <small>权限系统</small>
-				</h1> 
-				<ol class="breadcrumb">
-					<li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-					<li class="active">控制台</li>
-				</ol>
-			</section>
-			<!-- Main content -->
+		<div class="container"> 
 			<section class="content">
-				<!-- Small boxes (Stat box) -->
-				<div class="row">
-					<div class="col-lg-3 col-xs-6">
-						<!-- small box -->
-						<div class="small-box bg-aqua">
-							<div class="inner">
-								<h3>${interCount }</h3>
-
-								<p>网吧总数</p>
-							</div>
-							<div class="icon">
-								<i class="ion-ios-bookmarks"></i>
-							</div>
-							<a href="<%=basePath%>backstage/internetcafes/show.html" class="small-box-footer">查看详情 <i class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					<!-- ./col -->
-					<div class="col-lg-3 col-xs-6">
-						<!-- small box -->
-						<div class="small-box bg-green">
-							<div class="inner">
-								<h3>${onlineCount }</h3>
-
-								<p>PC在线总数</p>
-							</div>
-							<div class="icon">
-								<i class="ion-monitor"></i>
-							</div>
-							<a href="<%=basePath%>backstage/computer/show.html" class="small-box-footer">查看详情 <i class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					<!-- ./col -->
-					<div class="col-lg-3 col-xs-6">
-						<!-- small box -->
-						<div class="small-box bg-red">
-							<div class="inner">
-								<h3>${pcCount }</h3>
-								<p>PC总数</p>
-							</div>
-							<div class="icon">
-								<i class="ion ion-pie-graph"></i>
-							</div>
-							<a href="<%=basePath%>backstage/computer/show.html" class="small-box-footer">查看详情 <i class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					<!-- ./col -->
-					<!-- ./col -->
-					<div class="col-lg-3 col-xs-6">
-						<!-- small box -->
-						<div class="small-box bg-yellow">
-							<div class="inner">
-								<h3>${memberCount }</h3>
-
-								<p>成员账户</p>
-							</div>
-							<div class="icon">
-								<i class="ion ion-person-add"></i>
-							</div>
-							<a href="<%=basePath%>backstage/member/show.html" class="small-box-footer">查看详情 <i class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-
-				</div>
-				<!-- /.row -->
-				<!-- Main row -->
-				<div class="row">
-					<!-- Left col -->
-					<section class="col-lg-7 connectedSortable">
-
-						<div class="box">
-							<div class="box-header with-border">
-								<h3 class="box-title">网吧列表</h3>
-							</div>
-							<!-- /.box-header -->
-							<div class="box-body">
-								<table class="table table-bordered" id="interTable" style="font-size: 1.5rem;margin-bottom: 0px;"> 
-									<thead>
-										<tr>
-											<th style="width: 10px">#</th>
-											<th>网吧名称</th>
-											<th>在线PC</th> 
-											<th>Label</th>
-										</tr>
-									</thead> 
-								</table>
-							</div>
-							<!-- /.box-body -->
-							<!-- <div class="box-footer clearfix">
-								<ul class="pagination pagination-sm no-margin pull-right">
-									<li><a href="#">«</a></li>
-									<li><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">»</a></li>
-								</ul>
-							</div> -->
-						</div>
-						<div class="box">
-							<div class="box-header with-border">
-								<h3 class="box-title">电脑列表</h3>
-							</div>
-							<!-- /.box-header -->
-							<div class="box-body">
-								<table class="table table-bordered" id="computerTable" style="font-size: 1.5rem;margin-bottom: 0px;"> 
-									<thead>
-										<tr>
-											<th style="width: 10px">#</th>
-											<th>所属网吧</th>
-											<th>机器名称</th> 
-											<th>状态</th>
-											<th>mac</th>
-										</tr>
-									</thead> 
-								</table>
-							</div>
-							<!-- /.box-body -->
-							<!-- <div class="box-footer clearfix">
-								<ul class="pagination pagination-sm no-margin pull-right">
-									<li><a href="#">«</a></li>
-									<li><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">»</a></li>
-								</ul>
-							</div> -->
-						</div>
-
-
-
-					</section>
-					<!-- /.Left col -->
-					<!-- right col (We are only adding the ID to make the widgets sortable)-->
-					<section class="col-lg-5 connectedSortable">
-						<div class="box box-info">
-							<div class="box-header">
-								<i class="glyphicon glyphicon-cloud"></i>
-
-								<h3 class="box-title">云端维护</h3>
-								<!-- tools box -->
-								<div class="pull-right box-tools">
-									<button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
-										<i class="fa fa-times"></i>
-									</button>
-								</div>
-								<!-- /. tools -->
-							</div> 
-							  
-							<div class="box-body" >
-									<input id="mySwitch" class="form-control" data-off-color="warning"  data-off-text="关闭" data-on-text="开启"  type="checkbox"> <span style="font-size: 12px;margin-left: 20px">注：此开关为一键开启或关闭所有网吧的云端维护功能</span> 
-							</div>
-						</div>  
-						<!-- solid sales graph -->
-						<%-- <div class="box box-info">
-							<div class="box-header with-border">
-								<h3 class="box-title">每日开机量</h3>
-
-								<div class="box-tools pull-right">
-									<button type="button" class="btn btn-box-tool" data-widget="collapse">
-										<i class="fa fa-minus"></i>
-									</button>
-									<button type="button" class="btn btn-box-tool" data-widget="remove">
-										<i class="fa fa-times"></i>
-									</button>
-								</div>
-							</div>
-							<div class="box-body chart-responsive">
-								<div class="chart" id="line-chart" style="height: 300px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-									<svg height="300" version="1.1" width="582" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;">
-										<desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc>
-										<defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
-										<text x="48.5" y="263" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal">
-										<tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text>
-										<path fill="none" stroke="#aaaaaa" d="M61,263H557" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-										<text x="48.5" y="203.5" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal">
-										<tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">5,000</tspan></text>
-										<path fill="none" stroke="#aaaaaa" d="M61,203.5H557" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-										<text x="48.5" y="144" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal">
-										<tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">10,000</tspan></text>
-										<path fill="none" stroke="#aaaaaa" d="M61,144H557" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-										<text x="48.5" y="84.5" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal">
-										<tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">15,000</tspan></text>
-										<path fill="none" stroke="#aaaaaa" d="M61,84.5H557" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-										<text x="48.5" y="24.99999999999997" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal">
-										<tspan dy="3.9999999999999716" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">20,000</tspan></text>
-										<path fill="none" stroke="#aaaaaa" d="M61,24.99999999999997H557" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-										<text x="465.99635479951394" y="275.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6)">
-										<tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013</tspan></text>
-										<text x="245.4179829890644" y="275.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,6)">
-										<tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012</tspan></text>
-										<path fill="none" stroke="#3c8dbc"
-											d="M61,231.2746C74.86148238153098,230.9414,102.58444714459296,233.282725,116.44592952612393,229.9418C130.3074119076549,226.600875,158.0303766707169,206.02637650273223,171.89185905224787,204.5472C185.60267314702307,203.08410150273224,213.0243013365735,220.995975,226.7351154313487,218.1727C240.4459295261239,215.349425,267.8675577156743,184.77624412568306,281.57837181044954,181.961C295.43985419198054,179.11481912568308,323.1628189550425,192.56687499999998,337.0243013365735,195.527C350.88578371810445,198.487125,378.60874848116646,219.70539398907104,392.4702308626974,205.642C406.18104495747264,191.73146898907103,433.60267314702304,92.4066788674033,447.31348724179827,83.63129999999998C460.8736330498177,74.9523538674033,487.9939246658566,126.05476730769232,501.55407047387604,135.8247C515.415552855407,145.81174230769233,543.138517618469,155.95057500000001,557,162.6592"
-											stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
-										<circle cx="61" cy="231.2746" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-										<circle cx="116.44592952612393" cy="229.9418" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-										<circle cx="171.89185905224787" cy="204.5472" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-										<circle cx="226.7351154313487" cy="218.1727" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-										<circle cx="281.57837181044954" cy="181.961" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-										<circle cx="337.0243013365735" cy="195.527" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-										<circle cx="392.4702308626974" cy="205.642" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-										<circle cx="447.31348724179827" cy="83.63129999999998" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-										<circle cx="501.55407047387604" cy="135.8247" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
-										<circle cx="557" cy="162.6592" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle></svg>
-									<div class="morris-hover morris-default-style" style="left: 14.5px; top: 157px; display: none;">
-										<div class="morris-hover-row-label">2011 Q1</div>
-										<div class="morris-hover-point" style="color: #3c8dbc">Item 1: 2,666</div>
-									</div>
-								</div>
-							</div>
-							<!-- /.box-body -->
-						</div> --%> 
-						<div class="box box-danger">
-				            <div class="box-header with-border">
-				              <h3 class="box-title">PC在线比例</h3>
-				
-				              <div class="box-tools pull-right">
-				                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-				                </button>
-				                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+      <!-- COLOR PALETTE -->
+      <div class="box box-default color-palette-box">
+        <div class="box-header with-border">
+          <h3 class="box-title"><i class="fa fa-tag"></i>病区病人</h3> 
+                
+            <span style="font-size: 12px;font-weight: bold;color: red;">友情提示：绿色的为一级护理，蓝色的为二级护理，红色的为特级护理</span>   
+        </div>
+        
+        <div class="box-body">
+        
+        <div class="row" style="margin-left: 5px;margin-bottom: 15px;width: 40%;float: left;">
+                <select id="bq" class="form-control select2" style="width: 100%;">
+                <c:forEach items="${tyy_list }" var="list">
+              	  <option value="${list.code }"  >${list.fullname }</option>
+                </c:forEach> 
+                </select>   
+       	 </div> 
+       	  <div class="row" style="margin-left: 15%;margin-bottom: 15px;width: 40%;float: left;">
+                <input style="float: left;" id="clinicnumber" name="clinicnumber" type="text" placeholder="请输入市民卡号或健康卡号" value=""   />
+                <button onclick="getHisp()" type="button" style="float: left;width: 150px;margin-left: 20px" class="btn btn-block btn-primary btn-sm">历史门诊病人</button>
+       	 </div>
+          <div class="row" style="clear: both;"  id="con"> 
+          	<c:forEach items="${pat_list }" var="list">
+          		<c:choose>
+					<c:when test="${list.careLevel=='一级护理'}">
+						<div class="col-sm-4 col-md-2" onclick="showPatient('${list.fuid}','${list.wardCode}')">
+			              <div class="color-palette-set">
+			                <div class="bg-green disabled color-palette"><span>病床号：${list.bedNo }</span></div>
+			                <div class="bg-green color-palette"><span>姓名：${list.patient }&nbsp;${list.sex}</span></div>
+			                <div class="bg-green-active color-palette"><span>${list.healthType }</span></div>
+			              </div>
+			            </div>
+					</c:when>
+					<c:when test="${list.careLevel=='二级护理'}"> 
+							<div class="col-sm-4 col-md-2" onclick="showPatient('${list.fuid}','${list.wardCode}')">
+				              <div class="color-palette-set">
+				                <div class="bg-light-blue disabled color-palette"><span>病床号：${list.bedNo }</span></div>
+				                <div class="bg-light-blue color-palette"><span>姓名：${list.patient }&nbsp;${list.sex}</span></div>
+				                <div class="bg-light-blue-active color-palette"><span>${list.healthType }</span></div>
 				              </div>
 				            </div>
-				            <div class="box-body chart-responsive">
-				              <div class="chart" id="sales-chart" style="height: 300px; position: relative;"></div>
+					</c:when>
+					<c:when test="${list.careLevel=='特级护理'}">
+							<div class="col-sm-4 col-md-2" onclick="showPatient('${list.fuid}','${list.wardCode}')">
+				              <div class="color-palette-set">
+				                <div class="bg-red disabled color-palette"><span>病床号：${list.bedNo }</span></div>
+				                <div class="bg-red color-palette"><span>姓名：${list.patient }&nbsp;${list.sex}</span></div>
+				                <div class="bg-red-active color-palette"><span>${list.healthType }</span></div>
+				              </div>
+				            </div> 
+					</c:when>
+					<c:otherwise>
+						<div class="col-sm-4 col-md-2" onclick="showPatient('${list.fuid}','${list.wardCode}')"> 
+				              <div class="color-palette-set">
+				                <div class="bg-gray disabled color-palette"><span>病床号：${list.bedNo }</span></div>
+				                <div class="bg-gray color-palette"><span>姓名：${list.patient }&nbsp;${list.sex}</span></div>
+				                <div class="bg-gray-active color-palette"><span>${list.healthType }</span></div>
+				              </div>
 				            </div>
-				            <!-- /.box-body -->
-				          </div>
-						<!-- /.box -->
+					</c:otherwise>
+				</c:choose>
+          	</c:forEach>
+            
+          </div>
+        </div>
+        <!-- /.box-body -->
+      </div> 
+      <form id="mform" action="<%=basePath%>backstage/piccMaintenanceregistration/showEdit.html" method="post">
+      	<input type="hidden" id="patientId" name="patientId" value="" /> 
+      	<input type="hidden" id="wardcode" name="wardcode" value="" /> 
+      </form>
 
-					</section>
-					<!-- right col -->
-				</div>
-				<!-- /.row (main row) -->
-
-			</section>
+    </section>
+			</div>
 			<!-- /.content -->
 		</div>
 		<!-- /.content-wrapper -->
@@ -278,10 +139,93 @@
 		<div class="control-sidebar-bg"></div>
 	</div>
 	<!-- ./wrapper -->
+	<script src="<%=basePath%>Bootstrap_AdminLTE_2.3.6/plugins/select2/select2.full.min.js"></script>
 	<script type="text/javascript">
 	
-	$(function() {
+	$(function() { 
+		$("#bq").find("option").each(function (){
+			if($(this).val()=='${wardcode}'){
+				$(this).attr("selected","selected");
+			}
+		}) 
+		 $(".select2").select2();  
+		 $("#bq").change(function (){
+			window.location.href="<%=basePath%>system/index.html?wardcode="+$(this).val();
+		 }) 
 	})
-	</script>
+	function showPatient(patid,wardcode){
+		$("#patientId").val(patid);
+		$("#wardcode").val(wardcode);
+		$("#mform").submit();
+	}
+	
+	
+
+	$(function() { 
+		document.getElementById("clinicnumber").focus();
+	 	/* $("#clinicnumber").keydown(function(){
+	 		console.log($(this).length);
+	 		if($(this).length==11){ 
+	 			alert($(this).val());
+	 		}
+	 	}); */
+	 	
+		$("#clinicnumber").on('input propertychange',function(){
+             var result = $(this).val();
+             if(result.length==9){ 
+            	 getPatient(result);
+ 	 		} 
+         }); 
+		 
+		  
+	})
+	 
+	function getPatient(mznum){
+		$.ajax({
+    		url:"<%=basePath%>/backstage/piccMaintenanceregistration/getPatient.html",
+    		data:{"mznum":mznum},
+    		method:"post",
+    		dataType:"json", 
+    		success:function(res){
+    			var ht="";
+    			ht+="<div class='col-sm-4 col-md-2' onclick=showPatient('"+res.fuid+"','"+res.wardCode+"')>";
+    			ht+='<div class="color-palette-set">';
+    			ht+='<div class="bg-green disabled color-palette"><span>门诊号：'+res.clinicnumber+'</span></div>';
+    			ht+='<div class="bg-green color-palette"><span>姓名：'+res.patient+'&nbsp;'+res.sex+'</span></div>';
+    			var phone=res.phone;
+    			phone=phone!=null?phone:"";
+    			ht+=' <div class="bg-green-active color-palette"><span>'+phone+'</span></div>';
+    			ht+='</div>';
+    			ht+='</div>';
+    			$("#con").html(ht);
+    		}
+		})	
+	}
+	  
+	function getHisp(){
+		
+		$.ajax({
+    		url:"<%=basePath%>/backstage/piccMaintenanceregistration/historyPatient.html",
+    		data:{},
+    		method:"post",
+    		dataType:"json", 
+    		success:function(res){
+    			var ht="";
+    			for(var a=0;a<res.length;a++){
+    				ht+="<div class='col-sm-4 col-md-2' onclick=showPatient('"+res[a].fuid+"','"+res[a].wardCode+"')>";
+        			ht+='<div class="color-palette-set">';
+        			ht+='<div class="bg-green disabled color-palette"><span>门诊号：'+res[a].clinicnumber+'</span></div>';
+        			ht+='<div class="bg-green color-palette"><span>姓名：'+res[a].patient+'&nbsp;'+res[a].sex+'</span></div>';
+        			var phone=res[a].phone; 
+        			phone=phone!=null?phone:"";
+        			ht+=' <div class="bg-green-active color-palette"><span>'+phone+'</span></div>';
+        			ht+='</div>';
+        			ht+='</div>';
+    			}
+    			$("#con").html(ht);
+    		}
+		})	
+	}
+	</script> 
 </body>
 </html>

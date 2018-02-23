@@ -4,221 +4,148 @@ package com.sn.entity;
 public class User  {
 	 
 	
-		private java.lang.String fuid;
-		private java.lang.String code;
-		private java.lang.String realname;
-		private java.lang.String username;
-		private java.lang.String useraddressid;
-		private java.lang.String roleid;
-		private java.lang.String departmentid;
-		private java.lang.String departmentname;
-		private java.lang.String sex;
-		private java.lang.String mobile;
-		private java.lang.String birthday;
-		private java.lang.String title;
-		private java.lang.String userpassword;
-		private java.lang.String question;
-		private java.lang.String answerquestion;
-		private java.lang.String lang;
-		private java.lang.String theme;
-		private java.util.Date firstvisit;
-		private java.util.Date previousvisit;
-		private java.util.Date lastvisit;
-		private java.lang.Integer logincount;
-		private java.lang.Integer useronline;
-		private java.lang.String ipaddress;
-		private java.lang.String macaddress;
-		private java.lang.Integer deletemark;
-		private java.lang.String description;
+		private String fuid;
+		private String code;
+		private String realname;
+		private String username;
+		private String useraddressid;
+		private String roleid;
+		private String departmentid;
+		private String departmentname;
+		private String sex;
+		private String mobile;
+		private String birthday;
+		private String title;
+		private String userpassword;
+		private Integer logincount;
+		private Integer deletemark;
+		private String description;
 		private java.util.Date createdate;
-		private java.lang.String createuserid;
-		private java.lang.String createuserrealname;
-		private java.util.Date modifydate;
-		private java.lang.String modifyuserid;
-		private java.lang.String modifyuserrealname;
-		
-		private String OrganizeId;
+		private String departmentnamecode;
+		private String userType;
 
-		public void setFuid(java.lang.String value) {
+	public String getOrganizeId() {
+		return OrganizeId;
+	}
+
+	public void setOrganizeId(String organizeId) {
+		OrganizeId = organizeId;
+	}
+
+	private java.util.Date modifydate;
+
+	private String OrganizeId;
+
+		public void setFuid(String value) {
 			this.fuid = value;
 		}
 		
-		public java.lang.String getFuid() {
+		public String getFuid() {
 			return this.fuid;
 		}
-		public void setCode(java.lang.String value) {
+		public void setCode(String value) {
 			this.code = value;
 		}
 		
-		public java.lang.String getCode() {
+		public String getCode() {
 			return this.code;
 		}
-		public void setRealname(java.lang.String value) {
+		public void setRealname(String value) {
 			this.realname = value;
 		}
 		
-		public java.lang.String getRealname() {
+		public String getRealname() {
 			return this.realname;
 		}
-		public void setUsername(java.lang.String value) {
+		public void setUsername(String value) {
 			this.username = value;
 		}
 		
-		public java.lang.String getUsername() {
+		public String getUsername() {
 			return this.username;
 		}
-		public void setUseraddressid(java.lang.String value) {
+		public void setUseraddressid(String value) {
 			this.useraddressid = value;
 		}
 		
-		public java.lang.String getUseraddressid() {
+		public String getUseraddressid() {
 			return this.useraddressid;
 		}
-		public void setRoleid(java.lang.String value) {
+		public void setRoleid(String value) {
 			this.roleid = value;
 		}
 		
-		public java.lang.String getRoleid() {
+		public String getRoleid() {
 			return this.roleid;
 		}
-		public void setDepartmentid(java.lang.String value) {
+		public void setDepartmentid(String value) {
 			this.departmentid = value;
 		}
 		
-		public java.lang.String getDepartmentid() {
+		public String getDepartmentid() {
 			return this.departmentid;
 		}
-		public void setDepartmentname(java.lang.String value) {
+		public void setDepartmentname(String value) {
 			this.departmentname = value;
 		}
 		
-		public java.lang.String getDepartmentname() {
+		public String getDepartmentname() {
 			return this.departmentname;
 		}
-		public void setSex(java.lang.String value) {
+		public void setSex(String value) {
 			this.sex = value;
 		}
 		
-		public java.lang.String getSex() {
+		public String getSex() {
 			return this.sex;
 		}
-		public void setMobile(java.lang.String value) {
+		public void setMobile(String value) {
 			this.mobile = value;
 		}
 		
-		public java.lang.String getMobile() {
+		public String getMobile() {
 			return this.mobile;
 		}
-		public void setBirthday(java.lang.String value) {
+		public void setBirthday(String value) {
 			this.birthday = value;
 		}
 		
-		public java.lang.String getBirthday() {
+		public String getBirthday() {
 			return this.birthday;
 		}
-		public void setTitle(java.lang.String value) {
+		public void setTitle(String value) {
 			this.title = value;
 		}
 		
-		public java.lang.String getTitle() {
+		public String getTitle() {
 			return this.title;
 		}
-		public void setUserpassword(java.lang.String value) {
+		public void setUserpassword(String value) {
 			this.userpassword = value;
 		}
 		
-		public java.lang.String getUserpassword() {
+		public String getUserpassword() {
 			return this.userpassword;
 		}
-		public void setQuestion(java.lang.String value) {
-			this.question = value;
-		}
-		
-		public java.lang.String getQuestion() {
-			return this.question;
-		}
-		public void setAnswerquestion(java.lang.String value) {
-			this.answerquestion = value;
-		}
-		
-		public java.lang.String getAnswerquestion() {
-			return this.answerquestion;
-		}
-		public void setLang(java.lang.String value) {
-			this.lang = value;
-		}
-		
-		public java.lang.String getLang() {
-			return this.lang;
-		}
-		public void setTheme(java.lang.String value) {
-			this.theme = value;
-		}
-		
-		public java.lang.String getTheme() {
-			return this.theme;
-		}
-		public void setFirstvisit(java.util.Date value) {
-			this.firstvisit = value;
-		}
-		
-		public java.util.Date getFirstvisit() {
-			return this.firstvisit;
-		}
-		public void setPreviousvisit(java.util.Date value) {
-			this.previousvisit = value;
-		}
-		
-		public java.util.Date getPreviousvisit() {
-			return this.previousvisit;
-		}
-		public void setLastvisit(java.util.Date value) {
-			this.lastvisit = value;
-		}
-		
-		public java.util.Date getLastvisit() {
-			return this.lastvisit;
-		}
-		public void setLogincount(java.lang.Integer value) {
+		public void setLogincount(Integer value) {
 			this.logincount = value;
 		}
 		
-		public java.lang.Integer getLogincount() {
+		public Integer getLogincount() {
 			return this.logincount;
 		}
-		public void setUseronline(java.lang.Integer value) {
-			this.useronline = value;
-		}
-		
-		public java.lang.Integer getUseronline() {
-			return this.useronline;
-		}
-		public void setIpaddress(java.lang.String value) {
-			this.ipaddress = value;
-		}
-		
-		public java.lang.String getIpaddress() {
-			return this.ipaddress;
-		}
-		public void setMacaddress(java.lang.String value) {
-			this.macaddress = value;
-		}
-		
-		public java.lang.String getMacaddress() {
-			return this.macaddress;
-		}
-		public void setDeletemark(java.lang.Integer value) {
+		public void setDeletemark(Integer value) {
 			this.deletemark = value;
 		}
 		
-		public java.lang.Integer getDeletemark() {
+		public Integer getDeletemark() {
 			return this.deletemark;
 		}
-		public void setDescription(java.lang.String value) {
+		public void setDescription(String value) {
 			this.description = value;
 		}
 		
-		public java.lang.String getDescription() {
+		public String getDescription() {
 			return this.description;
 		}
 		public void setCreatedate(java.util.Date value) {
@@ -228,19 +155,19 @@ public class User  {
 		public java.util.Date getCreatedate() {
 			return this.createdate;
 		}
-		public void setCreateuserid(java.lang.String value) {
-			this.createuserid = value;
+		public void setDepartmentnamecode(String value) {
+			this.departmentnamecode = value;
 		}
 		
-		public java.lang.String getCreateuserid() {
-			return this.createuserid;
+		public String getDepartmentnamecode() {
+			return this.departmentnamecode;
 		}
-		public void setCreateuserrealname(java.lang.String value) {
-			this.createuserrealname = value;
+		public void setUserType(String value) {
+			this.userType = value;
 		}
 		
-		public java.lang.String getCreateuserrealname() {
-			return this.createuserrealname;
+		public String getUserType() {
+			return this.userType;
 		}
 		public void setModifydate(java.util.Date value) {
 			this.modifydate = value;
@@ -248,28 +175,6 @@ public class User  {
 		
 		public java.util.Date getModifydate() {
 			return this.modifydate;
-		}
-		public void setModifyuserid(java.lang.String value) {
-			this.modifyuserid = value;
-		}
-		
-		public java.lang.String getModifyuserid() {
-			return this.modifyuserid;
-		}
-		public void setModifyuserrealname(java.lang.String value) {
-			this.modifyuserrealname = value;
-		}
-		
-		public java.lang.String getModifyuserrealname() {
-			return this.modifyuserrealname;
-		}
-
-		public String getOrganizeId() {
-			return OrganizeId;
-		}
-
-		public void setOrganizeId(String organizeId) {
-			OrganizeId = organizeId;
 		}
 	
 

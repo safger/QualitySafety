@@ -12,7 +12,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>管控系统 | 权限系统</title>
+<title>市一医院 | 医疗质量监管网络平台</title>
 <!-- Tell the browser to be responsive to screen width -->
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
  <link rel="stylesheet" href="<%=basePath%>Bootstrap_AdminLTE_2.3.6/plugins/datatables/dataTables.bootstrap.css">
@@ -54,12 +54,13 @@
 </style>
 
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+	<body class="skin-blue layout-top-nav">	
 	<div class="wrapper">
-
-		<jsp:include page="head.jsp" />
-		<c:import url="/system/menuData.html"></c:import>
+	<c:import url="/system/menuDataTop.html"></c:import>
+		<%-- <jsp:include page="head.jsp" />
+		<c:import url="/system/menuData.html"></c:import> --%>
 		<div class="content-wrapper">
+			<div class="container"> 
 			<section class="content-header">
 				<h1>
 					系统管理<small>角色管理</small>
@@ -74,9 +75,9 @@
 				<div class="row"> 
 					<div class=col-xs-12>
 						<div class="box"> 
-							<div class="box-header">
+							<!-- <div class="box-header">
 								<h3 class="box-title">角色管理</h3>
-							</div>
+							</div> -->
 							<div class="box-body">
 								<div class="row-fluid">
 									<div class="panel panel-info">
@@ -113,6 +114,7 @@
 					</div>
 				</div>
 			</section>
+			</div> 
 		</div>
 		<!-- /.content-wrapper -->
 		<jsp:include page="foot.jsp" />
@@ -321,7 +323,7 @@
 			                "language": {
 			                    "lengthMenu": "_MENU_ 条记录每页",
 			                    "zeroRecords": "没有找到记录",
-			                    "info": "第 _PAGE_ 页 ( 总共 _PAGES_ 页 )",
+			                    "info": "第 _PAGE_ 页 ( 总共 _PAGES_ 页 ,共 _MAX_ 条)",
 			                    "infoEmpty": "无记录",
 			                    "infoFiltered": "(从 _MAX_ 条记录过滤)",
 			                    "paginate": {
@@ -461,7 +463,7 @@
 						 "themes" : { "stripes" : true },
 						 "multiple" : true,
 						"data":{ 
-				            "url":"<%=basePath%>system/menu/treeRole.html?RoleId="+fuid+"&OrganizeId="+ $("input[name='parentid']").val(),
+				            "url":"<%=basePath%>system/menu/treeRole.html?RoleId="+fuid+"&OrganizeId="+ $('input[name=parentid]').val(),
 							"dataType" : "json",
 							"cache" : false
 						}  

@@ -18,11 +18,11 @@
  <link rel="stylesheet" href="<%=basePath%>Bootstrap_AdminLTE_2.3.6/plugins/datatables/dataTables.bootstrap.css">
 <link rel="stylesheet" href="<%=basePath%>js/jsTree/themes/default/style.min.css" />
  <link rel="stylesheet" href="<%=basePath%>Bootstrap_AdminLTE_2.3.6/plugins/bootstrap-validator/css/formValidation.min.css">
- 	  <link rel="stylesheet" href="<%=basePath%>Bootstrap_AdminLTE_2.3.6/plugins/iCheck/all.css">
+ 
 <style type="text/css">
 .panel {
 	display: inline-block;
-	width: 30%; 
+	width: 30%;
 	vertical-align: top;
 }
 
@@ -55,20 +55,20 @@
 </style>
 
 </head>
-<body class="skin-blue layout-top-nav">
+<body class="skin-blue layout-top-nav">	
 	<div class="wrapper">
-<c:import url="/system/menuDataTop.html"></c:import>
-		<%-- <jsp:include page="head.jsp" />
+	<c:import url="/system/menuDataTop.html"></c:import>
+	<%-- 	<jsp:include page="head.jsp" />
 		<c:import url="/system/menuData.html"></c:import> --%>
 		<div class="content-wrapper">
-			<div class="container"> 
+		<div class="container"> 
 			<section class="content-header">
 				<h1>
-					系统管理<small>用户管理</small>
+					系统管理<small>病区权限管理</small>
 				</h1>
 				<ol class="breadcrumb">
 					<li><a href="#"><i class="fa fa-dashboard"></i> 系统管理</a></li>
-					<li class="active">用户管理</li>
+					<li class="active">病区权限管理</li>
 				</ol>
 			</section>
 			<!-- Main content -->
@@ -78,7 +78,7 @@
 						<div class="box">
 							<!-- <div class="box-header">
 								<h3 class="box-title">用户管理</h3>
-							</div> -->
+							</div>  -->
 							<div class="box-body">
 								<div class="row-fluid">
 									<div class="panel panel-info">
@@ -93,8 +93,7 @@
 										<div class="panel-heading">
 											<h3 class="panel-title">用户信息</h3>
 											<div class="ibox-tools rboor" style="display: none;"> 
-						                        <a href="javascript:addShow()" class="btn btn-primary btn-xs p310"  ><i class="fa fa-plus"></i> 新增</a>  
-						                        <a href="javascript:showRole()" class="btn btn-primary btn-xs p310" ><i class="fa fa-calendar-check-o"></i> 分配角色</a>
+						                        <a href="javascript:showBq()" class="btn btn-primary btn-xs p310" ><i class="fa fa-calendar-check-o"></i> 分配病区</a>
 						                    </div> 
 										</div> 
 										<div class="panel-body">
@@ -104,7 +103,6 @@
 							                  <th>序号</th>
 							                  <th>用户名</th>
 							                  <th>姓名</th>
-							                  <th>角色</th>
 							                  <th>手机</th>
 							                  <th>操作</th>
 							                </tr>
@@ -129,42 +127,26 @@
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="myModalLabel">新增</h4>
+					<h4 class="modal-title" id="myModalLabel">修改</h4>
 				</div>
-				<form id="editForm" method="post" action=""  >
 					<div class="modal-body">
 						<div class="box-body">
-							<div class="form-group">
-								<label>用户名 </label> 
-								<input type="hidden"  name="fuid" value="">
+							 <a href="javascript:changeAllBq()" class="btn btn-primary btn-xs p310">全选</a>&nbsp;&nbsp; 
+							 <a href="javascript:unchangeAllBq()" class="btn btn-primary btn-xs p310">取消</a>
+							 <div class="row invoice-info" id="up">
+							 	<input type="hidden" id="userid" value="" />
+							 	<input type="hidden" id="usercode" value="" />
+							 	<input type="hidden"  name="fuid" value="">
 								<input type="hidden"  name="OrganizeId" value="">  
-								<input type="text" class="form-control"  name="username"  placeholder="请输入名称">
-							</div>
-							<div class="form-group"> 
-								<label>密码</label> <input type="password" class="form-control"   name="userpassword" placeholder="请输入密码">
-							</div>
-							<div class="form-group">
-								<label>姓名</label> <input type="text" class="form-control"  name="realname" placeholder="请输入姓名">
-							</div>
-							</div>
-							 <div class="form-group">
-								<label>用户类别</label> 
-								<div>
-								 <input type="radio" class="minimal" name="userType" checked="checked" value="001002" /> 病区医生 &nbsp;&nbsp; <input name="userType" class="minimal" type="radio" value="001001" /> 门诊医生
-								</div>	
-							</div> 
-							<div class="form-group">
-								<label>手机</label> <input type="number" class="form-control"  name="mobile" placeholder="请输入手机">
-							</div>
-							<div class="form-group">
-			                  <label>备注</label> 
-			                  <textarea class="form-control" rows="3" name="description" placeholder="请输入备注"></textarea>
-			                </div>
+				                   <div class="col-sm-4 invoice-col" id="up1"></div>	
+									<div class="col-sm-4 invoice-col" id="up2"></div>	
+									<div class="col-sm-4 invoice-col" id="up3"></div>	
+				              </div>
+						</div> 
 					</div>
-				</form>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-					<button type="button" class="btn btn-primary" id="save">保存</button>
+					<button type="button" class="btn btn-primary" onclick="updateBq()">保存</button>
 				</div>
 			</div>
 		</div>
@@ -176,19 +158,22 @@
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="myModalLabel">选择角色</h4>
+					<h4 class="modal-title" id="myModalLabel">选择病区</h4>
 				</div>
 					<div class="modal-body">
 						<div class="box-body">
-							 <div class="form-group" id="ch">
-				
-				                   
+							 <a href="javascript:changeAllBq()" class="btn btn-primary btn-xs p310">全选</a>&nbsp;&nbsp; 
+							 <a href="javascript:unchangeAllBq()" class="btn btn-primary btn-xs p310">取消</a>
+							 <div class="row invoice-info" id="ch">
+				                   <div class="col-sm-4 invoice-col" id="ch1"></div>	
+									<div class="col-sm-4 invoice-col" id="ch2"></div>	
+									<div class="col-sm-4 invoice-col" id="ch3"></div>	
 				              </div>
 						</div>
 					</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-					<button type="button" class="btn btn-primary" onclick="saveRole()">保存</button>
+					<button type="button" class="btn btn-primary" onclick="saveBq()">保存</button>
 				</div>
 			</div>
 		</div>
@@ -204,7 +189,7 @@
 		<script src="<%=basePath%>Bootstrap_AdminLTE_2.3.6/plugins/bootstrap-validator/js/framework/bootstrap.min.js"></script>
 		<script src="<%=basePath%>Bootstrap_AdminLTE_2.3.6/plugins/bootstrap-validator/js/language/zh_CN.js"></script>
 		<script type="text/javascript" src="<%=basePath%>js/jquery.form.js"></script>
-		  <script src="<%=basePath%>Bootstrap_AdminLTE_2.3.6/plugins/iCheck/icheck.min.js"></script>
+		  
 		<!--定义操作列按钮模板--> 
 		<script id="tpl" type="text/x-handlebars-template">
 		<div class="btn-group">
@@ -261,76 +246,7 @@
 				showUser(OrganizeId); 
 			});  
 			
-			 //-----------------------------------表单验证
-			$('#editForm').formValidation({ 
-		 	        fields: {
-		 	            username: {
-		 	                validators: {
-		 	                    notEmpty: {
-		 	                        message: '用户名必须设置'
-		 	                    },
-		 	                    stringLength: {
-		 	                        min: 3,  
-		 	                        max: 10,
-		 	                        message: '用户名必须在4-10个字符之间'
-		 	                    },
-		 	                    regexp: { 
-		 	                        regexp: /^[a-zA-Z0-9_\.]+$/,
-		 	                        message: '用户名只能由英文字母，数字，点和下划线'
-		 	                    }, 
-		 	                   callback: {       
-		 	                      message: '用户名已经注册',         
-		 	                      callback: function(value, validator) { 
-		 	                          //用ajax提交到后台，进行校验。如 果校验失败  return false; 校验成功 return true;
-		 	                          var re=false;
-		 	                          var fuid=$("input[name='fuid']").val();
-		 	                          if(fuid!=null&&fuid.length>0){
-		 	                        	 re=true;
-		 	                          }else{
-		 	                        	 $.ajax({
-				 								url : "/safety/system/IsExist.html?username=" + $("input[name='username']").val() + "&time=" + new Date(),
-												async : false, 
-												dataType:"text",
-												success : function(data) {
-														if(data=='true'){
-															re=true;
-														}  
-													}
-												}); 
-		 	                          } 
-		 	                          return re; 
-		 	                      }
-		 	                  } 
-		 	                }
-		 	            },
-		 	           userpassword: {
-		 	                validators: {
-		 	                    notEmpty: {
-		 	                        message: '密码不能为空'
-		 	                    },
-		 	                    different: {
-		 	                        field: 'username',
-		 	                        message: '密码不能和用户名相同'
-		 	                    }
-		 	                }
-		 	            },
-		 	           realname: {
-		 	                validators: {
-		 	                    notEmpty: {
-		 	                        message: '姓名不能为空'
-		 	                    }
-		 	                }
-		 	            }
-		 	        } 
-		 	    });  
-			 $("#save").click(add);
 			 
-			 $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-			      checkboxClass: 'icheckbox_minimal-blue',
-			      radioClass: 'iradio_minimal-blue'
-			    });
-			 
-			
 		});
 		
 		
@@ -343,14 +259,14 @@
 					 "searchable": true,
 					 "searching": true,  
 					 "aaSorting" : [[3, "desc"]], 
-			         "ajax": "<%=basePath %>system/usershow.html?OrganizeId="+OrganizeId,
+			         "ajax": "<%=basePath %>system/usershowBq.html?OrganizeId="+OrganizeId,
 			         "columns": [{ "data": null, 
 			       	  			"title" : "<input id='changeAll'  onclick='changeAll()' type='checkbox'/>", 
 			       	  			"createdCell" : function(nTd, sData, oData,
 											iRow, iCol) {
 										var ht='<div class="checkbox">';  
 										    ht+='<label>';  
-									      	ht+='<input  name="_change" type="checkbox" value='+oData.fuid+'  /> <br/>';
+									      	ht+='<input  name="_change" type="checkbox" ucode='+oData.code+' value='+oData.fuid+'  /> <br/>';
 									      	ht+='</label> </div>';		  
 										$(nTd).html(ht); // 分页行号累加：$(nTd).html(iRow+1);
 									}},
@@ -359,36 +275,30 @@
 									"title" : "用户名" },
 								  { "data": "realname",
 									"title" : "姓名" },
-								  { "data": "roleid", 
-									"title" : "角色"},  
-								  { "data": "mobile",
-									"title":"手机"},
+								  { "data": "title", 
+									"title" : "病区权限"},  
 								  { "data" : null,
 									"title" : "操作"
 									}],
 					"columnDefs": [ 
-								{ "bSortable": false, "aTargets": [ 0, 5 ] },
-								/* {
-								    "targets": [4],
+								{ "bSortable": false, "aTargets": [ 0, 4 ] },
+								  {
+								    "targets": [3],
 								    "type" : "date",
 								    "render": function (data) {
-								        if (data !== null) {
-								            var javascriptDate = new Date(data);
-								            javascriptDate = javascriptDate.getFullYear() + "/" + (javascriptDate.getMonth()  + 1) + "/" + javascriptDate.getDate() + " " + javascriptDate.getHours() + ":" + javascriptDate.getMinutes() + ":" + javascriptDate.getSeconds();
-								            return javascriptDate;
-								        } else { 
-								            return "";
+								        if(data.length>25){
+								        	data=data.substring(0,25)+"...";
 								        }
+								        return data;
 								    } 
-								},  */
+								},   
 			                    {
-			                        targets: 5,
+			                        targets: 4,
 			                        render: function (data, type, row,   meta) {
 			                            var context =
 			                            {
 			                                func: [
-			                                    {"name": "修改","fn": "edit(\'" + row.fuid + "\')", "type": "primary"},
-			                                    {"name": "删除", "fn": "del(\'" + row.fuid + "\')", "type": "danger"}
+			                                    {"name": "修改","fn": "edit(\'" + row.fuid + "\',\'" + row.code + "\')", "type": "primary"}
 			                                ]
 			                            };
 			                            
@@ -417,66 +327,63 @@
 				 
 				 $("input[type=search]").attr("placeholder","请输入名称");
 			}else{ 
-				 table.api().ajax.url('<%=basePath %>system/usershow.html?OrganizeId='+OrganizeId).load();
+				 table.api().ajax.url('<%=basePath %>system/usershowBq.html?OrganizeId='+OrganizeId).load();
 			}
 			
 		}
 
-		 
-
-		 	/**
-		     * 添加数据
-		     **/
-		    function add() {    
-		    	$('#editForm').formValidation('validate');    
-		    	if($('#editForm').data('formValidation').isValid()){
-		    		$("#editForm").ajaxSubmit({ 
-					       type: 'post', 
-					        async: false,
-					        url: "<%=basePath%>system/edit.html",
-					        dataType:"json", 
-							success : function(data) { 
-								 table.api().ajax.url('<%=basePath %>system/usershow.html?OrganizeId='+$("input[name=OrganizeId]").val()).load();
-				                $("#myModal").modal("hide");  
-				                clear();  
-							},
-							error : function(XmlHttpRequest, textStatus, errorThrown) {
-								alert("error");
-							}
-						});   	
-		    	}
-		    }
-
-		 	
-		 	function addShow(){ 
-		 		var id=$("input[name='OrganizeId']").val();
-				if(id==null||id.length==0){
-					alert("请先选择组织!");
-					return;  
-				}
-				$("#myModal").modal('toggle');
-		 	}
+	 
 		    /** 
 		     *编辑方法
 		     **/
-		    function edit(fuid) {
+		    function edit(fuid,usercode) {
+		    	$("#userid").val(fuid); 
+    			$("#usercode").val(usercode);  
 		    	$.ajax({
-		    		url:"<%=basePath%>system/update_show.html",
-		    		data:{"id":fuid},
+		    		url:"<%=basePath%>system/showUpNurseBq.html",
+		    		data:{"userid":fuid,"usercode":usercode},
 		    		dataType:"json",
-		    		success:function(s){ 
-		    	        $("#myModalLabel").text("修改");
-		    	        $("input[name='fuid']").val(s.fuid); 
-		    	        $("input[name='username']").val(s.username); 
-		    	        $("input[name='userpassword']").val(s.userpassword); 
-		    	        $("input[name='realname']").val(s.realname); 
-		    	        $("input[name='mobile']").val(s.mobile); 
-		    	        $("textarea[name='description']").val(s.description);
-		    	        $("input[name='userType']").each(function (){
-			   				 if($(this).val()==s.userType){
-			   					$(this).iCheck('check');
-			   				 }
-			   			 }) 
+		    		success:function(re){ 
+		    			var ht="";
+		    			var data=re['org_list'];
+		    			var tdata=re['t_list'];
+		            	if(data!=null&&data.length>0){
+		            		var num=parseInt(data.length/3)+1;
+		            		for(var a=0;a<data.length;a++){
+		            			ht+='<div class="checkbox">';
+				            	ht+='<label>';
+				            	var ischeck=0;
+				            	if(tdata!=null&&tdata.length>0){
+				            		for(var b=0;b<tdata.length;b++){
+				            			if(tdata[b].wardId==data[a].fuid){
+				            				ischeck=1;
+				            				break;
+				            			}
+				            		} 
+				            	}
+				            	if(ischeck==1){
+				            		ht+=' <input name="uro" checked="checked" type="checkbox" ocode="'+data[a].code+'" oname="'+data[a].fullname+'" value="'+data[a].fuid+'">';
+				            	}else{
+				            		ht+=' <input name="uro"   type="checkbox" ocode="'+data[a].code+'" oname="'+data[a].fullname+'" value="'+data[a].fuid+'">';
+				            	}
+				            	
+				            	ht+=data[a].fullname;
+				            	ht+=' </label>';
+				            	ht+=' </div>';
+				            	if(a==num-1){
+				            		$("#up1").html(ht); 
+				            		ht="";
+				            	}
+				            	if(a==num*2-1){
+				            		$("#up2").html(ht); 
+				            		ht="";
+				            	}
+				            	if(a==data.length-1){
+				            		$("#up3").html(ht); 
+				            		ht="";
+				            	}
+		            		}
+		            	}
 		    	        $("#myModal").modal("show"); 
 		    		}
 		    	});
@@ -498,26 +405,8 @@
 		    	$('#editForm').data('formValidation').resetForm();
 		    }
 
-		    /**
-		     * 删除数据
-		     * @param name
-		     */
-		    function del(fuid) {
-		    	if (!confirm("确认要删除？")) {
-		            return;
-		        }
-		        $.ajax({
-		            url: "<%=basePath%>system/delete.html",
-		            dataType:"text",
-		            data: {
-		                "id": fuid
-		            }, success: function (data) { 
-		            	table.api().ajax.url('<%=basePath %>system/usershow.html?OrganizeId='+$("input[name=OrganizeId]").val()).load();
-		            }
-		        });
-		    }
-		    
-		    function showRole(){
+		  
+		    function showBq(){
 		    	var OrganizeId=$("input[name='OrganizeId']").val();
 				if(OrganizeId==null||OrganizeId.length==0){
 					alert("请先选择组织!");
@@ -529,62 +418,114 @@
 					return;  					
 				}
 				 $.ajax({
-			            url: "<%=basePath%>system/role/showChange.html",
+			            url: "<%=basePath%>system/showNurseBq.html",
 			            dataType:"json",
 			            type: "post",
 			            data: {
-			                "OrganizeId": OrganizeId
+			                
 			            }, success: function (data) { 
 			            	var ht="";
 			            	if(data!=null&&data.length>0){
+			            		var num=parseInt(data.length/3)+1;
 			            		for(var a=0;a<data.length;a++){
 			            			ht+='<div class="checkbox">';
 					            	ht+='<label>';
-					            	ht+=' <input name="ro" type="checkbox" value="'+data[a].fuid+'">';
-					            	ht+=data[a].realname;
+					            	ht+=' <input name="ro" type="checkbox" ocode="'+data[a].code+'" oname="'+data[a].fullname+'" value="'+data[a].fuid+'">';
+					            	ht+=data[a].fullname;
 					            	ht+=' </label>';
 					            	ht+=' </div>';
+					            	if(a==num-1){
+					            		$("#ch1").html(ht); 
+					            		ht="";
+					            	}
+					            	if(a==num*2-1){
+					            		$("#ch2").html(ht); 
+					            		ht="";
+					            	}
+					            	if(a==data.length-1){
+					            		$("#ch3").html(ht); 
+					            		ht="";
+					            	}
 			            		}
 			            	}
-		                	$("#ch").html(ht); 
+		                //	$("#ch").html(ht); 
 			            	$("#roleModal").modal('toggle');
 			            }
 			        });
 				
 		    }
 		    
-		    function saveRole(){
+		    function saveBq(){
 		    	var val=$("input[name=_change]:checked");
 			 	 if(val.length==0){
 			 	 	alert("请先选择人员");
 			 	 	return;
 			 	 }else{
-			 		var userid="";
+			 		var userid=""; 
+			 		var usercode="";
 			 		val.each(function (){
 			 			userid+=$(this).val()+',';
+			 			usercode+=$(this).attr("ucode")+",";
 			 		})
-			 		userid=userid.substring(0,userid.length-1);
-			 		var roleid="";
+			 		usercode=usercode.substring(0,usercode.length-1);
+			 		var bqid=""; 
+			 		var bqcode="";
+			 		var bqname="";
 			 		$("input[name=ro]:checked").each(function (){
-			 			roleid+=$(this).val()+',';
+			 			bqid+=$(this).val()+',';
+			 			bqcode+=$(this).attr("ocode")+',';
+			 			bqname+=$(this).attr("oname")+',';
 			 		}) 
-			 		roleid=roleid.substring(0,roleid.length-1);
+			 		bqid=bqid.substring(0,bqid.length-1);
+			 		bqcode=bqcode.substring(0,bqcode.length-1);
+			 		bqname=bqname.substring(0,bqname.length-1);
 			 		 $.ajax({ 
-				            url: "<%=basePath %>system/AssignRoles.html", 
+				            url: "<%=basePath %>system/AssignBq.html", 
 				            dataType:"json",
 				            type: "post",
 				            data: {
 				                "userid": userid,
-				                "roleid":roleid,
-				                "OrganizeId":$("input[name='OrganizeId']").val()
+				                "bqid":bqid,
+				                bqcode:bqcode,
+				                bqname:bqname,
+				                usercode:usercode
 				            }, success: function (data) { 
 				            	$("#roleModal").modal('hide'); 
-				            	table.api().ajax.url('<%=basePath %>system/usershow.html?OrganizeId='+$("input[name=OrganizeId]").val()).load();
+				            	table.api().ajax.url('<%=basePath %>system/usershowBq.html?OrganizeId='+$("input[name=OrganizeId]").val()).load();
 				            }
 				        });
 				 }
 		    }
-		   
+		    function updateBq(){
+			 		var userid=$("#userid").val(); 
+			 		var usercode=$("#usercode").val();
+			 		var bqid="";
+			 		var bqcode="";
+			 		var bqname="";
+			 		$("input[name=uro]:checked").each(function (){
+			 			bqid+=$(this).val()+',';
+			 			bqcode+=$(this).attr("ocode")+',';
+			 			bqname+=$(this).attr("oname")+',';
+			 		}) 
+			 		bqid=bqid.substring(0,bqid.length-1);
+			 		bqcode=bqcode.substring(0,bqcode.length-1);
+			 		bqname=bqname.substring(0,bqname.length-1);
+			 		 $.ajax({ 
+				            url: "<%=basePath %>system/AssignBq.html", 
+				            dataType:"json",
+				            type: "post",
+				            data: {
+				                "userid": userid,
+				                "bqid":bqid,
+				                bqcode:bqcode,
+				                bqname:bqname,
+				                usercode:usercode
+				            }, success: function (data) { 
+				            	$("#myModal").modal('hide'); 
+				            	table.api().ajax.url('<%=basePath %>system/usershowBq.html?OrganizeId='+$("input[name=OrganizeId]").val()).load();
+				            }
+				        });
+		    }
 		  
 		    function changeAll(){     
 		    	if($("#changeAll").is(':checked')){ 
@@ -598,6 +539,22 @@
 		    	}
 		    }
 		    
+		    function changeAllBq(){     
+		    		$("input[name='ro']").each(function (){
+		    			$(this).prop("checked","checked");
+		    		}) 
+		    		$("input[name='uro']").each(function (){
+		    			$(this).prop("checked","checked");
+		    		}) 
+		    }
+		    function unchangeAllBq(){     
+		    		$("input[name='ro']").each(function (){
+		    			$(this).removeAttr("checked");   
+		    		}) 
+		    		$("input[name='uro']").each(function (){
+		    			$(this).removeAttr("checked");   
+		    		}) 
+		    }
 	</script>
 </body>
 </html>

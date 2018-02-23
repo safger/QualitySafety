@@ -358,8 +358,6 @@ public class UserAction  {
 		String id=baseUser.getFuid();
 		if(id!=null&&id.length()>0){
 			baseUser.setModifydate(new Date());
-			baseUser.setModifyuserid(userid);
-			baseUser.setModifyuserrealname(username);
 			userService.updateSelective(baseUser);
 			/*
 			 * 记录操作日志
@@ -369,15 +367,10 @@ public class UserAction  {
 			baseUser.setFuid(UUIDCreater.getUUID());
 			baseUser.setDeletemark(0);
 			baseUser.setCreatedate(new Date());
-			baseUser.setCreateuserid(userid);
 			baseUser.setDepartmentid(OrganizeId);
 			baseUser.setDepartmentname(DepartmentName); 
 			baseUser.setLogincount(1);
-			baseUser.setUseronline(1);
-			baseUser.setCreateuserrealname(username);
 			baseUser.setModifydate(new Date());
-			baseUser.setModifyuserid(userid);
-			baseUser.setModifyuserrealname(username);
 			userService.insert(baseUser);
 			/*
 			 * 记录操作日志
@@ -401,6 +394,49 @@ public class UserAction  {
 		baseUser.setOrganizeId(OrganizeId);
 		out.print(JSONArray.toJSONString(baseUser));
 		return null;
+	}
+	@RequestMapping("menuDataTop")
+	public String menuDataTop(Map<String, Object> model) {
+		String userid = (String) request.getSession().getAttribute("userid");
+		List<Menu> list = menuService.selectView(userid);
+		List<Menu> baseMenu_all = menuService.selectAll("menu_order");
+		for (int i = 0; i < list.size(); i++) {
+			Menu n = hasParent(baseMenu_all, list.get(i).getMenuParentid());
+			if (n != null) {
+				if (!isexit(n.getFuid(), list)) {
+					list.add(n);
+				}
+			}
+		}
+		List<Menu> parentList = new ArrayList<Menu>();
+		for (int i = 0; i < baseMenu_all.size(); i++) {
+			Menu m = (Menu) baseMenu_all.get(i);
+			m.setText(m.getMenuName());
+			m.setId(m.getFuid());
+			if (m.getMenuParentid().equals("1")) {
+				m = getChildOrg(baseMenu_all, m.getFuid(), m, list);
+				parentList.add(m);
+			}
+		}
+		String in = "";
+		if (parentList != null) {
+			for (int a = 0; a < parentList.size(); a++) {
+				if (parentList.get(a).getChildren() == null || parentList.get(a).getChildren().size() == 0) {
+					in += "" + a + ",";
+				}
+			}
+		}
+		in = in.length() > 0 ? in.substring(0, in.length() - 1) : in;
+		String temp[] = in.split(",");
+		int b = 0;
+		if (temp != null && temp.length > 0 && in.length() > 0) {
+			for (int a = 0; a < temp.length; a++) {
+				parentList.remove(Integer.parseInt(temp[a]) - b);
+				b++;
+			}
+		}
+		model.put("parentList", parentList);
+		return "system/head";
 	}
 	/**
 	 * @see ajax 删除

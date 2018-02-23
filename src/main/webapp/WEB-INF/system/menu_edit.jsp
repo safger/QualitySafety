@@ -12,16 +12,18 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>管控系统 | 权限系统</title>
+<title>市一医院 | PICC系统</title>
 <!-- Tell the browser to be responsive to screen width -->
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="skin-blue layout-top-nav">
 	<div class="wrapper">
 
-		<jsp:include page="head.jsp" />
-		<c:import url="/system/menuData.html"></c:import>
+		<%-- <jsp:include page="head.jsp" />
+		<c:import url="/system/menuData.html"></c:import> --%>
+		<c:import url="/system/menuDataTop.html"></c:import>
 		<div class="content-wrapper">
+		<div class="container"> 
 			<section class="content-header">
 				<h1>
 					系统管理<small>菜单管理</small>
@@ -71,6 +73,7 @@
 					</div>
 				</div>
 			</section>
+			</div>
 		</div>
 		<!-- /.content-wrapper -->
 		<jsp:include page="foot.jsp" />

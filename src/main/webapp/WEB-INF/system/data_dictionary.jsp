@@ -40,10 +40,12 @@
 </style>
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
-	<jsp:include page="head.jsp" />
-	<c:import url="/system/menuData.html"></c:import>
+	<body class="skin-blue layout-top-nav">	
+	<%-- <jsp:include page="head.jsp" />
+	<c:import url="/system/menuData.html"></c:import> --%>
+	<c:import url="/system/menuDataTop.html"></c:import>
 	<div class="content-wrapper">
+		<div class="container">
 		<section class="content-header">
 			<h1>
 				系统管理 <small>数据字典管理</small>
@@ -85,6 +87,7 @@
 				</div>
 			</div>
 		</section>
+		</div>
 	</div>
 	<jsp:include page="foot.jsp" />
 	</div>
@@ -207,7 +210,7 @@
 	                 "language": {
 	                     "lengthMenu": "_MENU_ 条记录每页",
 	                     "zeroRecords": "没有找到记录",
-	                     "info": "第 _PAGE_ 页 ( 总共 _PAGES_ 页 )",
+	                     "info": "第 _PAGE_ 页 ( 总共 _PAGES_ 页 ,共 _MAX_ 条)",
 	                     "infoEmpty": "无记录",
 	                     "infoFiltered": "(从 _MAX_ 条记录过滤)",
 	                     "paginate": {

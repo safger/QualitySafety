@@ -72,10 +72,7 @@ public class LoginAction {
 				roleid=roleid.length()>0?roleid.substring(0,roleid.length()-1):"";
 				request.getSession().setAttribute("roleid",roleid);
 				//更新最后登录时间
-				baseUser_list.get(0).setPreviousvisit(baseUser_list.get(0).getLastvisit());
-				baseUser_list.get(0).setLastvisit(new Date());
 				userService.updateSelective(baseUser_list.get(0));
-				request.getSession().setAttribute("previousvisit",baseUser_list.get(0).getPreviousvisit());
 				//----------------
 				 return "redirect:/system/index.html"; 
 				
@@ -89,7 +86,6 @@ public class LoginAction {
 		}
 	}
 	/**
-	 * @see 用户登出
 	 * @return
 	 */ 
 	@RequestMapping("logout")

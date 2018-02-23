@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.dao.IncidentMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.Incident" >
+    <id column="Fuid" property="fuid" jdbcType="VARCHAR" />
+        <result property="createdate" column="createdate"  jdbcType="TIMESTAMP" />
+        <result property="hospitalNumber" column="HospitalNumber"  jdbcType="VARCHAR" />
+        <result property="patient" column="patient"  jdbcType="VARCHAR" />
+        <result property="sex" column="sex"  jdbcType="INTEGER" />
+        <result property="birthday" column="birthday"  jdbcType="TIMESTAMP" />
+        <result property="bedNo" column="BedNo"  jdbcType="VARCHAR" />
+        <result property="occurrenceDate" column="OccurrenceDate"  jdbcType="TIMESTAMP" />
+        <result property="thingsPassed" column="ThingsPassed"  jdbcType="VARCHAR" />
+        <result property="eventLevel" column="EventLevel"  jdbcType="VARCHAR" />
+        <result property="eventAddress" column="EventAddress"  jdbcType="VARCHAR" />
+        <result property="classification" column="classification"  jdbcType="VARCHAR" />
+        <result property="supplementary" column="supplementary"  jdbcType="VARCHAR" />
+        <result property="reason" column="reason"  jdbcType="VARCHAR" />
+        <result property="supReason" column="supReason"  jdbcType="VARCHAR" />
+        <result property="consequence" column="consequence"  jdbcType="INTEGER" />
+        <result property="suggest" column="suggest"  jdbcType="VARCHAR" />
+        <result property="jobNumber" column="JobNumber"  jdbcType="VARCHAR" />
+        <result property="reporter" column="reporter"  jdbcType="VARCHAR" />
+        <result property="jobCategory" column="JobCategory"  jdbcType="VARCHAR" />
+        <result property="reporterPhone" column="reporterPhone"  jdbcType="VARCHAR" />
+        <result property="litigant" column="litigant"  jdbcType="INTEGER" />
+        <result property="expert" column="expert"  jdbcType="VARCHAR" />
+        <result property="major" column="major"  jdbcType="INTEGER" />
+        <result property="serious" column="serious"  jdbcType="VARCHAR" />
+        <result property="frequency" column="frequency"  jdbcType="VARCHAR" />
+        <result property="risk" column="risk"  jdbcType="VARCHAR" />
+        <result property="process" column="process"  jdbcType="VARCHAR" />
+        <result property="processReturn" column="processReturn"  jdbcType="VARCHAR" />
+        <result property="processAssess" column="processAssess"  jdbcType="VARCHAR" />
+        <result property="rectificationAssess" column="rectificationAssess"  jdbcType="VARCHAR" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         FUID ,
+         createdate ,
+         HospitalNumber ,
+         patient ,
+         sex ,
+         birthday ,
+         BedNo ,
+         OccurrenceDate ,
+         ThingsPassed ,
+         EventLevel ,
+         EventAddress ,
+         classification ,
+         supplementary ,
+         reason ,
+         supReason ,
+         consequence ,
+         suggest ,
+         JobNumber ,
+         reporter ,
+         JobCategory ,
+         reporterPhone ,
+         litigant ,
+         expert ,
+         major ,
+         serious ,
+         frequency ,
+         risk ,
+         process ,
+         processReturn ,
+         processAssess ,
+         rectificationAssess 
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from bu_incident
+		      where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from bu_incident
+    	where 
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </delete>
+  <insert id="insert" parameterType="com.sn.entity.Incident" >
+    
+         insert into bu_incident ( 
+         		FUID , 
+         	          		createdate , 
+         	          		HospitalNumber , 
+         	          		patient , 
+         	          		sex , 
+         	          		birthday , 
+         	          		BedNo , 
+         	          		OccurrenceDate , 
+         	          		ThingsPassed , 
+         	          		EventLevel , 
+         	          		EventAddress , 
+         	          		classification , 
+         	          		supplementary , 
+         	          		reason , 
+         	          		supReason , 
+         	          		consequence , 
+         	          		suggest , 
+         	          		JobNumber , 
+         	          		reporter , 
+         	          		JobCategory , 
+         	          		reporterPhone , 
+         	          		litigant , 
+         	          		expert , 
+         	          		major , 
+         	          		serious , 
+         	          		frequency , 
+         	          		risk , 
+         	          		process , 
+         	          		processReturn , 
+         	          		processAssess , 
+         	          		rectificationAssess  
+         	 )
+   	 	values (
+   	 		#{fuid,jdbcType=VARCHAR} , 
+   	 	   	 		#{createdate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{hospitalNumber,jdbcType=VARCHAR} , 
+   	 	   	 		#{patient,jdbcType=VARCHAR} , 
+   	 	   	 		#{sex,jdbcType=INTEGER} , 
+   	 	   	 		#{birthday,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{bedNo,jdbcType=VARCHAR} , 
+   	 	   	 		#{occurrenceDate,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{thingsPassed,jdbcType=VARCHAR} , 
+   	 	   	 		#{eventLevel,jdbcType=VARCHAR} , 
+   	 	   	 		#{eventAddress,jdbcType=VARCHAR} , 
+   	 	   	 		#{classification,jdbcType=VARCHAR} , 
+   	 	   	 		#{supplementary,jdbcType=VARCHAR} , 
+   	 	   	 		#{reason,jdbcType=VARCHAR} , 
+   	 	   	 		#{supReason,jdbcType=VARCHAR} , 
+   	 	   	 		#{consequence,jdbcType=INTEGER} , 
+   	 	   	 		#{suggest,jdbcType=VARCHAR} , 
+   	 	   	 		#{jobNumber,jdbcType=VARCHAR} , 
+   	 	   	 		#{reporter,jdbcType=VARCHAR} , 
+   	 	   	 		#{jobCategory,jdbcType=VARCHAR} , 
+   	 	   	 		#{reporterPhone,jdbcType=VARCHAR} , 
+   	 	   	 		#{litigant,jdbcType=INTEGER} , 
+   	 	   	 		#{expert,jdbcType=VARCHAR} , 
+   	 	   	 		#{major,jdbcType=INTEGER} , 
+   	 	   	 		#{serious,jdbcType=VARCHAR} , 
+   	 	   	 		#{frequency,jdbcType=VARCHAR} , 
+   	 	   	 		#{risk,jdbcType=VARCHAR} , 
+   	 	   	 		#{process,jdbcType=VARCHAR} , 
+   	 	   	 		#{processReturn,jdbcType=VARCHAR} , 
+   	 	   	 		#{processAssess,jdbcType=VARCHAR} , 
+   	 	   	 		#{rectificationAssess,jdbcType=VARCHAR}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.Incident">
+  	  insert into  bu_incident
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="fuid != null" >
+  	 	  FUID ,  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 	  createdate ,  
+  	  	</if>
+  	  	<if test="hospitalNumber != null" >
+  	 	  HospitalNumber ,  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 	  patient ,  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 	  sex ,  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 	  birthday ,  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 	  BedNo ,  
+  	  	</if>
+  	  	<if test="occurrenceDate != null" >
+  	 	  OccurrenceDate ,  
+  	  	</if>
+  	  	<if test="thingsPassed != null" >
+  	 	  ThingsPassed ,  
+  	  	</if>
+  	  	<if test="eventLevel != null" >
+  	 	  EventLevel ,  
+  	  	</if>
+  	  	<if test="eventAddress != null" >
+  	 	  EventAddress ,  
+  	  	</if>
+  	  	<if test="classification != null" >
+  	 	  classification ,  
+  	  	</if>
+  	  	<if test="supplementary != null" >
+  	 	  supplementary ,  
+  	  	</if>
+  	  	<if test="reason != null" >
+  	 	  reason ,  
+  	  	</if>
+  	  	<if test="supReason != null" >
+  	 	  supReason ,  
+  	  	</if>
+  	  	<if test="consequence != null" >
+  	 	  consequence ,  
+  	  	</if>
+  	  	<if test="suggest != null" >
+  	 	  suggest ,  
+  	  	</if>
+  	  	<if test="jobNumber != null" >
+  	 	  JobNumber ,  
+  	  	</if>
+  	  	<if test="reporter != null" >
+  	 	  reporter ,  
+  	  	</if>
+  	  	<if test="jobCategory != null" >
+  	 	  JobCategory ,  
+  	  	</if>
+  	  	<if test="reporterPhone != null" >
+  	 	  reporterPhone ,  
+  	  	</if>
+  	  	<if test="litigant != null" >
+  	 	  litigant ,  
+  	  	</if>
+  	  	<if test="expert != null" >
+  	 	  expert ,  
+  	  	</if>
+  	  	<if test="major != null" >
+  	 	  major ,  
+  	  	</if>
+  	  	<if test="serious != null" >
+  	 	  serious ,  
+  	  	</if>
+  	  	<if test="frequency != null" >
+  	 	  frequency ,  
+  	  	</if>
+  	  	<if test="risk != null" >
+  	 	  risk ,  
+  	  	</if>
+  	  	<if test="process != null" >
+  	 	  process ,  
+  	  	</if>
+  	  	<if test="processReturn != null" >
+  	 	  processReturn ,  
+  	  	</if>
+  	  	<if test="processAssess != null" >
+  	 	  processAssess ,  
+  	  	</if>
+  	  	<if test="rectificationAssess != null" >
+  	 	  rectificationAssess   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="fuid != null" >
+        	#{fuid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="createdate != null" >
+        	#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="hospitalNumber != null" >
+        	#{hospitalNumber,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patient != null" >
+        	#{patient,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sex != null" >
+        	#{sex,jdbcType=INTEGER} , 
+       </if>
+    	<if test="birthday != null" >
+        	#{birthday,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="bedNo != null" >
+        	#{bedNo,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="occurrenceDate != null" >
+        	#{occurrenceDate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="thingsPassed != null" >
+        	#{thingsPassed,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="eventLevel != null" >
+        	#{eventLevel,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="eventAddress != null" >
+        	#{eventAddress,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="classification != null" >
+        	#{classification,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="supplementary != null" >
+        	#{supplementary,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="reason != null" >
+        	#{reason,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="supReason != null" >
+        	#{supReason,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="consequence != null" >
+        	#{consequence,jdbcType=INTEGER} , 
+       </if>
+    	<if test="suggest != null" >
+        	#{suggest,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jobNumber != null" >
+        	#{jobNumber,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="reporter != null" >
+        	#{reporter,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jobCategory != null" >
+        	#{jobCategory,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="reporterPhone != null" >
+        	#{reporterPhone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="litigant != null" >
+        	#{litigant,jdbcType=INTEGER} , 
+       </if>
+    	<if test="expert != null" >
+        	#{expert,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="major != null" >
+        	#{major,jdbcType=INTEGER} , 
+       </if>
+    	<if test="serious != null" >
+        	#{serious,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="frequency != null" >
+        	#{frequency,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="risk != null" >
+        	#{risk,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="process != null" >
+        	#{process,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="processReturn != null" >
+        	#{processReturn,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="processAssess != null" >
+        	#{processAssess,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="rectificationAssess != null" >
+        	#{rectificationAssess,jdbcType=VARCHAR}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.Incident" >
+    update  bu_incident
+    <set >
+    	<if test="createdate != null" >
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="hospitalNumber != null" >
+        	  HospitalNumber=#{hospitalNumber,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="patient != null" >
+        	  patient=#{patient,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sex != null" >
+        	  sex=#{sex,jdbcType=INTEGER} , 
+       </if>
+    	<if test="birthday != null" >
+        	  birthday=#{birthday,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="bedNo != null" >
+        	  BedNo=#{bedNo,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="occurrenceDate != null" >
+        	  OccurrenceDate=#{occurrenceDate,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="thingsPassed != null" >
+        	  ThingsPassed=#{thingsPassed,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="eventLevel != null" >
+        	  EventLevel=#{eventLevel,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="eventAddress != null" >
+        	  EventAddress=#{eventAddress,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="classification != null" >
+        	  classification=#{classification,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="supplementary != null" >
+        	  supplementary=#{supplementary,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="reason != null" >
+        	  reason=#{reason,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="supReason != null" >
+        	  supReason=#{supReason,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="consequence != null" >
+        	  consequence=#{consequence,jdbcType=INTEGER} , 
+       </if>
+    	<if test="suggest != null" >
+        	  suggest=#{suggest,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jobNumber != null" >
+        	  JobNumber=#{jobNumber,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="reporter != null" >
+        	  reporter=#{reporter,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jobCategory != null" >
+        	  JobCategory=#{jobCategory,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="reporterPhone != null" >
+        	  reporterPhone=#{reporterPhone,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="litigant != null" >
+        	  litigant=#{litigant,jdbcType=INTEGER} , 
+       </if>
+    	<if test="expert != null" >
+        	  expert=#{expert,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="major != null" >
+        	  major=#{major,jdbcType=INTEGER} , 
+       </if>
+    	<if test="serious != null" >
+        	  serious=#{serious,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="frequency != null" >
+        	  frequency=#{frequency,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="risk != null" >
+        	  risk=#{risk,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="process != null" >
+        	  process=#{process,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="processReturn != null" >
+        	  processReturn=#{processReturn,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="processAssess != null" >
+        	  processAssess=#{processAssess,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="rectificationAssess != null" >
+        	  rectificationAssess=#{rectificationAssess,jdbcType=VARCHAR}  
+       </if>
+ 	 </set>
+    where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.Incident" >
+    update bu_incident
+    set 
+        	  createdate=#{createdate,jdbcType=TIMESTAMP} , 
+        	  HospitalNumber=#{hospitalNumber,jdbcType=VARCHAR} , 
+        	  patient=#{patient,jdbcType=VARCHAR} , 
+        	  sex=#{sex,jdbcType=INTEGER} , 
+        	  birthday=#{birthday,jdbcType=TIMESTAMP} , 
+        	  BedNo=#{bedNo,jdbcType=VARCHAR} , 
+        	  OccurrenceDate=#{occurrenceDate,jdbcType=TIMESTAMP} , 
+        	  ThingsPassed=#{thingsPassed,jdbcType=VARCHAR} , 
+        	  EventLevel=#{eventLevel,jdbcType=VARCHAR} , 
+        	  EventAddress=#{eventAddress,jdbcType=VARCHAR} , 
+        	  classification=#{classification,jdbcType=VARCHAR} , 
+        	  supplementary=#{supplementary,jdbcType=VARCHAR} , 
+        	  reason=#{reason,jdbcType=VARCHAR} , 
+        	  supReason=#{supReason,jdbcType=VARCHAR} , 
+        	  consequence=#{consequence,jdbcType=INTEGER} , 
+        	  suggest=#{suggest,jdbcType=VARCHAR} , 
+        	  JobNumber=#{jobNumber,jdbcType=VARCHAR} , 
+        	  reporter=#{reporter,jdbcType=VARCHAR} , 
+        	  JobCategory=#{jobCategory,jdbcType=VARCHAR} , 
+        	  reporterPhone=#{reporterPhone,jdbcType=VARCHAR} , 
+        	  litigant=#{litigant,jdbcType=INTEGER} , 
+        	  expert=#{expert,jdbcType=VARCHAR} , 
+        	  major=#{major,jdbcType=INTEGER} , 
+        	  serious=#{serious,jdbcType=VARCHAR} , 
+        	  frequency=#{frequency,jdbcType=VARCHAR} , 
+        	  risk=#{risk,jdbcType=VARCHAR} , 
+        	  process=#{process,jdbcType=VARCHAR} , 
+        	  processReturn=#{processReturn,jdbcType=VARCHAR} , 
+        	  processAssess=#{processAssess,jdbcType=VARCHAR} , 
+        	  rectificationAssess=#{rectificationAssess,jdbcType=VARCHAR}  
+      where  
+		        FUID = #{fuid,jdbcType=VARCHAR}  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.Incident" >
+    select 
+    <include refid="Base_Column_List" />
+    from bu_incident
+   <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="hospitalNumber != null" >
+  	 		   and    HospitalNumber  = #{hospitalNumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="occurrenceDate != null" >
+  	 		   and    OccurrenceDate  = #{occurrenceDate}  
+  	  	</if>
+  	  	<if test="thingsPassed != null" >
+  	 		   and    ThingsPassed  = #{thingsPassed}  
+  	  	</if>
+  	  	<if test="eventLevel != null" >
+  	 		   and    EventLevel  = #{eventLevel}  
+  	  	</if>
+  	  	<if test="eventAddress != null" >
+  	 		   and    EventAddress  = #{eventAddress}  
+  	  	</if>
+  	  	<if test="classification != null" >
+  	 		   and    classification  = #{classification}  
+  	  	</if>
+  	  	<if test="supplementary != null" >
+  	 		   and    supplementary  = #{supplementary}  
+  	  	</if>
+  	  	<if test="reason != null" >
+  	 		   and    reason  = #{reason}  
+  	  	</if>
+  	  	<if test="supReason != null" >
+  	 		   and    supReason  = #{supReason}  
+  	  	</if>
+  	  	<if test="consequence != null" >
+  	 		   and    consequence  = #{consequence}  
+  	  	</if>
+  	  	<if test="suggest != null" >
+  	 		   and    suggest  = #{suggest}  
+  	  	</if>
+  	  	<if test="jobNumber != null" >
+  	 		   and    JobNumber  = #{jobNumber}  
+  	  	</if>
+  	  	<if test="reporter != null" >
+  	 		   and    reporter  = #{reporter}  
+  	  	</if>
+  	  	<if test="jobCategory != null" >
+  	 		   and    JobCategory  = #{jobCategory}  
+  	  	</if>
+  	  	<if test="reporterPhone != null" >
+  	 		   and    reporterPhone  = #{reporterPhone}  
+  	  	</if>
+  	  	<if test="litigant != null" >
+  	 		   and    litigant  = #{litigant}  
+  	  	</if>
+  	  	<if test="expert != null" >
+  	 		   and    expert  = #{expert}  
+  	  	</if>
+  	  	<if test="major != null" >
+  	 		   and    major  = #{major}  
+  	  	</if>
+  	  	<if test="serious != null" >
+  	 		   and    serious  = #{serious}  
+  	  	</if>
+  	  	<if test="frequency != null" >
+  	 		   and    frequency  = #{frequency}  
+  	  	</if>
+  	  	<if test="risk != null" >
+  	 		   and    risk  = #{risk}  
+  	  	</if>
+  	  	<if test="process != null" >
+  	 		   and    process  = #{process}  
+  	  	</if>
+  	  	<if test="processReturn != null" >
+  	 		   and    processReturn  = #{processReturn}  
+  	  	</if>
+  	  	<if test="processAssess != null" >
+  	 		   and    processAssess  = #{processAssess}  
+  	  	</if>
+  	  	<if test="rectificationAssess != null" >
+  	 		   and    rectificationAssess  = #{rectificationAssess}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.Incident">  
+    DELETE FROM bu_incident  
+      <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="hospitalNumber != null" >
+  	 		   and    HospitalNumber  = #{hospitalNumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="occurrenceDate != null" >
+  	 		   and    OccurrenceDate  = #{occurrenceDate}  
+  	  	</if>
+  	  	<if test="thingsPassed != null" >
+  	 		   and    ThingsPassed  = #{thingsPassed}  
+  	  	</if>
+  	  	<if test="eventLevel != null" >
+  	 		   and    EventLevel  = #{eventLevel}  
+  	  	</if>
+  	  	<if test="eventAddress != null" >
+  	 		   and    EventAddress  = #{eventAddress}  
+  	  	</if>
+  	  	<if test="classification != null" >
+  	 		   and    classification  = #{classification}  
+  	  	</if>
+  	  	<if test="supplementary != null" >
+  	 		   and    supplementary  = #{supplementary}  
+  	  	</if>
+  	  	<if test="reason != null" >
+  	 		   and    reason  = #{reason}  
+  	  	</if>
+  	  	<if test="supReason != null" >
+  	 		   and    supReason  = #{supReason}  
+  	  	</if>
+  	  	<if test="consequence != null" >
+  	 		   and    consequence  = #{consequence}  
+  	  	</if>
+  	  	<if test="suggest != null" >
+  	 		   and    suggest  = #{suggest}  
+  	  	</if>
+  	  	<if test="jobNumber != null" >
+  	 		   and    JobNumber  = #{jobNumber}  
+  	  	</if>
+  	  	<if test="reporter != null" >
+  	 		   and    reporter  = #{reporter}  
+  	  	</if>
+  	  	<if test="jobCategory != null" >
+  	 		   and    JobCategory  = #{jobCategory}  
+  	  	</if>
+  	  	<if test="reporterPhone != null" >
+  	 		   and    reporterPhone  = #{reporterPhone}  
+  	  	</if>
+  	  	<if test="litigant != null" >
+  	 		   and    litigant  = #{litigant}  
+  	  	</if>
+  	  	<if test="expert != null" >
+  	 		   and    expert  = #{expert}  
+  	  	</if>
+  	  	<if test="major != null" >
+  	 		   and    major  = #{major}  
+  	  	</if>
+  	  	<if test="serious != null" >
+  	 		   and    serious  = #{serious}  
+  	  	</if>
+  	  	<if test="frequency != null" >
+  	 		   and    frequency  = #{frequency}  
+  	  	</if>
+  	  	<if test="risk != null" >
+  	 		   and    risk  = #{risk}  
+  	  	</if>
+  	  	<if test="process != null" >
+  	 		   and    process  = #{process}  
+  	  	</if>
+  	  	<if test="processReturn != null" >
+  	 		   and    processReturn  = #{processReturn}  
+  	  	</if>
+  	  	<if test="processAssess != null" >
+  	 		   and    processAssess  = #{processAssess}  
+  	  	</if>
+  	  	<if test="rectificationAssess != null" >
+  	 		   and    rectificationAssess  = #{rectificationAssess}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  bu_incident WHERE 
+		        FUID 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.Incident" >
+select count(*) from bu_incident
+ <where>  
+  	  	<if test="fuid != null" >
+  	 		       FUID  = #{fuid}  
+  	  	</if>
+  	  	<if test="createdate != null" >
+  	 		   and    createdate  = #{createdate}  
+  	  	</if>
+  	  	<if test="hospitalNumber != null" >
+  	 		   and    HospitalNumber  = #{hospitalNumber}  
+  	  	</if>
+  	  	<if test="patient != null" >
+  	 		   and    patient  = #{patient}  
+  	  	</if>
+  	  	<if test="sex != null" >
+  	 		   and    sex  = #{sex}  
+  	  	</if>
+  	  	<if test="birthday != null" >
+  	 		   and    birthday  = #{birthday}  
+  	  	</if>
+  	  	<if test="bedNo != null" >
+  	 		   and    BedNo  = #{bedNo}  
+  	  	</if>
+  	  	<if test="occurrenceDate != null" >
+  	 		   and    OccurrenceDate  = #{occurrenceDate}  
+  	  	</if>
+  	  	<if test="thingsPassed != null" >
+  	 		   and    ThingsPassed  = #{thingsPassed}  
+  	  	</if>
+  	  	<if test="eventLevel != null" >
+  	 		   and    EventLevel  = #{eventLevel}  
+  	  	</if>
+  	  	<if test="eventAddress != null" >
+  	 		   and    EventAddress  = #{eventAddress}  
+  	  	</if>
+  	  	<if test="classification != null" >
+  	 		   and    classification  = #{classification}  
+  	  	</if>
+  	  	<if test="supplementary != null" >
+  	 		   and    supplementary  = #{supplementary}  
+  	  	</if>
+  	  	<if test="reason != null" >
+  	 		   and    reason  = #{reason}  
+  	  	</if>
+  	  	<if test="supReason != null" >
+  	 		   and    supReason  = #{supReason}  
+  	  	</if>
+  	  	<if test="consequence != null" >
+  	 		   and    consequence  = #{consequence}  
+  	  	</if>
+  	  	<if test="suggest != null" >
+  	 		   and    suggest  = #{suggest}  
+  	  	</if>
+  	  	<if test="jobNumber != null" >
+  	 		   and    JobNumber  = #{jobNumber}  
+  	  	</if>
+  	  	<if test="reporter != null" >
+  	 		   and    reporter  = #{reporter}  
+  	  	</if>
+  	  	<if test="jobCategory != null" >
+  	 		   and    JobCategory  = #{jobCategory}  
+  	  	</if>
+  	  	<if test="reporterPhone != null" >
+  	 		   and    reporterPhone  = #{reporterPhone}  
+  	  	</if>
+  	  	<if test="litigant != null" >
+  	 		   and    litigant  = #{litigant}  
+  	  	</if>
+  	  	<if test="expert != null" >
+  	 		   and    expert  = #{expert}  
+  	  	</if>
+  	  	<if test="major != null" >
+  	 		   and    major  = #{major}  
+  	  	</if>
+  	  	<if test="serious != null" >
+  	 		   and    serious  = #{serious}  
+  	  	</if>
+  	  	<if test="frequency != null" >
+  	 		   and    frequency  = #{frequency}  
+  	  	</if>
+  	  	<if test="risk != null" >
+  	 		   and    risk  = #{risk}  
+  	  	</if>
+  	  	<if test="process != null" >
+  	 		   and    process  = #{process}  
+  	  	</if>
+  	  	<if test="processReturn != null" >
+  	 		   and    processReturn  = #{processReturn}  
+  	  	</if>
+  	  	<if test="processAssess != null" >
+  	 		   and    processAssess  = #{processAssess}  
+  	  	</if>
+  	  	<if test="rectificationAssess != null" >
+  	 		   and    rectificationAssess  = #{rectificationAssess}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"  resultMap="BaseResultMap"  >
+select * from bu_incident 
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap" parameterType="com.sn.entity.Incident"  >
+		 select 
+    <include refid="Base_Column_List" />
+    from bu_incident 
+      <where>  
+		 LIKE CONCAT('%','#{1}','%' ) 
+  	  	</where>  
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.Incident" >
+    select 
+    <include refid="Base_Column_List" />
+    from bu_incident
+      <where>  
+		 
+  	  	</where>
+	</select>
+	
+</mapper>

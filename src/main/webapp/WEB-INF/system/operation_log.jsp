@@ -40,10 +40,13 @@
 </style>
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
-	<jsp:include page="head.jsp" />
-	<c:import url="/system/menuData.html"></c:import>
+	<body class="skin-blue layout-top-nav">	
+	<%-- <jsp:include page="head.jsp" />
+	<c:import url="/system/menuData.html"></c:import> --%>
+	<c:import url="/system/menuDataTop.html"></c:import>
+	
 	<div class="content-wrapper">
+		<div class="container"> 
 		<section class="content-header">
 			<h1>
 				系统管理<small>系统操作日志管理</small>
@@ -60,11 +63,11 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="box">
-						<div class="box-header">
+						<!-- <div class="box-header">
 							<h3 class="box-title">系统操作日志列表</h3> 
 							<div class="ibox-tools rboor">
 			                </div>
-						</div>
+						</div> -->
 						<!-- /.box-header -->
 						<div class="box-body" style="border-style: solid solid none;border-color: #e7eaec;border-width: 1px 0px;">
 							<table id="newAttributeTable" class="table table-bordered table-hover" style="width: 100%">
@@ -82,6 +85,7 @@
 				</div>
 			</div>
 		</section>
+		</div>
 	</div>
 	<jsp:include page="foot.jsp" />
 	</div>
@@ -136,7 +140,7 @@
 	                "language": {
 	                    "lengthMenu": "_MENU_ 条记录每页",
 	                    "zeroRecords": "没有找到记录",
-	                    "info": "第 _PAGE_ 页 ( 总共 _PAGES_ 页 )",
+	                    "info": "第 _PAGE_ 页 ( 总共 _PAGES_ 页 ,共 _MAX_ 条)",
 	                    "infoEmpty": "无记录",
 	                    "infoFiltered": "(从 _MAX_ 条记录过滤)",
 	                    "paginate": {
