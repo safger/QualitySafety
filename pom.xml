@@ -126,6 +126,13 @@
 			<artifactId>pagehelper</artifactId>
 			<version>4.1.2</version>
 		</dependency>
+		<!-- sqlserver jdbc -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>sqljdbc4</artifactId>
+			<version>4.0</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -145,6 +152,9 @@
 				<includes>
 					<include>**/*.xml</include>
 				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
 			</resource>
 		</resources>
 	</build>

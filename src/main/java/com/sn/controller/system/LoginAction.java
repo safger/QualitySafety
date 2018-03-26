@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.sn.entity.Organize;
+import com.sn.service.OrganizeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +34,9 @@ public class LoginAction {
 	private UserRoleService userRoleService;
 	@Autowired
 	private MenuService menuService;
+	@Autowired
+	private OrganizeService organizeService;
+
 	private String error;
 	private List<User> baseUser_list;
 	
@@ -53,12 +58,15 @@ public class LoginAction {
 				String userid=baseUser_list.get(0).getFuid();
 				String departmentid=baseUser_list.get(0).getDepartmentid();
 				String departmentname=baseUser_list.get(0).getDepartmentname();
+				String description= baseUser_list.get(0).getDescription();
 				String superAdmin=baseUser_list.get(0).getCode();
+				Organize organize=organizeService.findById(departmentid);
 				request.getSession().setMaxInactiveInterval(3600*4);
 				request.getSession().setAttribute("username",username1);
 				request.getSession().setAttribute("userid",userid);
 				request.getSession().setAttribute("departmentid",departmentid);
 				request.getSession().setAttribute("departmentname",departmentname);
+				request.getSession().setAttribute("description",organize.getDescription());
 				request.getSession().setAttribute("superAdmin",superAdmin);
 				String roleid="";
 				UserRole userRole=new UserRole();
@@ -74,7 +82,7 @@ public class LoginAction {
 				//更新最后登录时间
 				userService.updateSelective(baseUser_list.get(0));
 				//----------------
-				 return "redirect:/system/index.html"; 
+				 return "redirect:/system/index.html";
 				
 			}else{
 				error="用户名或密码错误";

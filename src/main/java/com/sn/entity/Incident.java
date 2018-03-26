@@ -30,6 +30,8 @@ public class Incident  {
 		private Integer major;
 		private String serious;
 		private String frequency;
+		private String reporterId;
+		private String diagnosis;
 		private String risk;
 		private String process;
 		private String processReturn;
@@ -217,6 +219,20 @@ public class Incident  {
 		
 		public String getFrequency() {
 			return this.frequency;
+		}
+		public void setReporterId(String value) {
+			this.reporterId = value;
+		}
+		
+		public String getReporterId() {
+			return this.reporterId;
+		}
+		public void setDiagnosis(String value) {
+			this.diagnosis = value;
+		}
+		
+		public String getDiagnosis() {
+			return this.diagnosis;
 		}
 		public void setRisk(String value) {
 			this.risk = value;

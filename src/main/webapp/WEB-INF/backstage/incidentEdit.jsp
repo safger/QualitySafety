@@ -106,6 +106,8 @@
                                         <tr>
                                             <th colspan="10">一、患者基本信息（不涉及患者不填）</th>
                                             <input type="hidden" value="${incident.fuid }" name="fuid"/>
+                                            <input type="hidden" value="${type}" name="type"/>
+
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -113,9 +115,9 @@
                                             <td class="active">患者姓名</td>
                                             <td><input name="patient" type="text" value="${incident.patient }"/></td>
                                             <td class="active">门诊号/住院号</td>
-                                            <td><input name="clinicId" type="text" value="${incident.clinicId }"/></td>
+                                            <td><input name="hospitalNumber" type="text" value="${incident.hospitalNumber }"/></td>
                                             <td class="active">出生日期</td>
-                                            <td><input name="birthday" type="text" value="${incident.birthday }"/></td>
+                                            <td><input name="birthday" type="text"  onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" value="<fmt:formatDate value="${incident.birthday }" pattern="yyyy-MM-dd HH:mm"/>"/></td>
                                             <td class="active">性别</td>
                                             <td colspan="3">
                                                 <input name="sex" value="0" checked="checked" type="radio"
@@ -129,8 +131,7 @@
                                                 <input name="bedNo" type="text" value="${incident.bedNo }"/>
                                             </td>
                                             <td class="active">临床诊断</td>
-                                            <td colspan="7"><input name="diagnosis" type="text"
-                                                                   value="${incident.diagnosis }" name="bcondition"/>
+                                            <td colspan="7"><input name="diagnosis" type="text"  value="${incident.diagnosis }"  />
                                             </td>
                                         </tr>
 
@@ -138,10 +139,10 @@
                                             <th colspan="10">二、事件发生日期</th>
                                         </tr>
                                         <tr>
-                                            <td class="active">发生时间</td>
-                                            <td colspan="2"><input name="occurtime"
-                                                                   onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"
-                                                                   type="text" value="${incident.occurtime }"/></td>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>发生时间</td>
+                                            <td colspan="2"><input name="occurrenceDate"
+                                                                   onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"
+                                                                   type="text" value="<fmt:formatDate value="${incident.occurrenceDate }" pattern="yyyy-MM-dd HH:mm"/>"/></td>
                                             <td colspan="7"></td>
 
                                         </tr>
@@ -149,24 +150,19 @@
                                             <th colspan="10">三、事件经过</th>
                                         </tr>
                                         <tr>
-                                            <td class="active">事情经过</td>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>事情经过</td>
                                             <td colspan="9">
-                                                <textarea rows="3" name="jafter"
-                                                          style="width: 90%">${incident.jafter }</textarea>
+                                                <textarea rows="3" name="thingsPassed"
+                                                          style="width: 90%">${incident.thingsPassed }</textarea>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th colspan="10">四、事件级别</th>
                                         </tr>
                                         <tr>
-                                            <td class="active">事件级别</td>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>事件级别</td>
                                             <td colspan="10">
-                                                <select style="height: 28px">
-                                                    <option> I级不良事件（警讯事件）</option>
-                                                    <option> II级不良事件（不良后果事件）</option>
-                                                    <option> III级不良事件（未造成后果事件）</option>
-                                                    <option> IV级不良事件（隐患事件）</option>
-                                                </select>
+                                                <div id="eventLevel"></div>
                                             </td>
                                         </tr>
 
@@ -174,14 +170,14 @@
                                             <th colspan="10">五、事件类别</th>
                                         </tr>
                                         <tr>
-                                            <td class="active">1.事件发生场所</td>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>1.事件发生场所</td>
                                             <td colspan="10">
                                                 <input type="text" value="${incident.eventAddress }"
                                                        name="eventAddress"/>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="active">2.事件分类</td>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>2.事件分类</td>
                                             <td colspan="1">
                                                 <div id="classification"></div>
                                             </td>
@@ -192,7 +188,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="active">3.事件原因</td>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>3.事件原因</td>
                                             <td colspan="3">
                                                 <input type="text" value="${incident.reason }" name="reason"/>
                                             </td>
@@ -214,41 +210,42 @@
                                             <th colspan="10">六.报告人情况</th>
                                         </tr>
                                         <tr>
-                                            <td class="active">工号</td>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>工号</td>
                                             <td><input name="jobNumber" type="text" value="${incident.jobNumber }"/>
                                             </td>
-                                            <td class="active">报告人</td>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>报告人</td>
                                             <td><input name="reporter" type="text" value="${incident.reporter }"/></td>
                                             <td class="active">岗位类别</td>
                                             <td colspan="3"><input name="jobCategory" type="text"
                                                                    value="${incident.jobCategory }"/></td>
                                         </tr>
                                         <tr>
-                                            <td class="active">科室</td>
+                                          <%--  <td class="active">科室</td>
                                             <td><input name="jobNumber" type="text" value="${incident.jobNumber }"/>
-                                            </td>
-                                            <td class="active">联系电话</td>
+                                            </td>--%>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>联系电话</td>
                                             <td><input name="reporterPhone" type="text"
                                                        value="${incident.reporterPhone }"/></td>
                                             <td class="active">是否当事人</td>
-                                            <td colspan="3">
+                                            <td colspan="5">
                                                 <input name="litigant" value="0" checked="checked" type="radio"
                                                        class="minimal"> 是
                                                 <input name="litigant" value="1" type="radio" class="minimal"> 否
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="active">选择处理此事的专家组</td>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>选择处理此事的专家组</td>
                                             <td>
                                                 <div id="expert"></div>
                                             </td>
-                                            <td class="active">报告是否紧急<br>重大事件</td>
+                                            <td class="active">报告是否紧急重大事件</td>
                                             <td colspan="5">
                                                 <input name="major" value="0" checked="checked" type="radio"
                                                        class="minimal"> 是
                                                 <input name="major" value="1" type="radio" class="minimal"> 否
                                             </td>
                                         </tr>
+                                        <c:if test="${type=='cl'}" >
                                         <tr>
                                             <th colspan="10">七.不良事件严重分级（SAC分级）</th>
                                         </tr>
@@ -276,7 +273,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="active">3、风险评估</td>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>3、风险评估</td>
                                             <td colspan="9">
                                                 <input  type="hidden" readonly name="risk"
                                                        value=""/>
@@ -287,32 +284,33 @@
                                                 </button>
                                             </td>
                                         </tr>
-                                        <tr>
+                                       <%-- <tr>
                                             <td class="active">4、干预措施</td>
                                             <td colspan="9">
 
                                             </td>
-                                        </tr>
+                                        </tr>--%>
                                         <tr>
                                             <th colspan="10">八、处理小组意见</th>
                                         </tr>
                                         <tr>
-                                            <td class="active">小组意见</td>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>小组意见</td>
                                             <td colspan="9">
-                                                <textarea rows="3" name="jafter"
-                                                          style="width: 90%">${incident.jafter }</textarea>
+                                                <textarea rows="3" name="process"
+                                                          style="width: 90%">${incident.process }</textarea>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th colspan="10">九、事件处理结果</th>
                                         </tr>
                                         <tr>
-                                            <td class="active">处理结果</td>
+                                            <td class="active"><span style="color: red;font-weight: bold">*</span>处理结果</td>
                                             <td colspan="9">
-                                                <textarea rows="3" name="jafter"
-                                                          style="width: 90%">${incident.jafter }</textarea>
+                                                <textarea rows="3" name="processReturn"
+                                                          style="width: 90%">${incident.processReturn }</textarea>
                                             </td>
                                         </tr>
+                                        </c:if>
                                         </tbody>
                                     </table>
                                 </form>
@@ -325,6 +323,7 @@
             </section>
         </div>
     </div>
+
     <!-- /.content-wrapper -->
     <jsp:include page="../system/foot.jsp"/>
 </div>
@@ -336,44 +335,169 @@
 <!-- js分页模板 -->
 <script type="text/javascript">
     $(function () {
-        $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+       $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
             checkboxClass: 'icheckbox_minimal-blue',
             radioClass: 'iradio_minimal-blue'
         });
-
+        var classification='${incident.classification}';
+        classification=classification=='-1'||classification.length==0?'001':classification;
         $("#classification").AutoSelect({
             data: basetemp,
-            initCode: "001",
+            initCode: classification,
             showNum: 2,
             name: "classification",
             disabled: 1,
             style: "width:90%"
         });
+        var expert='${incident.expert}';
+        expert=expert=='-1'||expert.length==0?'002':expert;
         $("#expert").AutoSelect({
             data: basetemp,
-            initCode: "002",
+            initCode: expert,
             showNum: 2,
             name: "expert",
             disabled: 1,
             style: "width:90%"
         });
+        var eventLevel='${incident.eventLevel}';
+        eventLevel=eventLevel=='-1'||eventLevel.length==0?'003':eventLevel;
+     $("#eventLevel").AutoSelect({
+                data: basetemp,
+                initCode: eventLevel,
+                showNum: 2,
+                name: "eventLevel",
+                disabled: 1,
+                style: "width:90%"
+            });
 
-        var ish = '<%=ish%>';
-        if (ish == 1) {
-            $("#cs").remove();
+
+        var litigant = '${incident.litigant}';
+        $("input[name='litigant'][value='" + litigant + "']").iCheck('check');
+        var major = '${incident.major}';
+        $("input[name='major'][value='" + major + "']").iCheck('check');
+        var serious = '${incident.serious}';
+        $("input[name='serious'][value='" + serious + "']").iCheck('check');
+        var frequency = '${incident.frequency}';
+        $("input[name='frequency'][value='" + frequency + "']").iCheck('check');
+        var consequence = '${incident.consequence}';
+        $("input[name='consequence'][value='" + consequence + "']").iCheck('check');
+        var sex = '${incident.sex}';
+        $("input[name='sex'][value='" + sex + "']").iCheck('check');
+
+        var risk='${incident.risk}';
+        $("#fx").html(risk);
+        $("input[name='risk']").val(risk);
+        switch (risk){
+            case "极高风险":$("#fx").css("color","red");break;
+            case "高风险":$("#fx").css("color","#FFCC00");break;
+            case "中度风险":$("#fx").css("color","#FFFF00");break;
+            case "低风险":$("#fx").css("color","#00FF00");break;
+
         }
-        var patienttype = '${incident.patienttype}';
-        $("input[name='patienttype'][value='" + patienttype + "']").iCheck('check');
 
 
+
+        $("input[name='hospitalNumber']").blur(function(){
+
+            var zyh=$(this).val();
+            $.ajax({
+                url:"<%=basePath%>backstage/incident/searchBr.html?date="+new Date(),
+                type: 'post',
+                data:{"zyh":zyh},
+                dataType:"json",
+                success:function(res){
+                    if(res!=null){
+                        $("input[name='patient']").val(res.brxm);
+                        $("input[name='bedNo']").val(res.brch);
+                        $("input[name='birthday']").val(res.age);
+                        var sex=res.brxb==1?"男":"女";
+                        $("input[name='sex'][value='" + sex + "']").iCheck('check');
+                    }
+                }
+            });
+        });
     })
 
 
     function ysub() {
-
-        $("#myform").attr("action", "<%=basePath%>medication/incident/edit.html");
+        if(!vi()){
+            return;
+        }
+        $("#myform").attr("action", "<%=basePath%>backstage/incident/edit.html");
         $("#myform").submit();
 
+    }
+
+    function vi(){
+        var t=true;
+        if($("input[name='occurrenceDate']").val().length == 0){
+            layer.msg("请输入发生时间");
+            t=false;
+            return;
+        }
+        if($("textarea[name='thingsPassed']").val().length == 0){
+            layer.msg("请输入事情经过");
+            t=false;
+            return;
+        }
+        if($("select[name='eventLevel']").val() == '-1'){
+            layer.msg("请选择事件级别");
+            t=false;
+            return;
+        }
+        if($("input[name='eventAddress']").val().length == 0){
+            layer.msg("请输入事件发生场所");
+            t=false;
+            return;
+        }
+        if($("select[name='classification']").val() == '-1'){
+            layer.msg("请选择事件分类");
+            t=false;
+            return;
+        }
+        if($("select[name='expert']").val() == '-1'){
+            layer.msg("请选择处理的专家组");
+            t=false;
+            return;
+        }
+        if($("input[name='reason']").val().length == 0){
+            layer.msg("请输入事件原因");
+            t=false;
+            return;
+        }
+        if($("input[name='jobNumber']").val().length == 0){
+            layer.msg("请输入工号");
+            t=false;
+            return;
+        }
+        if($("input[name='reporter']").val().length == 0){
+            layer.msg("请输入上报人");
+            t=false;
+            return;
+        }
+        if($("input[name='reporterPhone']").val().length == 0){
+            layer.msg("请输入联系电话");
+            t=false;
+            return;
+        }
+        <c:if test="${type=='cl'}" >
+        if($("input[name='risk']").val().length == 0){
+            layer.msg("请进行风险评估");
+            t=false;
+            return;
+        }
+        if($("textarea[name='process']").val().length == 0){
+            layer.msg("请输入处理意见");
+            t=false;
+            return;
+        }
+        if($("textarea[name='processReturn']").val().length == 0){
+            layer.msg("请输入处理结果");
+            t=false;
+            return;
+        }
+        </c:if>
+        return t;
     }
 
     //时间格式化
@@ -390,7 +514,7 @@
             d = d.length == 1 ? "0" + d.toString() : d;
             var mm = (bdate.getMonth() + 1).toString();
             mm = mm.length == 1 ? "0" + mm.toString() : mm;
-            bdate = bdate.getFullYear() + "-" + mm + "-" + d + " " + h + ":" + m + ":" + s;
+            bdate = bdate.getFullYear() + "-" + mm + "-" + d + " " + h + ":" + m ;
             return bdate;
         }
 

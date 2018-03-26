@@ -89,7 +89,7 @@ String path = request.getContextPath();
             <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<%=basePath%><c:choose><c:when test="${empty sessionScope.headImg}">/images/user.png</c:when><c:otherwise>/upload/L_${sessionScope.headImg }</c:otherwise></c:choose>" class="user-image" alt="User Image">
-              <span class="hidden-xs">${sessionScope.realname }</span> 
+              <span class="hidden-xs">${sessionScope.username }</span>
             </a>  
             <ul class="dropdown-menu"> 
               <!-- User image -->    

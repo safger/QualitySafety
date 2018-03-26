@@ -3,6 +3,8 @@ package com.sn.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
@@ -33,13 +35,6 @@ public class DatadictionaryServiceImpl implements DatadictionaryService{
 	@Autowired
 	private DatadictionaryMapper datadictionaryMapper;
 
-	public DatadictionaryMapper getDatadictionaryMapper() {
-		return datadictionaryMapper;
-	}
-
-	public void setUserMapper(UserMapper userMapper) {
-		this.datadictionaryMapper = datadictionaryMapper;
-	} 
 
 	 
 

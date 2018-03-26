@@ -109,7 +109,7 @@ public class CompetenceManager extends  HttpServlet{
 			context= WebApplicationContextUtils.getWebApplicationContext(servlet);
 		}
 		baseDatadictionaryService=(DatadictionaryService)context.getBean("datadictionaryService");
-		List<Datadictionary> baseDatadictionary_list= baseDatadictionaryService.selectByColum(null,null);
+		List<Datadictionary> baseDatadictionary_list= baseDatadictionaryService.selectByColum(null," sequence");
 		Map<String, String> DatadictionaryMap = new HashMap<String, String>();
 		for(Datadictionary t : baseDatadictionary_list){
 			DatadictionaryMap.put(t.getCode().toString(), t.getFullname());

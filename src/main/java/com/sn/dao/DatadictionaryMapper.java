@@ -3,17 +3,18 @@ package com.sn.dao;
 import java.util.List;
 
 import com.sn.entity.Datadictionary;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
 /**
  * @author xiaofeng
  * @version 1.0
  * @since 1.0
  */
 
-
-
 public interface DatadictionaryMapper {
 	
-	 int deleteByPrimaryKey(String fuid);
+		 int deleteByPrimaryKey(String fuid);
 
 	    int insert(Datadictionary record);
 

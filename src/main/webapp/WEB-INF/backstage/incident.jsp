@@ -60,7 +60,7 @@ input.form-control {
 }
 
 .head-find .form-new-input span { /*position: absolute;*/
-	width: 107px; 
+	width: 100px;
 	height: 32px;
 	background: #ecf0f5;
 	font-size: 14px;
@@ -142,31 +142,27 @@ input.form-control {
 						<div class="box-body">
 							<div class="head-find">
 								<div class="row">
-									<div class="col-xs-3">
+									<div class="col-xs-4" >
 										<div class="form-new-input">
-											<span>患者姓名：</span> <input type="text" id="patient" class="fis">
+											<span >事件分类：</span>
+											<div  id="sjlb"></div>
 										</div>
 									</div>
-									<div class="col-xs-3">
+									<div class="col-xs-4">
 										<div class="form-new-input">
-											<span>病人类别：</span> 
-											<div id="spatienttype"></div>
+											<span>事件级别：</span>
+											<div id="eventLevel"></div>
 										</div>
 									</div>
-									<div class="col-xs-6">
+									<div class="col-xs-4">
 										<div class="form-new-input">
-											<span>用药错误分级：</span>  
-											<select id="cwfj" style="height: 32px;width: 220px;">
+											<span>风险评估：</span>
+											<select id="risk" class="fis">
 												<option value="-1">请选择</option>
-												<option value="002004001">A 级：客观环境或条件可能引发错误（错误隐患）</option>
-												<option value="002005001">B 级：发生错误但未发给患者，或已发给患者但患者未使用</option>
-												<option value="002005002">C 级：患者已使用，但未造成伤害</option>
-												<option value="002005003">D 级：患者已使用，需要监测错误对患者造成的后果，并根据后果判断是否需要采取措施预防和减少伤害</option>
-												<option value="002006001">E 级：错误造成患者暂时性伤害，需要采取预防措施</option>
-												<option value="002006002">F 级：错误对患者的伤害可导致住院或延长住院时间</option>
-												<option value="002006003">G 级：错误导致患者永久性伤害</option>
-												<option value="002006004">H 级：错误导致患者生命垂危，需采取维持生命的措施（如心肺复苏、除颤、插管等）</option>
-												<option value="002007001">I 级：错误导致患者死亡</option>
+												<option>低风险</option>
+												<option>中度风险</option>
+												<option>高风险</option>
+												<option>极高风险</option>
 											</select>
 										</div>
 									</div>
@@ -174,213 +170,28 @@ input.form-control {
 									
 								</div>
 								<div class="row">
-									<div class="col-xs-3">
+									<div class="col-xs-4">
 										<div class="form-new-input">
-											<span>上报人：</span>  
-											<input type="text" id="reporter" class="fis">
+											<span>患者姓名：</span>
+											<input type="text" id="patient" class="fis">
 										</div>
 									</div> 
-									<div class="col-xs-3">
+									<div class="col-xs-4">
 										<div class="form-new-input">
-											<span>上报人岗位：</span>  
-											<div id="sreportertype"></div>
+											<span>门诊/住院号：</span>
+											<input type="text" id="hospitalNumber" class="fis">
 										</div>
 									</div> 
-									<div class="col-xs-3">  
+									<div class="col-xs-4">
 										<div class="form-new-input">
-											<span>事件伤害程度：</span>  
-											<div id="sdegree"></div>
+											<span>上报人工号：</span>
+											<input type="text" id="jobNumber" class="fis">
 										</div>
 									</div>
-									<div class="col-xs-3">
-										<div class="form-new-input form-new-input-date">
-											<span>医嘱输入错误：</span> 
-											 <div id="sinputerror"></div>
-										</div>
-									</div>
+
 								</div>
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="form-new-input">
-											<span>医嘱开立错误：</span>   
-											<div style="margin-left: 15px;float: left;width:calc(100% - 140px)">
-												<c:forEach items="${datadictionary_list }" var="list">
-														<c:if test="${fn:length(list.code)==9}">
-															<c:if test="${fn:startsWith(list.code, '002010')}">
-															   <input name="yerror" value="${list.code }"   type="checkbox" class="minimal" > &nbsp;${list.fullname } &nbsp;
-															</c:if>
-														</c:if>
-													</c:forEach>
-											</div>
-										</div>
-									</div> 
-								</div>
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="form-new-input">
-											<span>药房调剂错误：</span>   
-											<div style="margin-left: 15px;float: left;width:calc(100% - 140px)">
-												<c:forEach items="${datadictionary_list }" var="list">
-														<c:if test="${fn:length(list.code)==9}">
-															<c:if test="${fn:startsWith(list.code, '002012')}">
-															   <input name="pharmacyerror" value="${list.code }"   type="checkbox" class="minimal" > &nbsp;${list.fullname } &nbsp;
-															</c:if>
-														</c:if>
-													</c:forEach>
-											</div>
-										</div>
-									</div> 
-								</div><div class="row">
-									<div class="col-xs-12">
-										<div class="form-new-input">
-											<span>药房调剂错误：</span>
-											<div style="margin-left: 15px;float: left;width:calc(100% - 140px)">
-												<c:forEach items="${datadictionary_list }" var="list">
-														<c:if test="${fn:length(list.code)==9}">
-															<c:if test="${fn:startsWith(list.code, '002012')}">
-															   <input name="pharmacyerror" value="${list.code }"   type="checkbox" class="minimal" > &nbsp;${list.fullname } &nbsp;
-															</c:if>
-														</c:if>
-													</c:forEach>
-											</div>
-										</div>
-									</div>
-								</div><div class="row">
-									<div class="col-xs-12">
-										<div class="form-new-input">
-											<span>药房调剂错误：</span>
-											<div style="margin-left: 15px;float: left;width:calc(100% - 140px)">
-												<c:forEach items="${datadictionary_list }" var="list">
-														<c:if test="${fn:length(list.code)==9}">
-															<c:if test="${fn:startsWith(list.code, '002012')}">
-															   <input name="pharmacyerror" value="${list.code }"   type="checkbox" class="minimal" > &nbsp;${list.fullname } &nbsp;
-															</c:if>
-														</c:if>
-													</c:forEach>
-											</div>
-										</div>
-									</div>
-								</div><div class="row">
-									<div class="col-xs-12">
-										<div class="form-new-input">
-											<span>药房调剂错误：</span>
-											<div style="margin-left: 15px;float: left;width:calc(100% - 140px)">
-												<c:forEach items="${datadictionary_list }" var="list">
-														<c:if test="${fn:length(list.code)==9}">
-															<c:if test="${fn:startsWith(list.code, '002012')}">
-															   <input name="pharmacyerror" value="${list.code }"   type="checkbox" class="minimal" > &nbsp;${list.fullname } &nbsp;
-															</c:if>
-														</c:if>
-													</c:forEach>
-											</div>
-										</div>
-									</div>
-								</div><div class="row">
-									<div class="col-xs-12">
-										<div class="form-new-input">
-											<span>药房调剂错误：</span>
-											<div style="margin-left: 15px;float: left;width:calc(100% - 140px)">
-												<c:forEach items="${datadictionary_list }" var="list">
-														<c:if test="${fn:length(list.code)==9}">
-															<c:if test="${fn:startsWith(list.code, '002012')}">
-															   <input name="pharmacyerror" value="${list.code }"   type="checkbox" class="minimal" > &nbsp;${list.fullname } &nbsp;
-															</c:if>
-														</c:if>
-													</c:forEach>
-											</div>
-										</div>
-									</div>
-								</div><div class="row">
-									<div class="col-xs-12">
-										<div class="form-new-input">
-											<span>药房调剂错误：</span>
-											<div style="margin-left: 15px;float: left;width:calc(100% - 140px)">
-												<c:forEach items="${datadictionary_list }" var="list">
-														<c:if test="${fn:length(list.code)==9}">
-															<c:if test="${fn:startsWith(list.code, '002012')}">
-															   <input name="pharmacyerror" value="${list.code }"   type="checkbox" class="minimal" > &nbsp;${list.fullname } &nbsp;
-															</c:if>
-														</c:if>
-													</c:forEach>
-											</div>
-										</div>
-									</div>
-								</div><div class="row">
-									<div class="col-xs-12">
-										<div class="form-new-input">
-											<span>药房调剂错误：</span>
-											<div style="margin-left: 15px;float: left;width:calc(100% - 140px)">
-												<c:forEach items="${datadictionary_list }" var="list">
-														<c:if test="${fn:length(list.code)==9}">
-															<c:if test="${fn:startsWith(list.code, '002012')}">
-															   <input name="pharmacyerror" value="${list.code }"   type="checkbox" class="minimal" > &nbsp;${list.fullname } &nbsp;
-															</c:if>
-														</c:if>
-													</c:forEach>
-											</div>
-										</div>
-									</div>
-								</div><div class="row">
-									<div class="col-xs-12">
-										<div class="form-new-input">
-											<span>药房调剂错误：</span>
-											<div style="margin-left: 15px;float: left;width:calc(100% - 140px)">
-												<c:forEach items="${datadictionary_list }" var="list">
-														<c:if test="${fn:length(list.code)==9}">
-															<c:if test="${fn:startsWith(list.code, '002012')}">
-															   <input name="pharmacyerror" value="${list.code }"   type="checkbox" class="minimal" > &nbsp;${list.fullname } &nbsp;
-															</c:if>
-														</c:if>
-													</c:forEach>
-											</div>
-										</div>
-									</div>
-								</div><div class="row">
-									<div class="col-xs-12">
-										<div class="form-new-input">
-											<span>药房调剂错误：</span>
-											<div style="margin-left: 15px;float: left;width:calc(100% - 140px)">
-												<c:forEach items="${datadictionary_list }" var="list">
-														<c:if test="${fn:length(list.code)==9}">
-															<c:if test="${fn:startsWith(list.code, '002012')}">
-															   <input name="pharmacyerror" value="${list.code }"   type="checkbox" class="minimal" > &nbsp;${list.fullname } &nbsp;
-															</c:if>
-														</c:if>
-													</c:forEach>
-											</div>
-										</div>
-									</div>
-								</div><div class="row">
-									<div class="col-xs-12">
-										<div class="form-new-input">
-											<span>药房调剂错误：</span>
-											<div style="margin-left: 15px;float: left;width:calc(100% - 140px)">
-												<c:forEach items="${datadictionary_list }" var="list">
-														<c:if test="${fn:length(list.code)==9}">
-															<c:if test="${fn:startsWith(list.code, '002012')}">
-															   <input name="pharmacyerror" value="${list.code }"   type="checkbox" class="minimal" > &nbsp;${list.fullname } &nbsp;
-															</c:if>
-														</c:if>
-													</c:forEach>
-											</div>
-										</div>
-									</div>
-								</div><div class="row">
-									<div class="col-xs-12">
-										<div class="form-new-input">
-											<span>药房调剂错误：</span>
-											<div style="margin-left: 15px;float: left;width:calc(100% - 140px)">
-												<c:forEach items="${datadictionary_list }" var="list">
-														<c:if test="${fn:length(list.code)==9}">
-															<c:if test="${fn:startsWith(list.code, '002012')}">
-															   <input name="pharmacyerror" value="${list.code }"   type="checkbox" class="minimal" > &nbsp;${list.fullname } &nbsp;
-															</c:if>
-														</c:if>
-													</c:forEach>
-											</div>
-										</div>
-									</div>
-								</div>
+
+
 
 
 								 <div class="row" > 
@@ -400,7 +211,10 @@ input.form-control {
 							<div class="box-header">
 								<h3 class="box-title">列表</h3>
 								 <div class="ibox-tools rboor">
-			                        <a href="<%=basePath%>backstage/incident/showAdd.html" class="btn btn-primary btn-xs p310"  ><i class="fa fa-plus"></i> 新增</a>
+									 <c:if test="${type!='cl'}">
+										 <a href="<%=basePath%>backstage/incident/showAdd.html" class="btn btn-primary btn-xs p310"  ><i class="fa fa-plus"></i> 新增</a>
+									 </c:if>
+
 			                    </div>
 							</div>
 							<!-- /.box-header -->
@@ -429,7 +243,7 @@ input.form-control {
 		</div>
 		<jsp:include page="../system/foot.jsp" />
 	</div>
-	 
+
 
 	<!-- DataTable插件 -->
 	<script src="<%=basePath%>Bootstrap_AdminLTE_2.3.6/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -491,19 +305,19 @@ $(function() {
 							$(nTd).html("<input name='_change' value='"+oData.fuid+"'  type='checkbox'/>"); // 分页行号累加：$(nTd).html(iRow+1);
 						}},
 						  
-						  { "data": "patient",
-								"title" : "患者姓名" },
-						  { "data": "patienttype",
-								"title" : "病人类别" },
-						  { "data": "ename",
-								"title" : "错误用药" },
-						  { "data": "yname",
-								"title" : "医嘱用药" },
+						  { "data": "classification",
+								"title" : "事件分类" },
+						  { "data": "eventLevel",
+								"title" : "事件级别" },
 						  { "data": "reporter",
 								"title" : "报告人" },
-						  { "data": "department",
-								"title" : "报告人科室" },
-						  { "data": "reportdate",
+						  { "data": "risk",
+								"title" : "风险评估" },
+						  { "data": "expert",
+								"title" : "处理专家" },
+						  { "data": "occurrenceDate",
+								"title" : "发生时间" },
+						  { "data": "createdate",
 								"title" : "报告时间" },
 					  { "data" : null,
 						"title" : "操作"
@@ -521,21 +335,45 @@ $(function() {
 					    }  
 					},
 					  { 
-						  targets: 7,
+						  targets: 6,
 						  render: function(data,type,row,meta){ 
 							  return timeForm(data);
 						  }
-					  }, 
+					  },{
+						  targets: 4,
+						  render: function(data,type,row,meta){
+						      if(data!=null&&data.length>0){
+                                  switch (data){
+                                      case "极高风险":return "<span style='color: red'>极高风险</span>";break;
+                                      case "高风险":return "<span style='color: #FFCC00'>高风险</span>";break;
+                                      case "中度风险":return "<span style='color: #FFFF00'>中度风险</span>";break;
+                                      case "低风险":return "<span style='color: #00FF00'>低风险</span>";break;
+                                  }
+                              }else{
+						          return data;
+                              }
+
+						  }
+					  },
+						{
+						  targets: 7,
+						  render: function(data,type,row,meta){
+							  return timeForm(data);
+						  }
+					  },
+
 					  {
 	                        targets:8, 
 	                        render: function (data, type, row,   meta) {
 	                            var context =
 	                            {
 	                            		 func: [
-											{"name": "查看","fn": "showEd(\'" + row.fuid + "\')", "type": "primary"},
-											<c:if test="${com.hisUpdate}">  
+											<c:if test="${type=='add'}">
 											 {"name": "修改","fn": "edit(\'" + row.fuid + "\')", "type": "primary"},
-												  </c:if>
+											 </c:if>
+                                             <c:if test="${type=='cl'}">
+                                             {"name": "处理","fn": "edit(\'" + row.fuid + "\')", "type": "primary"},
+                                             </c:if>
 											<c:if test="${com.hisDelete}">  
 											 {"name": "删除", "fn": "del(\'" + row.fuid + "\')", "type": "danger"}
 											</c:if>
@@ -566,52 +404,45 @@ $(function() {
      } );
 	 
 
-	 $("#spatienttype").AutoSelect({ 
-			data : basetemp,   
-			initCode : "002001",  
-			showNum : 3,  
-			name : "s_patienttype",  
-			disabled : 0,      
-			style:"width:90%"
-		}); 
-	 $("#sreportertype").AutoSelect({ 
-			data : basetemp,   
-			initCode : "002002", 
-			showNum : 3,   
-			name : "s_reportertype",  
-			disabled : 0,      
-			style:"width:90%"
-		}); 
-	 $("#sdegree").AutoSelect({ 
-			data : basetemp,   
-			initCode : "002008", 
-			showNum : 3,   
-			name : "s_degree",  
-			disabled : 0,      
-			style:"width:90%"
-		}); 
-	 $("#sinputerror").AutoSelect({ 
-			data : basetemp,   
-			initCode : "002011", 
-			showNum : 3,   
-			name : "s_inputerror",  
-			disabled : 0,      
-			style:"width:90%"
-		}); 
 	 
 	 
 	 $("input[type=search]").css("display","none");
+
+	 $("#sjlb").AutoSelect({
+        data: basetemp,
+        initCode: "001",
+        showNum: 2,
+        name: "classification",
+        disabled: 1,
+        style: "width:110px"
+    });
+	$("#sjlb_2").attr("class","fis");
+	 $("#eventLevel").AutoSelect({
+        data: basetemp,
+        initCode: "003",
+        showNum: 2,
+        name: "eventLevel",
+        disabled: 1,
+        style: "width:110px"
+    });
+    $("#eventLevel_2").attr("class","fis");
+
+
  })
 
     /**
      *编辑方法
      **/
     function edit(fuid) {
-    	 window.location.href="<%=basePath%>medication/medicationReported/showEdit.html?fuid="+fuid;
-    } 
+        document.write("<form action='<%=basePath%>backstage/incident/showEdit.html' method='post' name='form1' style='display:none'>");
+        document.write("<input type='hidden' name='fuid' value='"+fuid+"'/>");
+        document.write("<input type='hidden' name='type' value='${type}'/>");
+        document.write("</form>");
+        document.form1.submit();
+    }
 
 function showEd(fuid){
-	 window.location.href="<%=basePath%>medication/medicationReported/showEdit.html?fuid="+fuid+"&ish=1";
+	 window.location.href="<%=basePath%>backstage/incident/showEdit.html?fuid="+fuid+"&ish=1";
 }
    
     /**
@@ -638,7 +469,7 @@ function showEd(fuid){
         }
     	
         $.ajax({
-            url: "<%=basePath%>medication/medicationReported/delete.html",
+            url: "<%=basePath%>backstage/incident/delete.html",
             data: {
                 "fuid": fuid
             }, success: function (data) {
@@ -648,36 +479,17 @@ function showEd(fuid){
     }
     
     function gsearch() {
-		var patient = $("#patient").val();
-		var patienttype = $("#spatienttype_3 option:selected").val();
-		var cwfj = $("#cwfj option:selected").val();
-		var reporter = $("#reporter").val();
-		var reportertype = $("#sreportertype_3 option:selected").val();
-		var degree = $("#sdegree_3 option:selected").val();
-		var inputerror = $("#sinputerror_3 option:selected").val();
-		var yerror="";
-		$("input[name='yerror']:checked").each(function (){
-			yerror+=$(this).val()+",";
-		})
-		yerror=yerror.length>0?yerror.substring(0,yerror.length-1):"";
-		var pharmacyerror="";
-		$("input[name='pharmacyerror']:checked").each(function (){
-			pharmacyerror+=$(this).val()+",";
-		})
-		pharmacyerror=pharmacyerror.length>0?pharmacyerror.substring(0,pharmacyerror.length-1):"";
-		var transfererror="";
-		$("input[name='transfererror']:checked").each(function (){
-			transfererror+=$(this).val()+",";
-		})
-		transfererror=transfererror.length>0?transfererror.substring(0,transfererror.length-1):"";
-		var medicineerror="";
-		$("input[name='medicineerror']:checked").each(function (){
-			medicineerror+=$(this).val()+",";
-		})
-		medicineerror=medicineerror.length>0?medicineerror.substring(0,medicineerror.length-1):"";
-		var data = patient + ";" + patienttype + ";" + cwfj + ";"
-				+ reporter + ";" + reportertype + ";" + degree + ";"
-				+ inputerror+";"+yerror+";"+transfererror+";"+pharmacyerror+";"+medicineerror;
+		var classification = $("select[name='classification']").val();
+		var eventLevel=$("select[name='eventLevel']").val();
+		var risk=$("#risk").val();
+		var patient=$("#patient").val();
+		var hospitalNumber=$("#hospitalNumber").val();
+		var jobNumber=$("#jobNumber").val();
+
+
+		var data = classification + ";" + eventLevel + ";" + risk + ";"
+				+ patient + " ;" + hospitalNumber + " ;" + jobNumber+" ";
+
 		table.fnFilter(data); 
 	}
     
@@ -695,63 +507,7 @@ function showEd(fuid){
     
     
     
-    function showDetail(fuid){
-		$.ajax({
-	 		url:"<%=basePath%>medication/medicationReported/getEditData.html",
-	 		type: 'post',
-	 		data:{"fuid":fuid},
-	 		dataType:"json",
-	 		success:function(res){
-	 			var s = res.data.medicationReported;
-	 				$("#d_fuid").html(s.fuid);  
-	 				$("#d_reportdate").html(s.reportdate);  
-	 				$("#d_createdate").html(s.createdate);  
-	 				$("#d_reporterid").html(s.reporterid);  
-	 				$("#d_reporter").html(s.reporter);  
-	 				$("#d_department").html(s.department);  
-	 				$("#d_phone").html(s.phone);  
-	 				$("#d_patient").html(s.patient);  
-	 				$("#d_clinicId").html(s.clinicId);  
-	 				$("#d_old").html(s.old);  
-	 				$("#d_sex").html(s.sex);  
-	 				$("#d_patienttyoe").html(s.patienttyoe);  
-	 				$("#d_diagnosis").html(s.diagnosis);  
-	 				$("#d_reportertype").html(s.reportertype);  
-	 				$("#d_dresults").html(s.dresults);  
-	 				$("#d_errorlevel").html(s.errorlevel);  
-	 				$("#d_degree").html(s.degree);  
-	 				$("#d_restore").html(s.restore);  
-	 				$("#d_occurtime").html(s.occurtime);  
-	 				$("#d_occuraddress").html(s.occuraddress);  
-	 				$("#d_errorper").html(s.errorper);  
-	 				$("#d_relatedper").html(s.relatedper);  
-	 				$("#d_yerror").html(s.yerror);  
-	 				$("#d_inputerror").html(s.inputerror);  
-	 				$("#d_pharmacyerror").html(s.pharmacyerror);  
-	 				$("#d_transfererror").html(s.transfererror);  
-	 				$("#d_medicineerror").html(s.medicineerror);  
-	 				$("#d_yname").html(s.yname);  
-	 				$("#d_ycommonname").html(s.ycommonname);  
-	 				$("#d_ydose").html(s.ydose);  
-	 				$("#d_yspecification").html(s.yspecification);  
-	 				$("#d_ename").html(s.ename);  
-	 				$("#d_ecommonname").html(s.ecommonname);  
-	 				$("#d_edose").html(s.edose);  
-	 				$("#d_especification").html(s.especification);  
-	 				$("#d_communicationRelated").html(s.communicationRelated);  
-	 				$("#d_deviceRelated").html(s.deviceRelated);  
-	 				$("#d_personalRelated").html(s.personalRelated);  
-	 				$("#d_workRelated").html(s.workRelated);  
-	 				$("#d_happen").html(s.happen);  
-	 				$("#d_possibleCauses").html(s.possibleCauses);  
-	 				$("#d_jafter").html(s.jafter);  
-	        	//var cdate = new Date(s.createTime);
-	        	//$("#d_createTime").html(cdate.getFullYear()+"-"+(cdate.getMonth()+1)+"-"+cdate.getDate());
-	 	        $("#Modal_detail").modal("show");  
-	 		}
-	 	}); 
-	} 
-    
+
     //时间格式化
     function timeForm(date){ 
     	 var bdate = new Date(date);  

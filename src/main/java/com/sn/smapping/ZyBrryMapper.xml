@@ -1,0 +1,3669 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sn.sdao.ZyBrryMapper" >
+  <resultMap id="BaseResultMap" type="com.sn.entity.ZyBrry" >
+    <id column="Zyh" property="zyh" jdbcType="NUMERIC" />
+        <result property="zyhm" column="ZYHM"  jdbcType="VARCHAR" />
+        <result property="bahm" column="BAHM"  jdbcType="VARCHAR" />
+        <result property="mzhm" column="MZHM"  jdbcType="VARCHAR" />
+        <result property="brxz" column="BRXZ"  jdbcType="NUMERIC" />
+        <result property="gfzh" column="GFZH"  jdbcType="VARCHAR" />
+        <result property="brxm" column="BRXM"  jdbcType="VARCHAR" />
+        <result property="brxb" column="BRXB"  jdbcType="NUMERIC" />
+        <result property="csny" column="CSNY"  jdbcType="TIMESTAMP" />
+        <result property="sfzh" column="SFZH"  jdbcType="VARCHAR" />
+        <result property="hyzk" column="HYZK"  jdbcType="NUMERIC" />
+        <result property="zydm" column="ZYDM"  jdbcType="NUMERIC" />
+        <result property="sfdm" column="SFDM"  jdbcType="NUMERIC" />
+        <result property="jgdm" column="JGDM"  jdbcType="NUMERIC" />
+        <result property="mzdm" column="MZDM"  jdbcType="NUMERIC" />
+        <result property="gjdm" column="GJDM"  jdbcType="NUMERIC" />
+        <result property="dwbh" column="DWBH"  jdbcType="NUMERIC" />
+        <result property="gzdw" column="GZDW"  jdbcType="VARCHAR" />
+        <result property="dwdh" column="DWDH"  jdbcType="VARCHAR" />
+        <result property="dwyb" column="DWYB"  jdbcType="VARCHAR" />
+        <result property="hkdz" column="HKDZ"  jdbcType="VARCHAR" />
+        <result property="hkyb" column="HKYB"  jdbcType="VARCHAR" />
+        <result property="lxrm" column="LXRM"  jdbcType="VARCHAR" />
+        <result property="lxgx" column="LXGX"  jdbcType="NUMERIC" />
+        <result property="lxdz" column="LXDZ"  jdbcType="VARCHAR" />
+        <result property="lxdh" column="LXDH"  jdbcType="VARCHAR" />
+        <result property="pzhm" column="PZHM"  jdbcType="VARCHAR" />
+        <result property="sbhm" column="SBHM"  jdbcType="VARCHAR" />
+        <result property="dbrm" column="DBRM"  jdbcType="VARCHAR" />
+        <result property="dbgx" column="DBGX"  jdbcType="NUMERIC" />
+        <result property="zztx" column="ZZTX"  jdbcType="NUMERIC" />
+        <result property="dbbz" column="DBBZ"  jdbcType="NUMERIC" />
+        <result property="brks" column="BRKS"  jdbcType="NUMERIC" />
+        <result property="brbq" column="BRBQ"  jdbcType="NUMERIC" />
+        <result property="brch" column="BRCH"  jdbcType="VARCHAR" />
+        <result property="djrq" column="DJRQ"  jdbcType="TIMESTAMP" />
+        <result property="ryrq" column="RYRQ"  jdbcType="TIMESTAMP" />
+        <result property="cyrq" column="CYRQ"  jdbcType="TIMESTAMP" />
+        <result property="cypb" column="CYPB"  jdbcType="NUMERIC" />
+        <result property="cyfs" column="CYFS"  jdbcType="NUMERIC" />
+        <result property="czgh" column="CZGH"  jdbcType="VARCHAR" />
+        <result property="ryqk" column="RYQK"  jdbcType="NUMERIC" />
+        <result property="brqk" column="BRQK"  jdbcType="NUMERIC" />
+        <result property="hljb" column="HLJB"  jdbcType="NUMERIC" />
+        <result property="ysdm" column="YSDM"  jdbcType="NUMERIC" />
+        <result property="brxx" column="BRXX"  jdbcType="NUMERIC" />
+        <result property="hzks" column="HZKS"  jdbcType="NUMERIC" />
+        <result property="jcks" column="JCKS"  jdbcType="NUMERIC" />
+        <result property="mzys" column="MZYS"  jdbcType="VARCHAR" />
+        <result property="zyys" column="ZYYS"  jdbcType="VARCHAR" />
+        <result property="zsys" column="ZSYS"  jdbcType="VARCHAR" />
+        <result property="zzys" column="ZZYS"  jdbcType="VARCHAR" />
+        <result property="qzrq" column="QZRQ"  jdbcType="TIMESTAMP" />
+        <result property="ksrq" column="KSRQ"  jdbcType="TIMESTAMP" />
+        <result property="jsrq" column="JSRQ"  jdbcType="TIMESTAMP" />
+        <result property="jscs" column="JSCS"  jdbcType="NUMERIC" />
+        <result property="jzrq" column="JZRQ"  jdbcType="TIMESTAMP" />
+        <result property="hzrq" column="HZRQ"  jdbcType="TIMESTAMP" />
+        <result property="xgpb" column="XGPB"  jdbcType="NUMERIC" />
+        <result property="bapb" column="BAPB"  jdbcType="NUMERIC" />
+        <result property="brgl" column="BRGL"  jdbcType="NUMERIC" />
+        <result property="brkl" column="BRKL"  jdbcType="VARCHAR" />
+        <result property="bz" column="BZ"  jdbcType="LONGVARCHAR" />
+        <result property="brqm" column="BRQM"  jdbcType="VARCHAR" />
+        <result property="jtdh" column="JTDH"  jdbcType="VARCHAR" />
+        <result property="bxhm" column="BXHM"  jdbcType="VARCHAR" />
+        <result property="jgbm" column="JGBM"  jdbcType="VARCHAR" />
+        <result property="ryxz" column="RYXZ"  jdbcType="VARCHAR" />
+        <result property="cbxz" column="CBXZ"  jdbcType="VARCHAR" />
+        <result property="szys" column="SZYS"  jdbcType="VARCHAR" />
+        <result property="cfxj" column="CFXJ"  jdbcType="NUMERIC" />
+        <result property="rycs" column="RYCS"  jdbcType="NUMERIC" />
+        <result property="lockFlag" column="LOCK_FLAG"  jdbcType="NUMERIC" />
+        <result property="yjrq" column="yjrq"  jdbcType="TIMESTAMP" />
+        <result property="ryzd" column="RYZD"  jdbcType="VARCHAR" />
+        <result property="ybkh" column="ybkh"  jdbcType="VARCHAR" />
+        <result property="kye" column="KYE"  jdbcType="NUMERIC" />
+        <result property="scbz" column="scbz"  jdbcType="CHAR" />
+        <result property="yszl" column="YSZL"  jdbcType="TINYINT" />
+        <result property="ysjs" column="YSJS"  jdbcType="NUMERIC" />
+        <result property="zkzt" column="ZKZT"  jdbcType="NUMERIC" />
+        <result property="rbqrq" column="RBQRQ"  jdbcType="TIMESTAMP" />
+        <result property="kzhm" column="KZHM"  jdbcType="VARCHAR" />
+        <result property="hzylh" column="HZYLH"  jdbcType="VARCHAR" />
+        <result property="lxchns" column="LXCHNS"  jdbcType="NUMERIC" />
+        <result property="ljchns" column="LJCHNS"  jdbcType="NUMERIC" />
+        <result property="sftsb" column="SFTSB"  jdbcType="NUMERIC" />
+        <result property="jsdh" column="JSDH"  jdbcType="VARCHAR" />
+        <result property="nbcysh" column="NBCYSH"  jdbcType="TINYINT" />
+        <result property="shry" column="SHRY"  jdbcType="VARCHAR" />
+        <result property="cylx" column="CYLX"  jdbcType="NUMERIC" />
+        <result property="zszhm" column="ZSZHM"  jdbcType="VARCHAR" />
+        <result property="zylx" column="ZYLX"  jdbcType="NUMERIC" />
+        <result property="bxlx" column="BXLX"  jdbcType="VARCHAR" />
+        <result property="grzhye" column="GRZHYE"  jdbcType="NUMERIC" />
+        <result property="mzBzdx" column="MZ_BZDX"  jdbcType="VARCHAR" />
+        <result property="mzJzdx" column="MZ_JZDX"  jdbcType="VARCHAR" />
+        <result property="mzRylx" column="MZ_RYLX"  jdbcType="VARCHAR" />
+        <result property="mzXsbz" column="MZ_XSBZ"  jdbcType="VARCHAR" />
+        <result property="rylxmc" column="RYLXMC"  jdbcType="VARCHAR" />
+        <result property="xzqydm" column="XZQYDM"  jdbcType="VARCHAR" />
+        <result property="cabzlx" column="CABZLX"  jdbcType="VARCHAR" />
+        <result property="cajzlx" column="CAJZLX"  jdbcType="VARCHAR" />
+        <result property="cahmlx" column="CAHMLX"  jdbcType="VARCHAR" />
+        <result property="caxsbz" column="CAXSBZ"  jdbcType="VARCHAR" />
+        <result property="cazh" column="CAZH"  jdbcType="VARCHAR" />
+        <result property="cazjlx" column="CAZJLX"  jdbcType="VARCHAR" />
+        <result property="cadxbz" column="CADXBZ"  jdbcType="NUMERIC" />
+        <result property="cayldh" column="CAYLDH"  jdbcType="VARCHAR" />
+        <result property="hiSbbh" column="HI_SBBH"  jdbcType="VARCHAR" />
+        <result property="hiDylb" column="Hi_DYLB"  jdbcType="VARCHAR" />
+        <result property="hiRylb" column="Hi_RYLB"  jdbcType="VARCHAR" />
+        <result property="hiDblb" column="Hi_DBLB"  jdbcType="VARCHAR" />
+        <result property="hiYflb" column="Hi_YFLB"  jdbcType="VARCHAR" />
+        <result property="hiDqbm" column="Hi_DQBM"  jdbcType="VARCHAR" />
+        <result property="hiDqmc" column="Hi_DQMC"  jdbcType="VARCHAR" />
+        <result property="hiDwlx" column="Hi_DWLX"  jdbcType="VARCHAR" />
+        <result property="hiYwlx" column="HI_YWLX"  jdbcType="VARCHAR" />
+        <result property="hiRylx" column="HI_RYLX"  jdbcType="VARCHAR" />
+        <result property="hiShlb" column="HI_SHLB"  jdbcType="VARCHAR" />
+        <result property="lnye" column="LNYE"  jdbcType="NUMERIC" />
+        <result property="djlsh" column="DJLSH"  jdbcType="VARCHAR" />
+        <result property="jslsh" column="JSLSH"  jdbcType="VARCHAR" />
+        <result property="cwsh" column="CWSH"  jdbcType="NUMERIC" />
+        <result property="csry" column="CSRY"  jdbcType="VARCHAR" />
+        <result property="fzybr" column="FZYBR"  jdbcType="NUMERIC" />
+        <result property="ydShbzkxx" column="YD_SHBZKXX"  jdbcType="VARCHAR" />
+        <result property="ydCbdxzqhdm" column="YD_CBDXZQHDM"  jdbcType="VARCHAR" />
+        <result property="sbksbm" column="SBKSBM"  jdbcType="VARCHAR" />
+        <result property="sfyzjg" column="SFYZJG"  jdbcType="VARCHAR" />
+        <result property="remote" column="remote"  jdbcType="NUMERIC" />
+        <result property="cwzjbz" column="cwzjbz"  jdbcType="VARCHAR" />
+        <result property="lockBak" column="LOCK_BAK"  jdbcType="NUMERIC" />
+        <result property="zfje" column="ZFJE"  jdbcType="NUMERIC" />
+        <result property="zyzsqxh" column="zyzsqxh"  jdbcType="NUMERIC" />
+        <result property="tradeid" column="tradeid"  jdbcType="VARCHAR" />
+        <result property="tradejsid" column="tradejsid"  jdbcType="VARCHAR" />
+        <result property="ckbr" column="ckbr"  jdbcType="NUMERIC" />
+        <result property="csdSfmc" column="CSD_SFMC"  jdbcType="VARCHAR" />
+        <result property="csdSjmc" column="CSD_SJMC"  jdbcType="VARCHAR" />
+        <result property="csdXjmc" column="CSD_XJMC"  jdbcType="VARCHAR" />
+        <result property="jgSfmc" column="JG_SFMC"  jdbcType="VARCHAR" />
+        <result property="jgSjmc" column="JG_SJMC"  jdbcType="VARCHAR" />
+        <result property="xzzSfmc" column="XZZ_SFMC"  jdbcType="VARCHAR" />
+        <result property="xzzSjmc" column="XZZ_SJMC"  jdbcType="VARCHAR" />
+        <result property="xzzXjmc" column="XZZ_XJMC"  jdbcType="VARCHAR" />
+        <result property="hkdzSfmc" column="HKDZ_SFMC"  jdbcType="VARCHAR" />
+        <result property="hkdzSjmc" column="HKDZ_SJMC"  jdbcType="VARCHAR" />
+        <result property="hkdzXjmc" column="HKDZ_XJMC"  jdbcType="VARCHAR" />
+        <result property="ywgm" column="YWGM"  jdbcType="VARCHAR" />
+        <result property="alergyDrugs" column="ALERGY_DRUGS"  jdbcType="VARCHAR" />
+        <result property="bloodType" column="BLOOD_TYPE"  jdbcType="VARCHAR" />
+        <result property="bloodTypeRh" column="BLOOD_TYPE_RH"  jdbcType="VARCHAR" />
+        <result property="xzzJdmc" column="XZZ_JDMC"  jdbcType="VARCHAR" />
+        <result property="hkdzJdmc" column="HKDZ_JDMC"  jdbcType="VARCHAR" />
+        <result property="age" column="age"  jdbcType="VARCHAR" />
+        <result property="ksmc" column="ksmc"  jdbcType="VARCHAR" />
+		   
+  </resultMap>
+  <sql id="Base_Column_List" >
+         ZYH ,
+         ZYHM ,
+         BAHM ,
+         MZHM ,
+         BRXZ ,
+         GFZH ,
+         BRXM ,
+         BRXB ,
+         CSNY ,
+         SFZH ,
+         HYZK ,
+         ZYDM ,
+         SFDM ,
+         JGDM ,
+         MZDM ,
+         GJDM ,
+         DWBH ,
+         GZDW ,
+         DWDH ,
+         DWYB ,
+         HKDZ ,
+         HKYB ,
+         LXRM ,
+         LXGX ,
+         LXDZ ,
+         LXDH ,
+         PZHM ,
+         SBHM ,
+         DBRM ,
+         DBGX ,
+         ZZTX ,
+         DBBZ ,
+         BRKS ,
+         BRBQ ,
+         BRCH ,
+         DJRQ ,
+         RYRQ ,
+         CYRQ ,
+         CYPB ,
+         CYFS ,
+         CZGH ,
+         RYQK ,
+         BRQK ,
+         HLJB ,
+         YSDM ,
+         BRXX ,
+         HZKS ,
+         JCKS ,
+         MZYS ,
+         ZYYS ,
+         ZSYS ,
+         ZZYS ,
+         QZRQ ,
+         KSRQ ,
+         JSRQ ,
+         JSCS ,
+         JZRQ ,
+         HZRQ ,
+         XGPB ,
+         BAPB ,
+         BRGL ,
+         BRKL ,
+         BZ ,
+         BRQM ,
+         JTDH ,
+         BXHM ,
+         JGBM ,
+         RYXZ ,
+         CBXZ ,
+         SZYS ,
+         CFXJ ,
+         RYCS ,
+         LOCK_FLAG ,
+         yjrq ,
+         RYZD ,
+         ybkh ,
+         KYE ,
+         scbz ,
+         YSZL ,
+         YSJS ,
+         ZKZT ,
+         RBQRQ ,
+         KZHM ,
+         HZYLH ,
+         LXCHNS ,
+         LJCHNS ,
+         SFTSB ,
+         JSDH ,
+         NBCYSH ,
+         SHRY ,
+         CYLX ,
+         ZSZHM ,
+         ZYLX ,
+         BXLX ,
+         GRZHYE ,
+         MZ_BZDX ,
+         MZ_JZDX ,
+         MZ_RYLX ,
+         MZ_XSBZ ,
+         RYLXMC ,
+         XZQYDM ,
+         CABZLX ,
+         CAJZLX ,
+         CAHMLX ,
+         CAXSBZ ,
+         CAZH ,
+         CAZJLX ,
+         CADXBZ ,
+         CAYLDH ,
+         HI_SBBH ,
+         Hi_DYLB ,
+         Hi_RYLB ,
+         Hi_DBLB ,
+         Hi_YFLB ,
+         Hi_DQBM ,
+         Hi_DQMC ,
+         Hi_DWLX ,
+         HI_YWLX ,
+         HI_RYLX ,
+         HI_SHLB ,
+         LNYE ,
+         DJLSH ,
+         JSLSH ,
+         CWSH ,
+         CSRY ,
+         FZYBR ,
+         YD_SHBZKXX ,
+         YD_CBDXZQHDM ,
+         SBKSBM ,
+         SFYZJG ,
+         remote ,
+         cwzjbz ,
+         LOCK_BAK ,
+         ZFJE ,
+         zyzsqxh ,
+         tradeid ,
+         tradejsid ,
+         ckbr ,
+         CSD_SFMC ,
+         CSD_SJMC ,
+         CSD_XJMC ,
+         JG_SFMC ,
+         JG_SJMC ,
+         XZZ_SFMC ,
+         XZZ_SJMC ,
+         XZZ_XJMC ,
+         HKDZ_SFMC ,
+         HKDZ_SJMC ,
+         HKDZ_XJMC ,
+         YWGM ,
+         ALERGY_DRUGS ,
+         BLOOD_TYPE ,
+         BLOOD_TYPE_RH ,
+         XZZ_JDMC ,
+         HKDZ_JDMC,
+         datediff(year,csny,getdate()) as age
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      SELECT  <include refid="Base_Column_List" />
+	    from ZY_BRRY
+		      where 
+		        ZYH = #{zyh,jdbcType=NUMERIC}  
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from ZY_BRRY
+    	where 
+		        ZYH = #{zyh,jdbcType=NUMERIC}  
+  </delete>
+  <insert id="insert" parameterType="com.sn.entity.ZyBrry" >
+    
+         insert into ZY_BRRY ( 
+         		ZYH , 
+         	          		ZYHM , 
+         	          		BAHM , 
+         	          		MZHM , 
+         	          		BRXZ , 
+         	          		GFZH , 
+         	          		BRXM , 
+         	          		BRXB , 
+         	          		CSNY , 
+         	          		SFZH , 
+         	          		HYZK , 
+         	          		ZYDM , 
+         	          		SFDM , 
+         	          		JGDM , 
+         	          		MZDM , 
+         	          		GJDM , 
+         	          		DWBH , 
+         	          		GZDW , 
+         	          		DWDH , 
+         	          		DWYB , 
+         	          		HKDZ , 
+         	          		HKYB , 
+         	          		LXRM , 
+         	          		LXGX , 
+         	          		LXDZ , 
+         	          		LXDH , 
+         	          		PZHM , 
+         	          		SBHM , 
+         	          		DBRM , 
+         	          		DBGX , 
+         	          		ZZTX , 
+         	          		DBBZ , 
+         	          		BRKS , 
+         	          		BRBQ , 
+         	          		BRCH , 
+         	          		DJRQ , 
+         	          		RYRQ , 
+         	          		CYRQ , 
+         	          		CYPB , 
+         	          		CYFS , 
+         	          		CZGH , 
+         	          		RYQK , 
+         	          		BRQK , 
+         	          		HLJB , 
+         	          		YSDM , 
+         	          		BRXX , 
+         	          		HZKS , 
+         	          		JCKS , 
+         	          		MZYS , 
+         	          		ZYYS , 
+         	          		ZSYS , 
+         	          		ZZYS , 
+         	          		QZRQ , 
+         	          		KSRQ , 
+         	          		JSRQ , 
+         	          		JSCS , 
+         	          		JZRQ , 
+         	          		HZRQ , 
+         	          		XGPB , 
+         	          		BAPB , 
+         	          		BRGL , 
+         	          		BRKL , 
+         	          		BZ , 
+         	          		BRQM , 
+         	          		JTDH , 
+         	          		BXHM , 
+         	          		JGBM , 
+         	          		RYXZ , 
+         	          		CBXZ , 
+         	          		SZYS , 
+         	          		CFXJ , 
+         	          		RYCS , 
+         	          		LOCK_FLAG , 
+         	          		yjrq , 
+         	          		RYZD , 
+         	          		ybkh , 
+         	          		KYE , 
+         	          		scbz , 
+         	          		YSZL , 
+         	          		YSJS , 
+         	          		ZKZT , 
+         	          		RBQRQ , 
+         	          		KZHM , 
+         	          		HZYLH , 
+         	          		LXCHNS , 
+         	          		LJCHNS , 
+         	          		SFTSB , 
+         	          		JSDH , 
+         	          		NBCYSH , 
+         	          		SHRY , 
+         	          		CYLX , 
+         	          		ZSZHM , 
+         	          		ZYLX , 
+         	          		BXLX , 
+         	          		GRZHYE , 
+         	          		MZ_BZDX , 
+         	          		MZ_JZDX , 
+         	          		MZ_RYLX , 
+         	          		MZ_XSBZ , 
+         	          		RYLXMC , 
+         	          		XZQYDM , 
+         	          		CABZLX , 
+         	          		CAJZLX , 
+         	          		CAHMLX , 
+         	          		CAXSBZ , 
+         	          		CAZH , 
+         	          		CAZJLX , 
+         	          		CADXBZ , 
+         	          		CAYLDH , 
+         	          		HI_SBBH , 
+         	          		Hi_DYLB , 
+         	          		Hi_RYLB , 
+         	          		Hi_DBLB , 
+         	          		Hi_YFLB , 
+         	          		Hi_DQBM , 
+         	          		Hi_DQMC , 
+         	          		Hi_DWLX , 
+         	          		HI_YWLX , 
+         	          		HI_RYLX , 
+         	          		HI_SHLB , 
+         	          		LNYE , 
+         	          		DJLSH , 
+         	          		JSLSH , 
+         	          		CWSH , 
+         	          		CSRY , 
+         	          		FZYBR , 
+         	          		YD_SHBZKXX , 
+         	          		YD_CBDXZQHDM , 
+         	          		SBKSBM , 
+         	          		SFYZJG , 
+         	          		remote , 
+         	          		cwzjbz , 
+         	          		LOCK_BAK , 
+         	          		ZFJE , 
+         	          		zyzsqxh , 
+         	          		tradeid , 
+         	          		tradejsid , 
+         	          		ckbr , 
+         	          		CSD_SFMC , 
+         	          		CSD_SJMC , 
+         	          		CSD_XJMC , 
+         	          		JG_SFMC , 
+         	          		JG_SJMC , 
+         	          		XZZ_SFMC , 
+         	          		XZZ_SJMC , 
+         	          		XZZ_XJMC , 
+         	          		HKDZ_SFMC , 
+         	          		HKDZ_SJMC , 
+         	          		HKDZ_XJMC , 
+         	          		YWGM , 
+         	          		ALERGY_DRUGS , 
+         	          		BLOOD_TYPE , 
+         	          		BLOOD_TYPE_RH , 
+         	          		XZZ_JDMC , 
+         	          		HKDZ_JDMC  
+         	 )
+   	 	values (
+   	 		#{zyh,jdbcType=NUMERIC} , 
+   	 	   	 		#{zyhm,jdbcType=VARCHAR} , 
+   	 	   	 		#{bahm,jdbcType=VARCHAR} , 
+   	 	   	 		#{mzhm,jdbcType=VARCHAR} , 
+   	 	   	 		#{brxz,jdbcType=NUMERIC} , 
+   	 	   	 		#{gfzh,jdbcType=VARCHAR} , 
+   	 	   	 		#{brxm,jdbcType=VARCHAR} , 
+   	 	   	 		#{brxb,jdbcType=NUMERIC} , 
+   	 	   	 		#{csny,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{sfzh,jdbcType=VARCHAR} , 
+   	 	   	 		#{hyzk,jdbcType=NUMERIC} , 
+   	 	   	 		#{zydm,jdbcType=NUMERIC} , 
+   	 	   	 		#{sfdm,jdbcType=NUMERIC} , 
+   	 	   	 		#{jgdm,jdbcType=NUMERIC} , 
+   	 	   	 		#{mzdm,jdbcType=NUMERIC} , 
+   	 	   	 		#{gjdm,jdbcType=NUMERIC} , 
+   	 	   	 		#{dwbh,jdbcType=NUMERIC} , 
+   	 	   	 		#{gzdw,jdbcType=VARCHAR} , 
+   	 	   	 		#{dwdh,jdbcType=VARCHAR} , 
+   	 	   	 		#{dwyb,jdbcType=VARCHAR} , 
+   	 	   	 		#{hkdz,jdbcType=VARCHAR} , 
+   	 	   	 		#{hkyb,jdbcType=VARCHAR} , 
+   	 	   	 		#{lxrm,jdbcType=VARCHAR} , 
+   	 	   	 		#{lxgx,jdbcType=NUMERIC} , 
+   	 	   	 		#{lxdz,jdbcType=VARCHAR} , 
+   	 	   	 		#{lxdh,jdbcType=VARCHAR} , 
+   	 	   	 		#{pzhm,jdbcType=VARCHAR} , 
+   	 	   	 		#{sbhm,jdbcType=VARCHAR} , 
+   	 	   	 		#{dbrm,jdbcType=VARCHAR} , 
+   	 	   	 		#{dbgx,jdbcType=NUMERIC} , 
+   	 	   	 		#{zztx,jdbcType=NUMERIC} , 
+   	 	   	 		#{dbbz,jdbcType=NUMERIC} , 
+   	 	   	 		#{brks,jdbcType=NUMERIC} , 
+   	 	   	 		#{brbq,jdbcType=NUMERIC} , 
+   	 	   	 		#{brch,jdbcType=VARCHAR} , 
+   	 	   	 		#{djrq,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{ryrq,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{cyrq,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{cypb,jdbcType=NUMERIC} , 
+   	 	   	 		#{cyfs,jdbcType=NUMERIC} , 
+   	 	   	 		#{czgh,jdbcType=VARCHAR} , 
+   	 	   	 		#{ryqk,jdbcType=NUMERIC} , 
+   	 	   	 		#{brqk,jdbcType=NUMERIC} , 
+   	 	   	 		#{hljb,jdbcType=NUMERIC} , 
+   	 	   	 		#{ysdm,jdbcType=NUMERIC} , 
+   	 	   	 		#{brxx,jdbcType=NUMERIC} , 
+   	 	   	 		#{hzks,jdbcType=NUMERIC} , 
+   	 	   	 		#{jcks,jdbcType=NUMERIC} , 
+   	 	   	 		#{mzys,jdbcType=VARCHAR} , 
+   	 	   	 		#{zyys,jdbcType=VARCHAR} , 
+   	 	   	 		#{zsys,jdbcType=VARCHAR} , 
+   	 	   	 		#{zzys,jdbcType=VARCHAR} , 
+   	 	   	 		#{qzrq,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{ksrq,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{jsrq,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{jscs,jdbcType=NUMERIC} , 
+   	 	   	 		#{jzrq,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{hzrq,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{xgpb,jdbcType=NUMERIC} , 
+   	 	   	 		#{bapb,jdbcType=NUMERIC} , 
+   	 	   	 		#{brgl,jdbcType=NUMERIC} , 
+   	 	   	 		#{brkl,jdbcType=VARCHAR} , 
+   	 	   	 		#{bz,jdbcType=LONGVARCHAR} , 
+   	 	   	 		#{brqm,jdbcType=VARCHAR} , 
+   	 	   	 		#{jtdh,jdbcType=VARCHAR} , 
+   	 	   	 		#{bxhm,jdbcType=VARCHAR} , 
+   	 	   	 		#{jgbm,jdbcType=VARCHAR} , 
+   	 	   	 		#{ryxz,jdbcType=VARCHAR} , 
+   	 	   	 		#{cbxz,jdbcType=VARCHAR} , 
+   	 	   	 		#{szys,jdbcType=VARCHAR} , 
+   	 	   	 		#{cfxj,jdbcType=NUMERIC} , 
+   	 	   	 		#{rycs,jdbcType=NUMERIC} , 
+   	 	   	 		#{lockFlag,jdbcType=NUMERIC} , 
+   	 	   	 		#{yjrq,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{ryzd,jdbcType=VARCHAR} , 
+   	 	   	 		#{ybkh,jdbcType=VARCHAR} , 
+   	 	   	 		#{kye,jdbcType=NUMERIC} , 
+   	 	   	 		#{scbz,jdbcType=CHAR} , 
+   	 	   	 		#{yszl,jdbcType=TINYINT} , 
+   	 	   	 		#{ysjs,jdbcType=NUMERIC} , 
+   	 	   	 		#{zkzt,jdbcType=NUMERIC} , 
+   	 	   	 		#{rbqrq,jdbcType=TIMESTAMP} , 
+   	 	   	 		#{kzhm,jdbcType=VARCHAR} , 
+   	 	   	 		#{hzylh,jdbcType=VARCHAR} , 
+   	 	   	 		#{lxchns,jdbcType=NUMERIC} , 
+   	 	   	 		#{ljchns,jdbcType=NUMERIC} , 
+   	 	   	 		#{sftsb,jdbcType=NUMERIC} , 
+   	 	   	 		#{jsdh,jdbcType=VARCHAR} , 
+   	 	   	 		#{nbcysh,jdbcType=TINYINT} , 
+   	 	   	 		#{shry,jdbcType=VARCHAR} , 
+   	 	   	 		#{cylx,jdbcType=NUMERIC} , 
+   	 	   	 		#{zszhm,jdbcType=VARCHAR} , 
+   	 	   	 		#{zylx,jdbcType=NUMERIC} , 
+   	 	   	 		#{bxlx,jdbcType=VARCHAR} , 
+   	 	   	 		#{grzhye,jdbcType=NUMERIC} , 
+   	 	   	 		#{mzBzdx,jdbcType=VARCHAR} , 
+   	 	   	 		#{mzJzdx,jdbcType=VARCHAR} , 
+   	 	   	 		#{mzRylx,jdbcType=VARCHAR} , 
+   	 	   	 		#{mzXsbz,jdbcType=VARCHAR} , 
+   	 	   	 		#{rylxmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{xzqydm,jdbcType=VARCHAR} , 
+   	 	   	 		#{cabzlx,jdbcType=VARCHAR} , 
+   	 	   	 		#{cajzlx,jdbcType=VARCHAR} , 
+   	 	   	 		#{cahmlx,jdbcType=VARCHAR} , 
+   	 	   	 		#{caxsbz,jdbcType=VARCHAR} , 
+   	 	   	 		#{cazh,jdbcType=VARCHAR} , 
+   	 	   	 		#{cazjlx,jdbcType=VARCHAR} , 
+   	 	   	 		#{cadxbz,jdbcType=NUMERIC} , 
+   	 	   	 		#{cayldh,jdbcType=VARCHAR} , 
+   	 	   	 		#{hiSbbh,jdbcType=VARCHAR} , 
+   	 	   	 		#{hiDylb,jdbcType=VARCHAR} , 
+   	 	   	 		#{hiRylb,jdbcType=VARCHAR} , 
+   	 	   	 		#{hiDblb,jdbcType=VARCHAR} , 
+   	 	   	 		#{hiYflb,jdbcType=VARCHAR} , 
+   	 	   	 		#{hiDqbm,jdbcType=VARCHAR} , 
+   	 	   	 		#{hiDqmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{hiDwlx,jdbcType=VARCHAR} , 
+   	 	   	 		#{hiYwlx,jdbcType=VARCHAR} , 
+   	 	   	 		#{hiRylx,jdbcType=VARCHAR} , 
+   	 	   	 		#{hiShlb,jdbcType=VARCHAR} , 
+   	 	   	 		#{lnye,jdbcType=NUMERIC} , 
+   	 	   	 		#{djlsh,jdbcType=VARCHAR} , 
+   	 	   	 		#{jslsh,jdbcType=VARCHAR} , 
+   	 	   	 		#{cwsh,jdbcType=NUMERIC} , 
+   	 	   	 		#{csry,jdbcType=VARCHAR} , 
+   	 	   	 		#{fzybr,jdbcType=NUMERIC} , 
+   	 	   	 		#{ydShbzkxx,jdbcType=VARCHAR} , 
+   	 	   	 		#{ydCbdxzqhdm,jdbcType=VARCHAR} , 
+   	 	   	 		#{sbksbm,jdbcType=VARCHAR} , 
+   	 	   	 		#{sfyzjg,jdbcType=VARCHAR} , 
+   	 	   	 		#{remote,jdbcType=NUMERIC} , 
+   	 	   	 		#{cwzjbz,jdbcType=VARCHAR} , 
+   	 	   	 		#{lockBak,jdbcType=NUMERIC} , 
+   	 	   	 		#{zfje,jdbcType=NUMERIC} , 
+   	 	   	 		#{zyzsqxh,jdbcType=NUMERIC} , 
+   	 	   	 		#{tradeid,jdbcType=VARCHAR} , 
+   	 	   	 		#{tradejsid,jdbcType=VARCHAR} , 
+   	 	   	 		#{ckbr,jdbcType=NUMERIC} , 
+   	 	   	 		#{csdSfmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{csdSjmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{csdXjmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{jgSfmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{jgSjmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{xzzSfmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{xzzSjmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{xzzXjmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{hkdzSfmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{hkdzSjmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{hkdzXjmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{ywgm,jdbcType=VARCHAR} , 
+   	 	   	 		#{alergyDrugs,jdbcType=VARCHAR} , 
+   	 	   	 		#{bloodType,jdbcType=VARCHAR} , 
+   	 	   	 		#{bloodTypeRh,jdbcType=VARCHAR} , 
+   	 	   	 		#{xzzJdmc,jdbcType=VARCHAR} , 
+   	 	   	 		#{hkdzJdmc,jdbcType=VARCHAR}  
+   	 	)
+  </insert>
+  
+      
+  
+   <insert id="insertSelective" parameterType="com.sn.entity.ZyBrry">
+  	  insert into  ZY_BRRY
+  	  
+  	   <trim prefix="(" suffix=")" suffixOverrides="," >
+  	   
+  	  	<if test="zyh != null" >
+  	 	  ZYH ,  
+  	  	</if>
+  	  	<if test="zyhm != null" >
+  	 	  ZYHM ,  
+  	  	</if>
+  	  	<if test="bahm != null" >
+  	 	  BAHM ,  
+  	  	</if>
+  	  	<if test="mzhm != null" >
+  	 	  MZHM ,  
+  	  	</if>
+  	  	<if test="brxz != null" >
+  	 	  BRXZ ,  
+  	  	</if>
+  	  	<if test="gfzh != null" >
+  	 	  GFZH ,  
+  	  	</if>
+  	  	<if test="brxm != null" >
+  	 	  BRXM ,  
+  	  	</if>
+  	  	<if test="brxb != null" >
+  	 	  BRXB ,  
+  	  	</if>
+  	  	<if test="csny != null" >
+  	 	  CSNY ,  
+  	  	</if>
+  	  	<if test="sfzh != null" >
+  	 	  SFZH ,  
+  	  	</if>
+  	  	<if test="hyzk != null" >
+  	 	  HYZK ,  
+  	  	</if>
+  	  	<if test="zydm != null" >
+  	 	  ZYDM ,  
+  	  	</if>
+  	  	<if test="sfdm != null" >
+  	 	  SFDM ,  
+  	  	</if>
+  	  	<if test="jgdm != null" >
+  	 	  JGDM ,  
+  	  	</if>
+  	  	<if test="mzdm != null" >
+  	 	  MZDM ,  
+  	  	</if>
+  	  	<if test="gjdm != null" >
+  	 	  GJDM ,  
+  	  	</if>
+  	  	<if test="dwbh != null" >
+  	 	  DWBH ,  
+  	  	</if>
+  	  	<if test="gzdw != null" >
+  	 	  GZDW ,  
+  	  	</if>
+  	  	<if test="dwdh != null" >
+  	 	  DWDH ,  
+  	  	</if>
+  	  	<if test="dwyb != null" >
+  	 	  DWYB ,  
+  	  	</if>
+  	  	<if test="hkdz != null" >
+  	 	  HKDZ ,  
+  	  	</if>
+  	  	<if test="hkyb != null" >
+  	 	  HKYB ,  
+  	  	</if>
+  	  	<if test="lxrm != null" >
+  	 	  LXRM ,  
+  	  	</if>
+  	  	<if test="lxgx != null" >
+  	 	  LXGX ,  
+  	  	</if>
+  	  	<if test="lxdz != null" >
+  	 	  LXDZ ,  
+  	  	</if>
+  	  	<if test="lxdh != null" >
+  	 	  LXDH ,  
+  	  	</if>
+  	  	<if test="pzhm != null" >
+  	 	  PZHM ,  
+  	  	</if>
+  	  	<if test="sbhm != null" >
+  	 	  SBHM ,  
+  	  	</if>
+  	  	<if test="dbrm != null" >
+  	 	  DBRM ,  
+  	  	</if>
+  	  	<if test="dbgx != null" >
+  	 	  DBGX ,  
+  	  	</if>
+  	  	<if test="zztx != null" >
+  	 	  ZZTX ,  
+  	  	</if>
+  	  	<if test="dbbz != null" >
+  	 	  DBBZ ,  
+  	  	</if>
+  	  	<if test="brks != null" >
+  	 	  BRKS ,  
+  	  	</if>
+  	  	<if test="brbq != null" >
+  	 	  BRBQ ,  
+  	  	</if>
+  	  	<if test="brch != null" >
+  	 	  BRCH ,  
+  	  	</if>
+  	  	<if test="djrq != null" >
+  	 	  DJRQ ,  
+  	  	</if>
+  	  	<if test="ryrq != null" >
+  	 	  RYRQ ,  
+  	  	</if>
+  	  	<if test="cyrq != null" >
+  	 	  CYRQ ,  
+  	  	</if>
+  	  	<if test="cypb != null" >
+  	 	  CYPB ,  
+  	  	</if>
+  	  	<if test="cyfs != null" >
+  	 	  CYFS ,  
+  	  	</if>
+  	  	<if test="czgh != null" >
+  	 	  CZGH ,  
+  	  	</if>
+  	  	<if test="ryqk != null" >
+  	 	  RYQK ,  
+  	  	</if>
+  	  	<if test="brqk != null" >
+  	 	  BRQK ,  
+  	  	</if>
+  	  	<if test="hljb != null" >
+  	 	  HLJB ,  
+  	  	</if>
+  	  	<if test="ysdm != null" >
+  	 	  YSDM ,  
+  	  	</if>
+  	  	<if test="brxx != null" >
+  	 	  BRXX ,  
+  	  	</if>
+  	  	<if test="hzks != null" >
+  	 	  HZKS ,  
+  	  	</if>
+  	  	<if test="jcks != null" >
+  	 	  JCKS ,  
+  	  	</if>
+  	  	<if test="mzys != null" >
+  	 	  MZYS ,  
+  	  	</if>
+  	  	<if test="zyys != null" >
+  	 	  ZYYS ,  
+  	  	</if>
+  	  	<if test="zsys != null" >
+  	 	  ZSYS ,  
+  	  	</if>
+  	  	<if test="zzys != null" >
+  	 	  ZZYS ,  
+  	  	</if>
+  	  	<if test="qzrq != null" >
+  	 	  QZRQ ,  
+  	  	</if>
+  	  	<if test="ksrq != null" >
+  	 	  KSRQ ,  
+  	  	</if>
+  	  	<if test="jsrq != null" >
+  	 	  JSRQ ,  
+  	  	</if>
+  	  	<if test="jscs != null" >
+  	 	  JSCS ,  
+  	  	</if>
+  	  	<if test="jzrq != null" >
+  	 	  JZRQ ,  
+  	  	</if>
+  	  	<if test="hzrq != null" >
+  	 	  HZRQ ,  
+  	  	</if>
+  	  	<if test="xgpb != null" >
+  	 	  XGPB ,  
+  	  	</if>
+  	  	<if test="bapb != null" >
+  	 	  BAPB ,  
+  	  	</if>
+  	  	<if test="brgl != null" >
+  	 	  BRGL ,  
+  	  	</if>
+  	  	<if test="brkl != null" >
+  	 	  BRKL ,  
+  	  	</if>
+  	  	<if test="bz != null" >
+  	 	  BZ ,  
+  	  	</if>
+  	  	<if test="brqm != null" >
+  	 	  BRQM ,  
+  	  	</if>
+  	  	<if test="jtdh != null" >
+  	 	  JTDH ,  
+  	  	</if>
+  	  	<if test="bxhm != null" >
+  	 	  BXHM ,  
+  	  	</if>
+  	  	<if test="jgbm != null" >
+  	 	  JGBM ,  
+  	  	</if>
+  	  	<if test="ryxz != null" >
+  	 	  RYXZ ,  
+  	  	</if>
+  	  	<if test="cbxz != null" >
+  	 	  CBXZ ,  
+  	  	</if>
+  	  	<if test="szys != null" >
+  	 	  SZYS ,  
+  	  	</if>
+  	  	<if test="cfxj != null" >
+  	 	  CFXJ ,  
+  	  	</if>
+  	  	<if test="rycs != null" >
+  	 	  RYCS ,  
+  	  	</if>
+  	  	<if test="lockFlag != null" >
+  	 	  LOCK_FLAG ,  
+  	  	</if>
+  	  	<if test="yjrq != null" >
+  	 	  yjrq ,  
+  	  	</if>
+  	  	<if test="ryzd != null" >
+  	 	  RYZD ,  
+  	  	</if>
+  	  	<if test="ybkh != null" >
+  	 	  ybkh ,  
+  	  	</if>
+  	  	<if test="kye != null" >
+  	 	  KYE ,  
+  	  	</if>
+  	  	<if test="scbz != null" >
+  	 	  scbz ,  
+  	  	</if>
+  	  	<if test="yszl != null" >
+  	 	  YSZL ,  
+  	  	</if>
+  	  	<if test="ysjs != null" >
+  	 	  YSJS ,  
+  	  	</if>
+  	  	<if test="zkzt != null" >
+  	 	  ZKZT ,  
+  	  	</if>
+  	  	<if test="rbqrq != null" >
+  	 	  RBQRQ ,  
+  	  	</if>
+  	  	<if test="kzhm != null" >
+  	 	  KZHM ,  
+  	  	</if>
+  	  	<if test="hzylh != null" >
+  	 	  HZYLH ,  
+  	  	</if>
+  	  	<if test="lxchns != null" >
+  	 	  LXCHNS ,  
+  	  	</if>
+  	  	<if test="ljchns != null" >
+  	 	  LJCHNS ,  
+  	  	</if>
+  	  	<if test="sftsb != null" >
+  	 	  SFTSB ,  
+  	  	</if>
+  	  	<if test="jsdh != null" >
+  	 	  JSDH ,  
+  	  	</if>
+  	  	<if test="nbcysh != null" >
+  	 	  NBCYSH ,  
+  	  	</if>
+  	  	<if test="shry != null" >
+  	 	  SHRY ,  
+  	  	</if>
+  	  	<if test="cylx != null" >
+  	 	  CYLX ,  
+  	  	</if>
+  	  	<if test="zszhm != null" >
+  	 	  ZSZHM ,  
+  	  	</if>
+  	  	<if test="zylx != null" >
+  	 	  ZYLX ,  
+  	  	</if>
+  	  	<if test="bxlx != null" >
+  	 	  BXLX ,  
+  	  	</if>
+  	  	<if test="grzhye != null" >
+  	 	  GRZHYE ,  
+  	  	</if>
+  	  	<if test="mzBzdx != null" >
+  	 	  MZ_BZDX ,  
+  	  	</if>
+  	  	<if test="mzJzdx != null" >
+  	 	  MZ_JZDX ,  
+  	  	</if>
+  	  	<if test="mzRylx != null" >
+  	 	  MZ_RYLX ,  
+  	  	</if>
+  	  	<if test="mzXsbz != null" >
+  	 	  MZ_XSBZ ,  
+  	  	</if>
+  	  	<if test="rylxmc != null" >
+  	 	  RYLXMC ,  
+  	  	</if>
+  	  	<if test="xzqydm != null" >
+  	 	  XZQYDM ,  
+  	  	</if>
+  	  	<if test="cabzlx != null" >
+  	 	  CABZLX ,  
+  	  	</if>
+  	  	<if test="cajzlx != null" >
+  	 	  CAJZLX ,  
+  	  	</if>
+  	  	<if test="cahmlx != null" >
+  	 	  CAHMLX ,  
+  	  	</if>
+  	  	<if test="caxsbz != null" >
+  	 	  CAXSBZ ,  
+  	  	</if>
+  	  	<if test="cazh != null" >
+  	 	  CAZH ,  
+  	  	</if>
+  	  	<if test="cazjlx != null" >
+  	 	  CAZJLX ,  
+  	  	</if>
+  	  	<if test="cadxbz != null" >
+  	 	  CADXBZ ,  
+  	  	</if>
+  	  	<if test="cayldh != null" >
+  	 	  CAYLDH ,  
+  	  	</if>
+  	  	<if test="hiSbbh != null" >
+  	 	  HI_SBBH ,  
+  	  	</if>
+  	  	<if test="hiDylb != null" >
+  	 	  Hi_DYLB ,  
+  	  	</if>
+  	  	<if test="hiRylb != null" >
+  	 	  Hi_RYLB ,  
+  	  	</if>
+  	  	<if test="hiDblb != null" >
+  	 	  Hi_DBLB ,  
+  	  	</if>
+  	  	<if test="hiYflb != null" >
+  	 	  Hi_YFLB ,  
+  	  	</if>
+  	  	<if test="hiDqbm != null" >
+  	 	  Hi_DQBM ,  
+  	  	</if>
+  	  	<if test="hiDqmc != null" >
+  	 	  Hi_DQMC ,  
+  	  	</if>
+  	  	<if test="hiDwlx != null" >
+  	 	  Hi_DWLX ,  
+  	  	</if>
+  	  	<if test="hiYwlx != null" >
+  	 	  HI_YWLX ,  
+  	  	</if>
+  	  	<if test="hiRylx != null" >
+  	 	  HI_RYLX ,  
+  	  	</if>
+  	  	<if test="hiShlb != null" >
+  	 	  HI_SHLB ,  
+  	  	</if>
+  	  	<if test="lnye != null" >
+  	 	  LNYE ,  
+  	  	</if>
+  	  	<if test="djlsh != null" >
+  	 	  DJLSH ,  
+  	  	</if>
+  	  	<if test="jslsh != null" >
+  	 	  JSLSH ,  
+  	  	</if>
+  	  	<if test="cwsh != null" >
+  	 	  CWSH ,  
+  	  	</if>
+  	  	<if test="csry != null" >
+  	 	  CSRY ,  
+  	  	</if>
+  	  	<if test="fzybr != null" >
+  	 	  FZYBR ,  
+  	  	</if>
+  	  	<if test="ydShbzkxx != null" >
+  	 	  YD_SHBZKXX ,  
+  	  	</if>
+  	  	<if test="ydCbdxzqhdm != null" >
+  	 	  YD_CBDXZQHDM ,  
+  	  	</if>
+  	  	<if test="sbksbm != null" >
+  	 	  SBKSBM ,  
+  	  	</if>
+  	  	<if test="sfyzjg != null" >
+  	 	  SFYZJG ,  
+  	  	</if>
+  	  	<if test="remote != null" >
+  	 	  remote ,  
+  	  	</if>
+  	  	<if test="cwzjbz != null" >
+  	 	  cwzjbz ,  
+  	  	</if>
+  	  	<if test="lockBak != null" >
+  	 	  LOCK_BAK ,  
+  	  	</if>
+  	  	<if test="zfje != null" >
+  	 	  ZFJE ,  
+  	  	</if>
+  	  	<if test="zyzsqxh != null" >
+  	 	  zyzsqxh ,  
+  	  	</if>
+  	  	<if test="tradeid != null" >
+  	 	  tradeid ,  
+  	  	</if>
+  	  	<if test="tradejsid != null" >
+  	 	  tradejsid ,  
+  	  	</if>
+  	  	<if test="ckbr != null" >
+  	 	  ckbr ,  
+  	  	</if>
+  	  	<if test="csdSfmc != null" >
+  	 	  CSD_SFMC ,  
+  	  	</if>
+  	  	<if test="csdSjmc != null" >
+  	 	  CSD_SJMC ,  
+  	  	</if>
+  	  	<if test="csdXjmc != null" >
+  	 	  CSD_XJMC ,  
+  	  	</if>
+  	  	<if test="jgSfmc != null" >
+  	 	  JG_SFMC ,  
+  	  	</if>
+  	  	<if test="jgSjmc != null" >
+  	 	  JG_SJMC ,  
+  	  	</if>
+  	  	<if test="xzzSfmc != null" >
+  	 	  XZZ_SFMC ,  
+  	  	</if>
+  	  	<if test="xzzSjmc != null" >
+  	 	  XZZ_SJMC ,  
+  	  	</if>
+  	  	<if test="xzzXjmc != null" >
+  	 	  XZZ_XJMC ,  
+  	  	</if>
+  	  	<if test="hkdzSfmc != null" >
+  	 	  HKDZ_SFMC ,  
+  	  	</if>
+  	  	<if test="hkdzSjmc != null" >
+  	 	  HKDZ_SJMC ,  
+  	  	</if>
+  	  	<if test="hkdzXjmc != null" >
+  	 	  HKDZ_XJMC ,  
+  	  	</if>
+  	  	<if test="ywgm != null" >
+  	 	  YWGM ,  
+  	  	</if>
+  	  	<if test="alergyDrugs != null" >
+  	 	  ALERGY_DRUGS ,  
+  	  	</if>
+  	  	<if test="bloodType != null" >
+  	 	  BLOOD_TYPE ,  
+  	  	</if>
+  	  	<if test="bloodTypeRh != null" >
+  	 	  BLOOD_TYPE_RH ,  
+  	  	</if>
+  	  	<if test="xzzJdmc != null" >
+  	 	  XZZ_JDMC ,  
+  	  	</if>
+  	  	<if test="hkdzJdmc != null" >
+  	 	  HKDZ_JDMC   
+  	  	</if>
+  	    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+    	<if test="zyh != null" >
+        	#{zyh,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zyhm != null" >
+        	#{zyhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bahm != null" >
+        	#{bahm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="mzhm != null" >
+        	#{mzhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="brxz != null" >
+        	#{brxz,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="gfzh != null" >
+        	#{gfzh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="brxm != null" >
+        	#{brxm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="brxb != null" >
+        	#{brxb,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="csny != null" >
+        	#{csny,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="sfzh != null" >
+        	#{sfzh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hyzk != null" >
+        	#{hyzk,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zydm != null" >
+        	#{zydm,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="sfdm != null" >
+        	#{sfdm,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="jgdm != null" >
+        	#{jgdm,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="mzdm != null" >
+        	#{mzdm,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="gjdm != null" >
+        	#{gjdm,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="dwbh != null" >
+        	#{dwbh,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="gzdw != null" >
+        	#{gzdw,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dwdh != null" >
+        	#{dwdh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dwyb != null" >
+        	#{dwyb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hkdz != null" >
+        	#{hkdz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hkyb != null" >
+        	#{hkyb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="lxrm != null" >
+        	#{lxrm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="lxgx != null" >
+        	#{lxgx,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="lxdz != null" >
+        	#{lxdz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="lxdh != null" >
+        	#{lxdh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="pzhm != null" >
+        	#{pzhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sbhm != null" >
+        	#{sbhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dbrm != null" >
+        	#{dbrm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dbgx != null" >
+        	#{dbgx,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zztx != null" >
+        	#{zztx,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="dbbz != null" >
+        	#{dbbz,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brks != null" >
+        	#{brks,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brbq != null" >
+        	#{brbq,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brch != null" >
+        	#{brch,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="djrq != null" >
+        	#{djrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="ryrq != null" >
+        	#{ryrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="cyrq != null" >
+        	#{cyrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="cypb != null" >
+        	#{cypb,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="cyfs != null" >
+        	#{cyfs,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="czgh != null" >
+        	#{czgh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ryqk != null" >
+        	#{ryqk,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brqk != null" >
+        	#{brqk,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="hljb != null" >
+        	#{hljb,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="ysdm != null" >
+        	#{ysdm,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brxx != null" >
+        	#{brxx,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="hzks != null" >
+        	#{hzks,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="jcks != null" >
+        	#{jcks,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="mzys != null" >
+        	#{mzys,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="zyys != null" >
+        	#{zyys,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="zsys != null" >
+        	#{zsys,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="zzys != null" >
+        	#{zzys,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="qzrq != null" >
+        	#{qzrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="ksrq != null" >
+        	#{ksrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="jsrq != null" >
+        	#{jsrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="jscs != null" >
+        	#{jscs,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="jzrq != null" >
+        	#{jzrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="hzrq != null" >
+        	#{hzrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="xgpb != null" >
+        	#{xgpb,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="bapb != null" >
+        	#{bapb,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brgl != null" >
+        	#{brgl,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brkl != null" >
+        	#{brkl,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bz != null" >
+        	#{bz,jdbcType=LONGVARCHAR} , 
+       </if>
+    	<if test="brqm != null" >
+        	#{brqm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jtdh != null" >
+        	#{jtdh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bxhm != null" >
+        	#{bxhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jgbm != null" >
+        	#{jgbm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ryxz != null" >
+        	#{ryxz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cbxz != null" >
+        	#{cbxz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="szys != null" >
+        	#{szys,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cfxj != null" >
+        	#{cfxj,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="rycs != null" >
+        	#{rycs,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="lockFlag != null" >
+        	#{lockFlag,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="yjrq != null" >
+        	#{yjrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="ryzd != null" >
+        	#{ryzd,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ybkh != null" >
+        	#{ybkh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="kye != null" >
+        	#{kye,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="scbz != null" >
+        	#{scbz,jdbcType=CHAR} , 
+       </if>
+    	<if test="yszl != null" >
+        	#{yszl,jdbcType=TINYINT} , 
+       </if>
+    	<if test="ysjs != null" >
+        	#{ysjs,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zkzt != null" >
+        	#{zkzt,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="rbqrq != null" >
+        	#{rbqrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="kzhm != null" >
+        	#{kzhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hzylh != null" >
+        	#{hzylh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="lxchns != null" >
+        	#{lxchns,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="ljchns != null" >
+        	#{ljchns,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="sftsb != null" >
+        	#{sftsb,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="jsdh != null" >
+        	#{jsdh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="nbcysh != null" >
+        	#{nbcysh,jdbcType=TINYINT} , 
+       </if>
+    	<if test="shry != null" >
+        	#{shry,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cylx != null" >
+        	#{cylx,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zszhm != null" >
+        	#{zszhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="zylx != null" >
+        	#{zylx,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="bxlx != null" >
+        	#{bxlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="grzhye != null" >
+        	#{grzhye,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="mzBzdx != null" >
+        	#{mzBzdx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="mzJzdx != null" >
+        	#{mzJzdx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="mzRylx != null" >
+        	#{mzRylx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="mzXsbz != null" >
+        	#{mzXsbz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="rylxmc != null" >
+        	#{rylxmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="xzqydm != null" >
+        	#{xzqydm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cabzlx != null" >
+        	#{cabzlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cajzlx != null" >
+        	#{cajzlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cahmlx != null" >
+        	#{cahmlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="caxsbz != null" >
+        	#{caxsbz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cazh != null" >
+        	#{cazh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cazjlx != null" >
+        	#{cazjlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cadxbz != null" >
+        	#{cadxbz,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="cayldh != null" >
+        	#{cayldh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiSbbh != null" >
+        	#{hiSbbh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiDylb != null" >
+        	#{hiDylb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiRylb != null" >
+        	#{hiRylb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiDblb != null" >
+        	#{hiDblb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiYflb != null" >
+        	#{hiYflb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiDqbm != null" >
+        	#{hiDqbm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiDqmc != null" >
+        	#{hiDqmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiDwlx != null" >
+        	#{hiDwlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiYwlx != null" >
+        	#{hiYwlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiRylx != null" >
+        	#{hiRylx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiShlb != null" >
+        	#{hiShlb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="lnye != null" >
+        	#{lnye,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="djlsh != null" >
+        	#{djlsh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jslsh != null" >
+        	#{jslsh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cwsh != null" >
+        	#{cwsh,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="csry != null" >
+        	#{csry,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="fzybr != null" >
+        	#{fzybr,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="ydShbzkxx != null" >
+        	#{ydShbzkxx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ydCbdxzqhdm != null" >
+        	#{ydCbdxzqhdm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sbksbm != null" >
+        	#{sbksbm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sfyzjg != null" >
+        	#{sfyzjg,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="remote != null" >
+        	#{remote,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="cwzjbz != null" >
+        	#{cwzjbz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="lockBak != null" >
+        	#{lockBak,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zfje != null" >
+        	#{zfje,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zyzsqxh != null" >
+        	#{zyzsqxh,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="tradeid != null" >
+        	#{tradeid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="tradejsid != null" >
+        	#{tradejsid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ckbr != null" >
+        	#{ckbr,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="csdSfmc != null" >
+        	#{csdSfmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="csdSjmc != null" >
+        	#{csdSjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="csdXjmc != null" >
+        	#{csdXjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jgSfmc != null" >
+        	#{jgSfmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jgSjmc != null" >
+        	#{jgSjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="xzzSfmc != null" >
+        	#{xzzSfmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="xzzSjmc != null" >
+        	#{xzzSjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="xzzXjmc != null" >
+        	#{xzzXjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hkdzSfmc != null" >
+        	#{hkdzSfmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hkdzSjmc != null" >
+        	#{hkdzSjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hkdzXjmc != null" >
+        	#{hkdzXjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ywgm != null" >
+        	#{ywgm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="alergyDrugs != null" >
+        	#{alergyDrugs,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bloodType != null" >
+        	#{bloodType,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bloodTypeRh != null" >
+        	#{bloodTypeRh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="xzzJdmc != null" >
+        	#{xzzJdmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hkdzJdmc != null" >
+        	#{hkdzJdmc,jdbcType=VARCHAR}  
+       </if>
+       </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sn.entity.ZyBrry" >
+    update  ZY_BRRY
+    <set >
+    	<if test="zyhm != null" >
+        	  ZYHM=#{zyhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bahm != null" >
+        	  BAHM=#{bahm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="mzhm != null" >
+        	  MZHM=#{mzhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="brxz != null" >
+        	  BRXZ=#{brxz,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="gfzh != null" >
+        	  GFZH=#{gfzh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="brxm != null" >
+        	  BRXM=#{brxm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="brxb != null" >
+        	  BRXB=#{brxb,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="csny != null" >
+        	  CSNY=#{csny,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="sfzh != null" >
+        	  SFZH=#{sfzh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hyzk != null" >
+        	  HYZK=#{hyzk,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zydm != null" >
+        	  ZYDM=#{zydm,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="sfdm != null" >
+        	  SFDM=#{sfdm,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="jgdm != null" >
+        	  JGDM=#{jgdm,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="mzdm != null" >
+        	  MZDM=#{mzdm,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="gjdm != null" >
+        	  GJDM=#{gjdm,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="dwbh != null" >
+        	  DWBH=#{dwbh,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="gzdw != null" >
+        	  GZDW=#{gzdw,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dwdh != null" >
+        	  DWDH=#{dwdh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dwyb != null" >
+        	  DWYB=#{dwyb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hkdz != null" >
+        	  HKDZ=#{hkdz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hkyb != null" >
+        	  HKYB=#{hkyb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="lxrm != null" >
+        	  LXRM=#{lxrm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="lxgx != null" >
+        	  LXGX=#{lxgx,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="lxdz != null" >
+        	  LXDZ=#{lxdz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="lxdh != null" >
+        	  LXDH=#{lxdh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="pzhm != null" >
+        	  PZHM=#{pzhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sbhm != null" >
+        	  SBHM=#{sbhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dbrm != null" >
+        	  DBRM=#{dbrm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="dbgx != null" >
+        	  DBGX=#{dbgx,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zztx != null" >
+        	  ZZTX=#{zztx,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="dbbz != null" >
+        	  DBBZ=#{dbbz,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brks != null" >
+        	  BRKS=#{brks,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brbq != null" >
+        	  BRBQ=#{brbq,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brch != null" >
+        	  BRCH=#{brch,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="djrq != null" >
+        	  DJRQ=#{djrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="ryrq != null" >
+        	  RYRQ=#{ryrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="cyrq != null" >
+        	  CYRQ=#{cyrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="cypb != null" >
+        	  CYPB=#{cypb,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="cyfs != null" >
+        	  CYFS=#{cyfs,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="czgh != null" >
+        	  CZGH=#{czgh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ryqk != null" >
+        	  RYQK=#{ryqk,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brqk != null" >
+        	  BRQK=#{brqk,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="hljb != null" >
+        	  HLJB=#{hljb,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="ysdm != null" >
+        	  YSDM=#{ysdm,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brxx != null" >
+        	  BRXX=#{brxx,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="hzks != null" >
+        	  HZKS=#{hzks,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="jcks != null" >
+        	  JCKS=#{jcks,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="mzys != null" >
+        	  MZYS=#{mzys,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="zyys != null" >
+        	  ZYYS=#{zyys,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="zsys != null" >
+        	  ZSYS=#{zsys,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="zzys != null" >
+        	  ZZYS=#{zzys,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="qzrq != null" >
+        	  QZRQ=#{qzrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="ksrq != null" >
+        	  KSRQ=#{ksrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="jsrq != null" >
+        	  JSRQ=#{jsrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="jscs != null" >
+        	  JSCS=#{jscs,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="jzrq != null" >
+        	  JZRQ=#{jzrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="hzrq != null" >
+        	  HZRQ=#{hzrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="xgpb != null" >
+        	  XGPB=#{xgpb,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="bapb != null" >
+        	  BAPB=#{bapb,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brgl != null" >
+        	  BRGL=#{brgl,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="brkl != null" >
+        	  BRKL=#{brkl,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bz != null" >
+        	  BZ=#{bz,jdbcType=LONGVARCHAR} , 
+       </if>
+    	<if test="brqm != null" >
+        	  BRQM=#{brqm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jtdh != null" >
+        	  JTDH=#{jtdh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bxhm != null" >
+        	  BXHM=#{bxhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jgbm != null" >
+        	  JGBM=#{jgbm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ryxz != null" >
+        	  RYXZ=#{ryxz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cbxz != null" >
+        	  CBXZ=#{cbxz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="szys != null" >
+        	  SZYS=#{szys,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cfxj != null" >
+        	  CFXJ=#{cfxj,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="rycs != null" >
+        	  RYCS=#{rycs,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="lockFlag != null" >
+        	  LOCK_FLAG=#{lockFlag,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="yjrq != null" >
+        	  yjrq=#{yjrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="ryzd != null" >
+        	  RYZD=#{ryzd,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ybkh != null" >
+        	  ybkh=#{ybkh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="kye != null" >
+        	  KYE=#{kye,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="scbz != null" >
+        	  scbz=#{scbz,jdbcType=CHAR} , 
+       </if>
+    	<if test="yszl != null" >
+        	  YSZL=#{yszl,jdbcType=TINYINT} , 
+       </if>
+    	<if test="ysjs != null" >
+        	  YSJS=#{ysjs,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zkzt != null" >
+        	  ZKZT=#{zkzt,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="rbqrq != null" >
+        	  RBQRQ=#{rbqrq,jdbcType=TIMESTAMP} , 
+       </if>
+    	<if test="kzhm != null" >
+        	  KZHM=#{kzhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hzylh != null" >
+        	  HZYLH=#{hzylh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="lxchns != null" >
+        	  LXCHNS=#{lxchns,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="ljchns != null" >
+        	  LJCHNS=#{ljchns,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="sftsb != null" >
+        	  SFTSB=#{sftsb,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="jsdh != null" >
+        	  JSDH=#{jsdh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="nbcysh != null" >
+        	  NBCYSH=#{nbcysh,jdbcType=TINYINT} , 
+       </if>
+    	<if test="shry != null" >
+        	  SHRY=#{shry,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cylx != null" >
+        	  CYLX=#{cylx,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zszhm != null" >
+        	  ZSZHM=#{zszhm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="zylx != null" >
+        	  ZYLX=#{zylx,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="bxlx != null" >
+        	  BXLX=#{bxlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="grzhye != null" >
+        	  GRZHYE=#{grzhye,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="mzBzdx != null" >
+        	  MZ_BZDX=#{mzBzdx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="mzJzdx != null" >
+        	  MZ_JZDX=#{mzJzdx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="mzRylx != null" >
+        	  MZ_RYLX=#{mzRylx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="mzXsbz != null" >
+        	  MZ_XSBZ=#{mzXsbz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="rylxmc != null" >
+        	  RYLXMC=#{rylxmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="xzqydm != null" >
+        	  XZQYDM=#{xzqydm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cabzlx != null" >
+        	  CABZLX=#{cabzlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cajzlx != null" >
+        	  CAJZLX=#{cajzlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cahmlx != null" >
+        	  CAHMLX=#{cahmlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="caxsbz != null" >
+        	  CAXSBZ=#{caxsbz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cazh != null" >
+        	  CAZH=#{cazh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cazjlx != null" >
+        	  CAZJLX=#{cazjlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cadxbz != null" >
+        	  CADXBZ=#{cadxbz,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="cayldh != null" >
+        	  CAYLDH=#{cayldh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiSbbh != null" >
+        	  HI_SBBH=#{hiSbbh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiDylb != null" >
+        	  Hi_DYLB=#{hiDylb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiRylb != null" >
+        	  Hi_RYLB=#{hiRylb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiDblb != null" >
+        	  Hi_DBLB=#{hiDblb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiYflb != null" >
+        	  Hi_YFLB=#{hiYflb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiDqbm != null" >
+        	  Hi_DQBM=#{hiDqbm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiDqmc != null" >
+        	  Hi_DQMC=#{hiDqmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiDwlx != null" >
+        	  Hi_DWLX=#{hiDwlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiYwlx != null" >
+        	  HI_YWLX=#{hiYwlx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiRylx != null" >
+        	  HI_RYLX=#{hiRylx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hiShlb != null" >
+        	  HI_SHLB=#{hiShlb,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="lnye != null" >
+        	  LNYE=#{lnye,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="djlsh != null" >
+        	  DJLSH=#{djlsh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jslsh != null" >
+        	  JSLSH=#{jslsh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="cwsh != null" >
+        	  CWSH=#{cwsh,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="csry != null" >
+        	  CSRY=#{csry,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="fzybr != null" >
+        	  FZYBR=#{fzybr,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="ydShbzkxx != null" >
+        	  YD_SHBZKXX=#{ydShbzkxx,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ydCbdxzqhdm != null" >
+        	  YD_CBDXZQHDM=#{ydCbdxzqhdm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sbksbm != null" >
+        	  SBKSBM=#{sbksbm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="sfyzjg != null" >
+        	  SFYZJG=#{sfyzjg,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="remote != null" >
+        	  remote=#{remote,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="cwzjbz != null" >
+        	  cwzjbz=#{cwzjbz,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="lockBak != null" >
+        	  LOCK_BAK=#{lockBak,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zfje != null" >
+        	  ZFJE=#{zfje,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="zyzsqxh != null" >
+        	  zyzsqxh=#{zyzsqxh,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="tradeid != null" >
+        	  tradeid=#{tradeid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="tradejsid != null" >
+        	  tradejsid=#{tradejsid,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ckbr != null" >
+        	  ckbr=#{ckbr,jdbcType=NUMERIC} , 
+       </if>
+    	<if test="csdSfmc != null" >
+        	  CSD_SFMC=#{csdSfmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="csdSjmc != null" >
+        	  CSD_SJMC=#{csdSjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="csdXjmc != null" >
+        	  CSD_XJMC=#{csdXjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jgSfmc != null" >
+        	  JG_SFMC=#{jgSfmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="jgSjmc != null" >
+        	  JG_SJMC=#{jgSjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="xzzSfmc != null" >
+        	  XZZ_SFMC=#{xzzSfmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="xzzSjmc != null" >
+        	  XZZ_SJMC=#{xzzSjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="xzzXjmc != null" >
+        	  XZZ_XJMC=#{xzzXjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hkdzSfmc != null" >
+        	  HKDZ_SFMC=#{hkdzSfmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hkdzSjmc != null" >
+        	  HKDZ_SJMC=#{hkdzSjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hkdzXjmc != null" >
+        	  HKDZ_XJMC=#{hkdzXjmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="ywgm != null" >
+        	  YWGM=#{ywgm,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="alergyDrugs != null" >
+        	  ALERGY_DRUGS=#{alergyDrugs,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bloodType != null" >
+        	  BLOOD_TYPE=#{bloodType,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="bloodTypeRh != null" >
+        	  BLOOD_TYPE_RH=#{bloodTypeRh,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="xzzJdmc != null" >
+        	  XZZ_JDMC=#{xzzJdmc,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="hkdzJdmc != null" >
+        	  HKDZ_JDMC=#{hkdzJdmc,jdbcType=VARCHAR}  
+       </if>
+ 	 </set>
+    where  
+		        ZYH = #{zyh,jdbcType=NUMERIC}  
+		 </update>        
+		        
+<update id="updateByPrimaryKey" parameterType="com.sn.entity.ZyBrry" >
+    update ZY_BRRY
+    set 
+        	  ZYHM=#{zyhm,jdbcType=VARCHAR} , 
+        	  BAHM=#{bahm,jdbcType=VARCHAR} , 
+        	  MZHM=#{mzhm,jdbcType=VARCHAR} , 
+        	  BRXZ=#{brxz,jdbcType=NUMERIC} , 
+        	  GFZH=#{gfzh,jdbcType=VARCHAR} , 
+        	  BRXM=#{brxm,jdbcType=VARCHAR} , 
+        	  BRXB=#{brxb,jdbcType=NUMERIC} , 
+        	  CSNY=#{csny,jdbcType=TIMESTAMP} , 
+        	  SFZH=#{sfzh,jdbcType=VARCHAR} , 
+        	  HYZK=#{hyzk,jdbcType=NUMERIC} , 
+        	  ZYDM=#{zydm,jdbcType=NUMERIC} , 
+        	  SFDM=#{sfdm,jdbcType=NUMERIC} , 
+        	  JGDM=#{jgdm,jdbcType=NUMERIC} , 
+        	  MZDM=#{mzdm,jdbcType=NUMERIC} , 
+        	  GJDM=#{gjdm,jdbcType=NUMERIC} , 
+        	  DWBH=#{dwbh,jdbcType=NUMERIC} , 
+        	  GZDW=#{gzdw,jdbcType=VARCHAR} , 
+        	  DWDH=#{dwdh,jdbcType=VARCHAR} , 
+        	  DWYB=#{dwyb,jdbcType=VARCHAR} , 
+        	  HKDZ=#{hkdz,jdbcType=VARCHAR} , 
+        	  HKYB=#{hkyb,jdbcType=VARCHAR} , 
+        	  LXRM=#{lxrm,jdbcType=VARCHAR} , 
+        	  LXGX=#{lxgx,jdbcType=NUMERIC} , 
+        	  LXDZ=#{lxdz,jdbcType=VARCHAR} , 
+        	  LXDH=#{lxdh,jdbcType=VARCHAR} , 
+        	  PZHM=#{pzhm,jdbcType=VARCHAR} , 
+        	  SBHM=#{sbhm,jdbcType=VARCHAR} , 
+        	  DBRM=#{dbrm,jdbcType=VARCHAR} , 
+        	  DBGX=#{dbgx,jdbcType=NUMERIC} , 
+        	  ZZTX=#{zztx,jdbcType=NUMERIC} , 
+        	  DBBZ=#{dbbz,jdbcType=NUMERIC} , 
+        	  BRKS=#{brks,jdbcType=NUMERIC} , 
+        	  BRBQ=#{brbq,jdbcType=NUMERIC} , 
+        	  BRCH=#{brch,jdbcType=VARCHAR} , 
+        	  DJRQ=#{djrq,jdbcType=TIMESTAMP} , 
+        	  RYRQ=#{ryrq,jdbcType=TIMESTAMP} , 
+        	  CYRQ=#{cyrq,jdbcType=TIMESTAMP} , 
+        	  CYPB=#{cypb,jdbcType=NUMERIC} , 
+        	  CYFS=#{cyfs,jdbcType=NUMERIC} , 
+        	  CZGH=#{czgh,jdbcType=VARCHAR} , 
+        	  RYQK=#{ryqk,jdbcType=NUMERIC} , 
+        	  BRQK=#{brqk,jdbcType=NUMERIC} , 
+        	  HLJB=#{hljb,jdbcType=NUMERIC} , 
+        	  YSDM=#{ysdm,jdbcType=NUMERIC} , 
+        	  BRXX=#{brxx,jdbcType=NUMERIC} , 
+        	  HZKS=#{hzks,jdbcType=NUMERIC} , 
+        	  JCKS=#{jcks,jdbcType=NUMERIC} , 
+        	  MZYS=#{mzys,jdbcType=VARCHAR} , 
+        	  ZYYS=#{zyys,jdbcType=VARCHAR} , 
+        	  ZSYS=#{zsys,jdbcType=VARCHAR} , 
+        	  ZZYS=#{zzys,jdbcType=VARCHAR} , 
+        	  QZRQ=#{qzrq,jdbcType=TIMESTAMP} , 
+        	  KSRQ=#{ksrq,jdbcType=TIMESTAMP} , 
+        	  JSRQ=#{jsrq,jdbcType=TIMESTAMP} , 
+        	  JSCS=#{jscs,jdbcType=NUMERIC} , 
+        	  JZRQ=#{jzrq,jdbcType=TIMESTAMP} , 
+        	  HZRQ=#{hzrq,jdbcType=TIMESTAMP} , 
+        	  XGPB=#{xgpb,jdbcType=NUMERIC} , 
+        	  BAPB=#{bapb,jdbcType=NUMERIC} , 
+        	  BRGL=#{brgl,jdbcType=NUMERIC} , 
+        	  BRKL=#{brkl,jdbcType=VARCHAR} , 
+        	  BZ=#{bz,jdbcType=LONGVARCHAR} , 
+        	  BRQM=#{brqm,jdbcType=VARCHAR} , 
+        	  JTDH=#{jtdh,jdbcType=VARCHAR} , 
+        	  BXHM=#{bxhm,jdbcType=VARCHAR} , 
+        	  JGBM=#{jgbm,jdbcType=VARCHAR} , 
+        	  RYXZ=#{ryxz,jdbcType=VARCHAR} , 
+        	  CBXZ=#{cbxz,jdbcType=VARCHAR} , 
+        	  SZYS=#{szys,jdbcType=VARCHAR} , 
+        	  CFXJ=#{cfxj,jdbcType=NUMERIC} , 
+        	  RYCS=#{rycs,jdbcType=NUMERIC} , 
+        	  LOCK_FLAG=#{lockFlag,jdbcType=NUMERIC} , 
+        	  yjrq=#{yjrq,jdbcType=TIMESTAMP} , 
+        	  RYZD=#{ryzd,jdbcType=VARCHAR} , 
+        	  ybkh=#{ybkh,jdbcType=VARCHAR} , 
+        	  KYE=#{kye,jdbcType=NUMERIC} , 
+        	  scbz=#{scbz,jdbcType=CHAR} , 
+        	  YSZL=#{yszl,jdbcType=TINYINT} , 
+        	  YSJS=#{ysjs,jdbcType=NUMERIC} , 
+        	  ZKZT=#{zkzt,jdbcType=NUMERIC} , 
+        	  RBQRQ=#{rbqrq,jdbcType=TIMESTAMP} , 
+        	  KZHM=#{kzhm,jdbcType=VARCHAR} , 
+        	  HZYLH=#{hzylh,jdbcType=VARCHAR} , 
+        	  LXCHNS=#{lxchns,jdbcType=NUMERIC} , 
+        	  LJCHNS=#{ljchns,jdbcType=NUMERIC} , 
+        	  SFTSB=#{sftsb,jdbcType=NUMERIC} , 
+        	  JSDH=#{jsdh,jdbcType=VARCHAR} , 
+        	  NBCYSH=#{nbcysh,jdbcType=TINYINT} , 
+        	  SHRY=#{shry,jdbcType=VARCHAR} , 
+        	  CYLX=#{cylx,jdbcType=NUMERIC} , 
+        	  ZSZHM=#{zszhm,jdbcType=VARCHAR} , 
+        	  ZYLX=#{zylx,jdbcType=NUMERIC} , 
+        	  BXLX=#{bxlx,jdbcType=VARCHAR} , 
+        	  GRZHYE=#{grzhye,jdbcType=NUMERIC} , 
+        	  MZ_BZDX=#{mzBzdx,jdbcType=VARCHAR} , 
+        	  MZ_JZDX=#{mzJzdx,jdbcType=VARCHAR} , 
+        	  MZ_RYLX=#{mzRylx,jdbcType=VARCHAR} , 
+        	  MZ_XSBZ=#{mzXsbz,jdbcType=VARCHAR} , 
+        	  RYLXMC=#{rylxmc,jdbcType=VARCHAR} , 
+        	  XZQYDM=#{xzqydm,jdbcType=VARCHAR} , 
+        	  CABZLX=#{cabzlx,jdbcType=VARCHAR} , 
+        	  CAJZLX=#{cajzlx,jdbcType=VARCHAR} , 
+        	  CAHMLX=#{cahmlx,jdbcType=VARCHAR} , 
+        	  CAXSBZ=#{caxsbz,jdbcType=VARCHAR} , 
+        	  CAZH=#{cazh,jdbcType=VARCHAR} , 
+        	  CAZJLX=#{cazjlx,jdbcType=VARCHAR} , 
+        	  CADXBZ=#{cadxbz,jdbcType=NUMERIC} , 
+        	  CAYLDH=#{cayldh,jdbcType=VARCHAR} , 
+        	  HI_SBBH=#{hiSbbh,jdbcType=VARCHAR} , 
+        	  Hi_DYLB=#{hiDylb,jdbcType=VARCHAR} , 
+        	  Hi_RYLB=#{hiRylb,jdbcType=VARCHAR} , 
+        	  Hi_DBLB=#{hiDblb,jdbcType=VARCHAR} , 
+        	  Hi_YFLB=#{hiYflb,jdbcType=VARCHAR} , 
+        	  Hi_DQBM=#{hiDqbm,jdbcType=VARCHAR} , 
+        	  Hi_DQMC=#{hiDqmc,jdbcType=VARCHAR} , 
+        	  Hi_DWLX=#{hiDwlx,jdbcType=VARCHAR} , 
+        	  HI_YWLX=#{hiYwlx,jdbcType=VARCHAR} , 
+        	  HI_RYLX=#{hiRylx,jdbcType=VARCHAR} , 
+        	  HI_SHLB=#{hiShlb,jdbcType=VARCHAR} , 
+        	  LNYE=#{lnye,jdbcType=NUMERIC} , 
+        	  DJLSH=#{djlsh,jdbcType=VARCHAR} , 
+        	  JSLSH=#{jslsh,jdbcType=VARCHAR} , 
+        	  CWSH=#{cwsh,jdbcType=NUMERIC} , 
+        	  CSRY=#{csry,jdbcType=VARCHAR} , 
+        	  FZYBR=#{fzybr,jdbcType=NUMERIC} , 
+        	  YD_SHBZKXX=#{ydShbzkxx,jdbcType=VARCHAR} , 
+        	  YD_CBDXZQHDM=#{ydCbdxzqhdm,jdbcType=VARCHAR} , 
+        	  SBKSBM=#{sbksbm,jdbcType=VARCHAR} , 
+        	  SFYZJG=#{sfyzjg,jdbcType=VARCHAR} , 
+        	  remote=#{remote,jdbcType=NUMERIC} , 
+        	  cwzjbz=#{cwzjbz,jdbcType=VARCHAR} , 
+        	  LOCK_BAK=#{lockBak,jdbcType=NUMERIC} , 
+        	  ZFJE=#{zfje,jdbcType=NUMERIC} , 
+        	  zyzsqxh=#{zyzsqxh,jdbcType=NUMERIC} , 
+        	  tradeid=#{tradeid,jdbcType=VARCHAR} , 
+        	  tradejsid=#{tradejsid,jdbcType=VARCHAR} , 
+        	  ckbr=#{ckbr,jdbcType=NUMERIC} , 
+        	  CSD_SFMC=#{csdSfmc,jdbcType=VARCHAR} , 
+        	  CSD_SJMC=#{csdSjmc,jdbcType=VARCHAR} , 
+        	  CSD_XJMC=#{csdXjmc,jdbcType=VARCHAR} , 
+        	  JG_SFMC=#{jgSfmc,jdbcType=VARCHAR} , 
+        	  JG_SJMC=#{jgSjmc,jdbcType=VARCHAR} , 
+        	  XZZ_SFMC=#{xzzSfmc,jdbcType=VARCHAR} , 
+        	  XZZ_SJMC=#{xzzSjmc,jdbcType=VARCHAR} , 
+        	  XZZ_XJMC=#{xzzXjmc,jdbcType=VARCHAR} , 
+        	  HKDZ_SFMC=#{hkdzSfmc,jdbcType=VARCHAR} , 
+        	  HKDZ_SJMC=#{hkdzSjmc,jdbcType=VARCHAR} , 
+        	  HKDZ_XJMC=#{hkdzXjmc,jdbcType=VARCHAR} , 
+        	  YWGM=#{ywgm,jdbcType=VARCHAR} , 
+        	  ALERGY_DRUGS=#{alergyDrugs,jdbcType=VARCHAR} , 
+        	  BLOOD_TYPE=#{bloodType,jdbcType=VARCHAR} , 
+        	  BLOOD_TYPE_RH=#{bloodTypeRh,jdbcType=VARCHAR} , 
+        	  XZZ_JDMC=#{xzzJdmc,jdbcType=VARCHAR} , 
+        	  HKDZ_JDMC=#{hkdzJdmc,jdbcType=VARCHAR}  
+      where  
+		        ZYH = #{zyh,jdbcType=NUMERIC}  
+  </update>
+  
+  <select id="selectByColum" resultMap="BaseResultMap" parameterType="com.sn.entity.ZyBrry" >
+    select 
+   datediff(year,csny,getdate()) as age,(select ksmc from gy_ksdm where KSDM=brks) as ksmc,*
+    from ZY_BRRY 
+   <where>  
+  	  	<if test="zyh != null" >
+  	 		       ZYH  = #{zyh}   
+  	  	</if>
+  	  	<if test="zyhm != null" >
+  	 		   and    ZYHM  = #{zyhm}  
+  	  	</if>
+  	  	<if test="bahm != null" >
+  	 		   and    BAHM  = #{bahm}  
+  	  	</if>
+  	  	<if test="mzhm != null" >
+  	 		   and    MZHM  = #{mzhm}  
+  	  	</if>
+  	  	<if test="brxz != null" >
+  	 		   and    BRXZ  = #{brxz}  
+  	  	</if>
+  	  	<if test="gfzh != null" >
+  	 		   and    GFZH  = #{gfzh}  
+  	  	</if>
+  	  	<if test="brxm != null" >
+  	 		   and    BRXM  = #{brxm}  
+  	  	</if>
+  	  	<if test="brxb != null" >
+  	 		   and    BRXB  = #{brxb}  
+  	  	</if>
+  	  	<if test="csny != null" >
+  	 		   and    CSNY  = #{csny}  
+  	  	</if>
+  	  	<if test="sfzh != null" >
+  	 		   and    SFZH  = #{sfzh}  
+  	  	</if>
+  	  	<if test="hyzk != null" >
+  	 		   and    HYZK  = #{hyzk}  
+  	  	</if>
+  	  	<if test="zydm != null" >
+  	 		   and    ZYDM  = #{zydm}  
+  	  	</if>
+  	  	<if test="sfdm != null" >
+  	 		   and    SFDM  = #{sfdm}  
+  	  	</if>
+  	  	<if test="jgdm != null" >
+  	 		   and    JGDM  = #{jgdm}  
+  	  	</if>
+  	  	<if test="mzdm != null" >
+  	 		   and    MZDM  = #{mzdm}  
+  	  	</if>
+  	  	<if test="gjdm != null" >
+  	 		   and    GJDM  = #{gjdm}  
+  	  	</if>
+  	  	<if test="dwbh != null" >
+  	 		   and    DWBH  = #{dwbh}  
+  	  	</if>
+  	  	<if test="gzdw != null" >
+  	 		   and    GZDW  = #{gzdw}  
+  	  	</if>
+  	  	<if test="dwdh != null" >
+  	 		   and    DWDH  = #{dwdh}  
+  	  	</if>
+  	  	<if test="dwyb != null" >
+  	 		   and    DWYB  = #{dwyb}  
+  	  	</if>
+  	  	<if test="hkdz != null" >
+  	 		   and    HKDZ  = #{hkdz}  
+  	  	</if>
+  	  	<if test="hkyb != null" >
+  	 		   and    HKYB  = #{hkyb}  
+  	  	</if>
+  	  	<if test="lxrm != null" >
+  	 		   and    LXRM  = #{lxrm}  
+  	  	</if>
+  	  	<if test="lxgx != null" >
+  	 		   and    LXGX  = #{lxgx}  
+  	  	</if>
+  	  	<if test="lxdz != null" >
+  	 		   and    LXDZ  = #{lxdz}  
+  	  	</if>
+  	  	<if test="lxdh != null" >
+  	 		   and    LXDH  = #{lxdh}  
+  	  	</if>
+  	  	<if test="pzhm != null" >
+  	 		   and    PZHM  = #{pzhm}  
+  	  	</if>
+  	  	<if test="sbhm != null" >
+  	 		   and    SBHM  = #{sbhm}  
+  	  	</if>
+  	  	<if test="dbrm != null" >
+  	 		   and    DBRM  = #{dbrm}  
+  	  	</if>
+  	  	<if test="dbgx != null" >
+  	 		   and    DBGX  = #{dbgx}  
+  	  	</if>
+  	  	<if test="zztx != null" >
+  	 		   and    ZZTX  = #{zztx}  
+  	  	</if>
+  	  	<if test="dbbz != null" >
+  	 		   and    DBBZ  = #{dbbz}  
+  	  	</if>
+  	  	<if test="brks != null" >
+  	 		   and    BRKS  = #{brks}  
+  	  	</if>
+  	  	<if test="brbq != null" >
+  	 		   and    BRBQ  = #{brbq}  
+  	  	</if>
+  	  	<if test="brch != null" >
+  	 		   and    BRCH  = #{brch}  
+  	  	</if>
+  	  	<if test="djrq != null" >
+  	 		   and    DJRQ  = #{djrq}  
+  	  	</if>
+  	  	<if test="ryrq != null" >
+  	 		   and    RYRQ  = #{ryrq}  
+  	  	</if>
+  	  	<if test="cyrq != null" >
+  	 		   and    CYRQ  = #{cyrq}  
+  	  	</if>
+  	  	<if test="cypb != null" >
+  	 		   and    CYPB  = #{cypb}  
+  	  	</if>
+  	  	<if test="cyfs != null" >
+  	 		   and    CYFS  = #{cyfs}  
+  	  	</if>
+  	  	<if test="czgh != null" >
+  	 		   and    CZGH  = #{czgh}  
+  	  	</if>
+  	  	<if test="ryqk != null" >
+  	 		   and    RYQK  = #{ryqk}  
+  	  	</if>
+  	  	<if test="brqk != null" >
+  	 		   and    BRQK  = #{brqk}  
+  	  	</if>
+  	  	<if test="hljb != null" >
+  	 		   and    HLJB  = #{hljb}  
+  	  	</if>
+  	  	<if test="ysdm != null" >
+  	 		   and    YSDM  = #{ysdm}  
+  	  	</if>
+  	  	<if test="brxx != null" >
+  	 		   and    BRXX  = #{brxx}  
+  	  	</if>
+  	  	<if test="hzks != null" >
+  	 		   and    HZKS  = #{hzks}  
+  	  	</if>
+  	  	<if test="jcks != null" >
+  	 		   and    JCKS  = #{jcks}  
+  	  	</if>
+  	  	<if test="mzys != null" >
+  	 		   and    MZYS  = #{mzys}  
+  	  	</if>
+  	  	<if test="zyys != null" >
+  	 		   and    ZYYS  = #{zyys}  
+  	  	</if>
+  	  	<if test="zsys != null" >
+  	 		   and    ZSYS  = #{zsys}  
+  	  	</if>
+  	  	<if test="zzys != null" >
+  	 		   and    ZZYS  = #{zzys}  
+  	  	</if>
+  	  	<if test="qzrq != null" >
+  	 		   and    QZRQ  = #{qzrq}  
+  	  	</if>
+  	  	<if test="ksrq != null" >
+  	 		   and    KSRQ  = #{ksrq}  
+  	  	</if>
+  	  	<if test="jsrq != null" >
+  	 		   and    JSRQ  = #{jsrq}  
+  	  	</if>
+  	  	<if test="jscs != null" >
+  	 		   and    JSCS  = #{jscs}  
+  	  	</if>
+  	  	<if test="jzrq != null" >
+  	 		   and    JZRQ  = #{jzrq}  
+  	  	</if>
+  	  	<if test="hzrq != null" >
+  	 		   and    HZRQ  = #{hzrq}  
+  	  	</if>
+  	  	<if test="xgpb != null" >
+  	 		   and    XGPB  = #{xgpb}  
+  	  	</if>
+  	  	<if test="bapb != null" >
+  	 		   and    BAPB  = #{bapb}  
+  	  	</if>
+  	  	<if test="brgl != null" >
+  	 		   and    BRGL  = #{brgl}  
+  	  	</if>
+  	  	<if test="brkl != null" >
+  	 		   and    BRKL  = #{brkl}  
+  	  	</if>
+  	  	<if test="bz != null" >
+  	 		   and    BZ  = #{bz}  
+  	  	</if>
+  	  	<if test="brqm != null" >
+  	 		   and    BRQM  = #{brqm}  
+  	  	</if>
+  	  	<if test="jtdh != null" >
+  	 		   and    JTDH  = #{jtdh}  
+  	  	</if>
+  	  	<if test="bxhm != null" >
+  	 		   and    BXHM  = #{bxhm}  
+  	  	</if>
+  	  	<if test="jgbm != null" >
+  	 		   and    JGBM  = #{jgbm}  
+  	  	</if>
+  	  	<if test="ryxz != null" >
+  	 		   and    RYXZ  = #{ryxz}  
+  	  	</if>
+  	  	<if test="cbxz != null" >
+  	 		   and    CBXZ  = #{cbxz}  
+  	  	</if>
+  	  	<if test="szys != null" >
+  	 		   and    SZYS  = #{szys}  
+  	  	</if>
+  	  	<if test="cfxj != null" >
+  	 		   and    CFXJ  = #{cfxj}  
+  	  	</if>
+  	  	<if test="rycs != null" >
+  	 		   and    RYCS  = #{rycs}  
+  	  	</if>
+  	  	<if test="lockFlag != null" >
+  	 		   and    LOCK_FLAG  = #{lockFlag}  
+  	  	</if>
+  	  	<if test="yjrq != null" >
+  	 		   and    yjrq  = #{yjrq}  
+  	  	</if>
+  	  	<if test="ryzd != null" >
+  	 		   and    RYZD  = #{ryzd}  
+  	  	</if>
+  	  	<if test="ybkh != null" >
+  	 		   and    ybkh  = #{ybkh}  
+  	  	</if>
+  	  	<if test="kye != null" >
+  	 		   and    KYE  = #{kye}  
+  	  	</if>
+  	  	<if test="scbz != null" >
+  	 		   and    scbz  = #{scbz}  
+  	  	</if>
+  	  	<if test="yszl != null" >
+  	 		   and    YSZL  = #{yszl}  
+  	  	</if>
+  	  	<if test="ysjs != null" >
+  	 		   and    YSJS  = #{ysjs}  
+  	  	</if>
+  	  	<if test="zkzt != null" >
+  	 		   and    ZKZT  = #{zkzt}  
+  	  	</if>
+  	  	<if test="rbqrq != null" >
+  	 		   and    RBQRQ  = #{rbqrq}  
+  	  	</if>
+  	  	<if test="kzhm != null" >
+  	 		   and    KZHM  = #{kzhm}  
+  	  	</if>
+  	  	<if test="hzylh != null" >
+  	 		   and    HZYLH  = #{hzylh}  
+  	  	</if>
+  	  	<if test="lxchns != null" >
+  	 		   and    LXCHNS  = #{lxchns}  
+  	  	</if>
+  	  	<if test="ljchns != null" >
+  	 		   and    LJCHNS  = #{ljchns}  
+  	  	</if>
+  	  	<if test="sftsb != null" >
+  	 		   and    SFTSB  = #{sftsb}  
+  	  	</if>
+  	  	<if test="jsdh != null" >
+  	 		   and    JSDH  = #{jsdh}  
+  	  	</if>
+  	  	<if test="nbcysh != null" >
+  	 		   and    NBCYSH  = #{nbcysh}  
+  	  	</if>
+  	  	<if test="shry != null" >
+  	 		   and    SHRY  = #{shry}  
+  	  	</if>
+  	  	<if test="cylx != null" >
+  	 		   and    CYLX  = #{cylx}  
+  	  	</if>
+  	  	<if test="zszhm != null" >
+  	 		   and    ZSZHM  = #{zszhm}  
+  	  	</if>
+  	  	<if test="zylx != null" >
+  	 		   and    ZYLX  = #{zylx}  
+  	  	</if>
+  	  	<if test="bxlx != null" >
+  	 		   and    BXLX  = #{bxlx}  
+  	  	</if>
+  	  	<if test="grzhye != null" >
+  	 		   and    GRZHYE  = #{grzhye}  
+  	  	</if>
+  	  	<if test="mzBzdx != null" >
+  	 		   and    MZ_BZDX  = #{mzBzdx}  
+  	  	</if>
+  	  	<if test="mzJzdx != null" >
+  	 		   and    MZ_JZDX  = #{mzJzdx}  
+  	  	</if>
+  	  	<if test="mzRylx != null" >
+  	 		   and    MZ_RYLX  = #{mzRylx}  
+  	  	</if>
+  	  	<if test="mzXsbz != null" >
+  	 		   and    MZ_XSBZ  = #{mzXsbz}  
+  	  	</if>
+  	  	<if test="rylxmc != null" >
+  	 		   and    RYLXMC  = #{rylxmc}  
+  	  	</if>
+  	  	<if test="xzqydm != null" >
+  	 		   and    XZQYDM  = #{xzqydm}  
+  	  	</if>
+  	  	<if test="cabzlx != null" >
+  	 		   and    CABZLX  = #{cabzlx}  
+  	  	</if>
+  	  	<if test="cajzlx != null" >
+  	 		   and    CAJZLX  = #{cajzlx}  
+  	  	</if>
+  	  	<if test="cahmlx != null" >
+  	 		   and    CAHMLX  = #{cahmlx}  
+  	  	</if>
+  	  	<if test="caxsbz != null" >
+  	 		   and    CAXSBZ  = #{caxsbz}  
+  	  	</if>
+  	  	<if test="cazh != null" >
+  	 		   and    CAZH  = #{cazh}  
+  	  	</if>
+  	  	<if test="cazjlx != null" >
+  	 		   and    CAZJLX  = #{cazjlx}  
+  	  	</if>
+  	  	<if test="cadxbz != null" >
+  	 		   and    CADXBZ  = #{cadxbz}  
+  	  	</if>
+  	  	<if test="cayldh != null" >
+  	 		   and    CAYLDH  = #{cayldh}  
+  	  	</if>
+  	  	<if test="hiSbbh != null" >
+  	 		   and    HI_SBBH  = #{hiSbbh}  
+  	  	</if>
+  	  	<if test="hiDylb != null" >
+  	 		   and    Hi_DYLB  = #{hiDylb}  
+  	  	</if>
+  	  	<if test="hiRylb != null" >
+  	 		   and    Hi_RYLB  = #{hiRylb}  
+  	  	</if>
+  	  	<if test="hiDblb != null" >
+  	 		   and    Hi_DBLB  = #{hiDblb}  
+  	  	</if>
+  	  	<if test="hiYflb != null" >
+  	 		   and    Hi_YFLB  = #{hiYflb}  
+  	  	</if>
+  	  	<if test="hiDqbm != null" >
+  	 		   and    Hi_DQBM  = #{hiDqbm}  
+  	  	</if>
+  	  	<if test="hiDqmc != null" >
+  	 		   and    Hi_DQMC  = #{hiDqmc}  
+  	  	</if>
+  	  	<if test="hiDwlx != null" >
+  	 		   and    Hi_DWLX  = #{hiDwlx}  
+  	  	</if>
+  	  	<if test="hiYwlx != null" >
+  	 		   and    HI_YWLX  = #{hiYwlx}  
+  	  	</if>
+  	  	<if test="hiRylx != null" >
+  	 		   and    HI_RYLX  = #{hiRylx}  
+  	  	</if>
+  	  	<if test="hiShlb != null" >
+  	 		   and    HI_SHLB  = #{hiShlb}  
+  	  	</if>
+  	  	<if test="lnye != null" >
+  	 		   and    LNYE  = #{lnye}  
+  	  	</if>
+  	  	<if test="djlsh != null" >
+  	 		   and    DJLSH  = #{djlsh}  
+  	  	</if>
+  	  	<if test="jslsh != null" >
+  	 		   and    JSLSH  = #{jslsh}  
+  	  	</if>
+  	  	<if test="cwsh != null" >
+  	 		   and    CWSH  = #{cwsh}  
+  	  	</if>
+  	  	<if test="csry != null" >
+  	 		   and    CSRY  = #{csry}  
+  	  	</if>
+  	  	<if test="fzybr != null" >
+  	 		   and    FZYBR  = #{fzybr}  
+  	  	</if>
+  	  	<if test="ydShbzkxx != null" >
+  	 		   and    YD_SHBZKXX  = #{ydShbzkxx}  
+  	  	</if>
+  	  	<if test="ydCbdxzqhdm != null" >
+  	 		   and    YD_CBDXZQHDM  = #{ydCbdxzqhdm}  
+  	  	</if>
+  	  	<if test="sbksbm != null" >
+  	 		   and    SBKSBM  = #{sbksbm}  
+  	  	</if>
+  	  	<if test="sfyzjg != null" >
+  	 		   and    SFYZJG  = #{sfyzjg}  
+  	  	</if>
+  	  	<if test="remote != null" >
+  	 		   and    remote  = #{remote}  
+  	  	</if>
+  	  	<if test="cwzjbz != null" >
+  	 		   and    cwzjbz  = #{cwzjbz}  
+  	  	</if>
+  	  	<if test="lockBak != null" >
+  	 		   and    LOCK_BAK  = #{lockBak}  
+  	  	</if>
+  	  	<if test="zfje != null" >
+  	 		   and    ZFJE  = #{zfje}  
+  	  	</if>
+  	  	<if test="zyzsqxh != null" >
+  	 		   and    zyzsqxh  = #{zyzsqxh}  
+  	  	</if>
+  	  	<if test="tradeid != null" >
+  	 		   and    tradeid  = #{tradeid}  
+  	  	</if>
+  	  	<if test="tradejsid != null" >
+  	 		   and    tradejsid  = #{tradejsid}  
+  	  	</if>
+  	  	<if test="ckbr != null" >
+  	 		   and    ckbr  = #{ckbr}  
+  	  	</if>
+  	  	<if test="csdSfmc != null" >
+  	 		   and    CSD_SFMC  = #{csdSfmc}  
+  	  	</if>
+  	  	<if test="csdSjmc != null" >
+  	 		   and    CSD_SJMC  = #{csdSjmc}  
+  	  	</if>
+  	  	<if test="csdXjmc != null" >
+  	 		   and    CSD_XJMC  = #{csdXjmc}  
+  	  	</if>
+  	  	<if test="jgSfmc != null" >
+  	 		   and    JG_SFMC  = #{jgSfmc}  
+  	  	</if>
+  	  	<if test="jgSjmc != null" >
+  	 		   and    JG_SJMC  = #{jgSjmc}  
+  	  	</if>
+  	  	<if test="xzzSfmc != null" >
+  	 		   and    XZZ_SFMC  = #{xzzSfmc}  
+  	  	</if>
+  	  	<if test="xzzSjmc != null" >
+  	 		   and    XZZ_SJMC  = #{xzzSjmc}  
+  	  	</if>
+  	  	<if test="xzzXjmc != null" >
+  	 		   and    XZZ_XJMC  = #{xzzXjmc}  
+  	  	</if>
+  	  	<if test="hkdzSfmc != null" >
+  	 		   and    HKDZ_SFMC  = #{hkdzSfmc}  
+  	  	</if>
+  	  	<if test="hkdzSjmc != null" >
+  	 		   and    HKDZ_SJMC  = #{hkdzSjmc}  
+  	  	</if>
+  	  	<if test="hkdzXjmc != null" >
+  	 		   and    HKDZ_XJMC  = #{hkdzXjmc}  
+  	  	</if>
+  	  	<if test="ywgm != null" >
+  	 		   and    YWGM  = #{ywgm}  
+  	  	</if>
+  	  	<if test="alergyDrugs != null" >
+  	 		   and    ALERGY_DRUGS  = #{alergyDrugs}  
+  	  	</if>
+  	  	<if test="bloodType != null" >
+  	 		   and    BLOOD_TYPE  = #{bloodType}  
+  	  	</if>
+  	  	<if test="bloodTypeRh != null" >
+  	 		   and    BLOOD_TYPE_RH  = #{bloodTypeRh}  
+  	  	</if>
+  	  	<if test="xzzJdmc != null" >
+  	 		   and    XZZ_JDMC  = #{xzzJdmc}  
+  	  	</if>
+  	  	<if test="hkdzJdmc != null" >
+  	 		   and    HKDZ_JDMC  = #{hkdzJdmc}  
+  	  	</if>
+    </where>  
+  </select>
+  
+  <delete id="deleteByColum"  parameterType="com.sn.entity.ZyBrry">
+    DELETE FROM ZY_BRRY  
+      <where>  
+  	  	<if test="zyh != null" >
+  	 		       ZYH  = #{zyh}  
+  	  	</if>
+  	  	<if test="zyhm != null" >
+  	 		   and    ZYHM  = #{zyhm}  
+  	  	</if>
+  	  	<if test="bahm != null" >
+  	 		   and    BAHM  = #{bahm}  
+  	  	</if>
+  	  	<if test="mzhm != null" >
+  	 		   and    MZHM  = #{mzhm}  
+  	  	</if>
+  	  	<if test="brxz != null" >
+  	 		   and    BRXZ  = #{brxz}  
+  	  	</if>
+  	  	<if test="gfzh != null" >
+  	 		   and    GFZH  = #{gfzh}  
+  	  	</if>
+  	  	<if test="brxm != null" >
+  	 		   and    BRXM  = #{brxm}  
+  	  	</if>
+  	  	<if test="brxb != null" >
+  	 		   and    BRXB  = #{brxb}  
+  	  	</if>
+  	  	<if test="csny != null" >
+  	 		   and    CSNY  = #{csny}  
+  	  	</if>
+  	  	<if test="sfzh != null" >
+  	 		   and    SFZH  = #{sfzh}  
+  	  	</if>
+  	  	<if test="hyzk != null" >
+  	 		   and    HYZK  = #{hyzk}  
+  	  	</if>
+  	  	<if test="zydm != null" >
+  	 		   and    ZYDM  = #{zydm}  
+  	  	</if>
+  	  	<if test="sfdm != null" >
+  	 		   and    SFDM  = #{sfdm}  
+  	  	</if>
+  	  	<if test="jgdm != null" >
+  	 		   and    JGDM  = #{jgdm}  
+  	  	</if>
+  	  	<if test="mzdm != null" >
+  	 		   and    MZDM  = #{mzdm}  
+  	  	</if>
+  	  	<if test="gjdm != null" >
+  	 		   and    GJDM  = #{gjdm}  
+  	  	</if>
+  	  	<if test="dwbh != null" >
+  	 		   and    DWBH  = #{dwbh}  
+  	  	</if>
+  	  	<if test="gzdw != null" >
+  	 		   and    GZDW  = #{gzdw}  
+  	  	</if>
+  	  	<if test="dwdh != null" >
+  	 		   and    DWDH  = #{dwdh}  
+  	  	</if>
+  	  	<if test="dwyb != null" >
+  	 		   and    DWYB  = #{dwyb}  
+  	  	</if>
+  	  	<if test="hkdz != null" >
+  	 		   and    HKDZ  = #{hkdz}  
+  	  	</if>
+  	  	<if test="hkyb != null" >
+  	 		   and    HKYB  = #{hkyb}  
+  	  	</if>
+  	  	<if test="lxrm != null" >
+  	 		   and    LXRM  = #{lxrm}  
+  	  	</if>
+  	  	<if test="lxgx != null" >
+  	 		   and    LXGX  = #{lxgx}  
+  	  	</if>
+  	  	<if test="lxdz != null" >
+  	 		   and    LXDZ  = #{lxdz}  
+  	  	</if>
+  	  	<if test="lxdh != null" >
+  	 		   and    LXDH  = #{lxdh}  
+  	  	</if>
+  	  	<if test="pzhm != null" >
+  	 		   and    PZHM  = #{pzhm}  
+  	  	</if>
+  	  	<if test="sbhm != null" >
+  	 		   and    SBHM  = #{sbhm}  
+  	  	</if>
+  	  	<if test="dbrm != null" >
+  	 		   and    DBRM  = #{dbrm}  
+  	  	</if>
+  	  	<if test="dbgx != null" >
+  	 		   and    DBGX  = #{dbgx}  
+  	  	</if>
+  	  	<if test="zztx != null" >
+  	 		   and    ZZTX  = #{zztx}  
+  	  	</if>
+  	  	<if test="dbbz != null" >
+  	 		   and    DBBZ  = #{dbbz}  
+  	  	</if>
+  	  	<if test="brks != null" >
+  	 		   and    BRKS  = #{brks}  
+  	  	</if>
+  	  	<if test="brbq != null" >
+  	 		   and    BRBQ  = #{brbq}  
+  	  	</if>
+  	  	<if test="brch != null" >
+  	 		   and    BRCH  = #{brch}  
+  	  	</if>
+  	  	<if test="djrq != null" >
+  	 		   and    DJRQ  = #{djrq}  
+  	  	</if>
+  	  	<if test="ryrq != null" >
+  	 		   and    RYRQ  = #{ryrq}  
+  	  	</if>
+  	  	<if test="cyrq != null" >
+  	 		   and    CYRQ  = #{cyrq}  
+  	  	</if>
+  	  	<if test="cypb != null" >
+  	 		   and    CYPB  = #{cypb}  
+  	  	</if>
+  	  	<if test="cyfs != null" >
+  	 		   and    CYFS  = #{cyfs}  
+  	  	</if>
+  	  	<if test="czgh != null" >
+  	 		   and    CZGH  = #{czgh}  
+  	  	</if>
+  	  	<if test="ryqk != null" >
+  	 		   and    RYQK  = #{ryqk}  
+  	  	</if>
+  	  	<if test="brqk != null" >
+  	 		   and    BRQK  = #{brqk}  
+  	  	</if>
+  	  	<if test="hljb != null" >
+  	 		   and    HLJB  = #{hljb}  
+  	  	</if>
+  	  	<if test="ysdm != null" >
+  	 		   and    YSDM  = #{ysdm}  
+  	  	</if>
+  	  	<if test="brxx != null" >
+  	 		   and    BRXX  = #{brxx}  
+  	  	</if>
+  	  	<if test="hzks != null" >
+  	 		   and    HZKS  = #{hzks}  
+  	  	</if>
+  	  	<if test="jcks != null" >
+  	 		   and    JCKS  = #{jcks}  
+  	  	</if>
+  	  	<if test="mzys != null" >
+  	 		   and    MZYS  = #{mzys}  
+  	  	</if>
+  	  	<if test="zyys != null" >
+  	 		   and    ZYYS  = #{zyys}  
+  	  	</if>
+  	  	<if test="zsys != null" >
+  	 		   and    ZSYS  = #{zsys}  
+  	  	</if>
+  	  	<if test="zzys != null" >
+  	 		   and    ZZYS  = #{zzys}  
+  	  	</if>
+  	  	<if test="qzrq != null" >
+  	 		   and    QZRQ  = #{qzrq}  
+  	  	</if>
+  	  	<if test="ksrq != null" >
+  	 		   and    KSRQ  = #{ksrq}  
+  	  	</if>
+  	  	<if test="jsrq != null" >
+  	 		   and    JSRQ  = #{jsrq}  
+  	  	</if>
+  	  	<if test="jscs != null" >
+  	 		   and    JSCS  = #{jscs}  
+  	  	</if>
+  	  	<if test="jzrq != null" >
+  	 		   and    JZRQ  = #{jzrq}  
+  	  	</if>
+  	  	<if test="hzrq != null" >
+  	 		   and    HZRQ  = #{hzrq}  
+  	  	</if>
+  	  	<if test="xgpb != null" >
+  	 		   and    XGPB  = #{xgpb}  
+  	  	</if>
+  	  	<if test="bapb != null" >
+  	 		   and    BAPB  = #{bapb}  
+  	  	</if>
+  	  	<if test="brgl != null" >
+  	 		   and    BRGL  = #{brgl}  
+  	  	</if>
+  	  	<if test="brkl != null" >
+  	 		   and    BRKL  = #{brkl}  
+  	  	</if>
+  	  	<if test="bz != null" >
+  	 		   and    BZ  = #{bz}  
+  	  	</if>
+  	  	<if test="brqm != null" >
+  	 		   and    BRQM  = #{brqm}  
+  	  	</if>
+  	  	<if test="jtdh != null" >
+  	 		   and    JTDH  = #{jtdh}  
+  	  	</if>
+  	  	<if test="bxhm != null" >
+  	 		   and    BXHM  = #{bxhm}  
+  	  	</if>
+  	  	<if test="jgbm != null" >
+  	 		   and    JGBM  = #{jgbm}  
+  	  	</if>
+  	  	<if test="ryxz != null" >
+  	 		   and    RYXZ  = #{ryxz}  
+  	  	</if>
+  	  	<if test="cbxz != null" >
+  	 		   and    CBXZ  = #{cbxz}  
+  	  	</if>
+  	  	<if test="szys != null" >
+  	 		   and    SZYS  = #{szys}  
+  	  	</if>
+  	  	<if test="cfxj != null" >
+  	 		   and    CFXJ  = #{cfxj}  
+  	  	</if>
+  	  	<if test="rycs != null" >
+  	 		   and    RYCS  = #{rycs}  
+  	  	</if>
+  	  	<if test="lockFlag != null" >
+  	 		   and    LOCK_FLAG  = #{lockFlag}  
+  	  	</if>
+  	  	<if test="yjrq != null" >
+  	 		   and    yjrq  = #{yjrq}  
+  	  	</if>
+  	  	<if test="ryzd != null" >
+  	 		   and    RYZD  = #{ryzd}  
+  	  	</if>
+  	  	<if test="ybkh != null" >
+  	 		   and    ybkh  = #{ybkh}  
+  	  	</if>
+  	  	<if test="kye != null" >
+  	 		   and    KYE  = #{kye}  
+  	  	</if>
+  	  	<if test="scbz != null" >
+  	 		   and    scbz  = #{scbz}  
+  	  	</if>
+  	  	<if test="yszl != null" >
+  	 		   and    YSZL  = #{yszl}  
+  	  	</if>
+  	  	<if test="ysjs != null" >
+  	 		   and    YSJS  = #{ysjs}  
+  	  	</if>
+  	  	<if test="zkzt != null" >
+  	 		   and    ZKZT  = #{zkzt}  
+  	  	</if>
+  	  	<if test="rbqrq != null" >
+  	 		   and    RBQRQ  = #{rbqrq}  
+  	  	</if>
+  	  	<if test="kzhm != null" >
+  	 		   and    KZHM  = #{kzhm}  
+  	  	</if>
+  	  	<if test="hzylh != null" >
+  	 		   and    HZYLH  = #{hzylh}  
+  	  	</if>
+  	  	<if test="lxchns != null" >
+  	 		   and    LXCHNS  = #{lxchns}  
+  	  	</if>
+  	  	<if test="ljchns != null" >
+  	 		   and    LJCHNS  = #{ljchns}  
+  	  	</if>
+  	  	<if test="sftsb != null" >
+  	 		   and    SFTSB  = #{sftsb}  
+  	  	</if>
+  	  	<if test="jsdh != null" >
+  	 		   and    JSDH  = #{jsdh}  
+  	  	</if>
+  	  	<if test="nbcysh != null" >
+  	 		   and    NBCYSH  = #{nbcysh}  
+  	  	</if>
+  	  	<if test="shry != null" >
+  	 		   and    SHRY  = #{shry}  
+  	  	</if>
+  	  	<if test="cylx != null" >
+  	 		   and    CYLX  = #{cylx}  
+  	  	</if>
+  	  	<if test="zszhm != null" >
+  	 		   and    ZSZHM  = #{zszhm}  
+  	  	</if>
+  	  	<if test="zylx != null" >
+  	 		   and    ZYLX  = #{zylx}  
+  	  	</if>
+  	  	<if test="bxlx != null" >
+  	 		   and    BXLX  = #{bxlx}  
+  	  	</if>
+  	  	<if test="grzhye != null" >
+  	 		   and    GRZHYE  = #{grzhye}  
+  	  	</if>
+  	  	<if test="mzBzdx != null" >
+  	 		   and    MZ_BZDX  = #{mzBzdx}  
+  	  	</if>
+  	  	<if test="mzJzdx != null" >
+  	 		   and    MZ_JZDX  = #{mzJzdx}  
+  	  	</if>
+  	  	<if test="mzRylx != null" >
+  	 		   and    MZ_RYLX  = #{mzRylx}  
+  	  	</if>
+  	  	<if test="mzXsbz != null" >
+  	 		   and    MZ_XSBZ  = #{mzXsbz}  
+  	  	</if>
+  	  	<if test="rylxmc != null" >
+  	 		   and    RYLXMC  = #{rylxmc}  
+  	  	</if>
+  	  	<if test="xzqydm != null" >
+  	 		   and    XZQYDM  = #{xzqydm}  
+  	  	</if>
+  	  	<if test="cabzlx != null" >
+  	 		   and    CABZLX  = #{cabzlx}  
+  	  	</if>
+  	  	<if test="cajzlx != null" >
+  	 		   and    CAJZLX  = #{cajzlx}  
+  	  	</if>
+  	  	<if test="cahmlx != null" >
+  	 		   and    CAHMLX  = #{cahmlx}  
+  	  	</if>
+  	  	<if test="caxsbz != null" >
+  	 		   and    CAXSBZ  = #{caxsbz}  
+  	  	</if>
+  	  	<if test="cazh != null" >
+  	 		   and    CAZH  = #{cazh}  
+  	  	</if>
+  	  	<if test="cazjlx != null" >
+  	 		   and    CAZJLX  = #{cazjlx}  
+  	  	</if>
+  	  	<if test="cadxbz != null" >
+  	 		   and    CADXBZ  = #{cadxbz}  
+  	  	</if>
+  	  	<if test="cayldh != null" >
+  	 		   and    CAYLDH  = #{cayldh}  
+  	  	</if>
+  	  	<if test="hiSbbh != null" >
+  	 		   and    HI_SBBH  = #{hiSbbh}  
+  	  	</if>
+  	  	<if test="hiDylb != null" >
+  	 		   and    Hi_DYLB  = #{hiDylb}  
+  	  	</if>
+  	  	<if test="hiRylb != null" >
+  	 		   and    Hi_RYLB  = #{hiRylb}  
+  	  	</if>
+  	  	<if test="hiDblb != null" >
+  	 		   and    Hi_DBLB  = #{hiDblb}  
+  	  	</if>
+  	  	<if test="hiYflb != null" >
+  	 		   and    Hi_YFLB  = #{hiYflb}  
+  	  	</if>
+  	  	<if test="hiDqbm != null" >
+  	 		   and    Hi_DQBM  = #{hiDqbm}  
+  	  	</if>
+  	  	<if test="hiDqmc != null" >
+  	 		   and    Hi_DQMC  = #{hiDqmc}  
+  	  	</if>
+  	  	<if test="hiDwlx != null" >
+  	 		   and    Hi_DWLX  = #{hiDwlx}  
+  	  	</if>
+  	  	<if test="hiYwlx != null" >
+  	 		   and    HI_YWLX  = #{hiYwlx}  
+  	  	</if>
+  	  	<if test="hiRylx != null" >
+  	 		   and    HI_RYLX  = #{hiRylx}  
+  	  	</if>
+  	  	<if test="hiShlb != null" >
+  	 		   and    HI_SHLB  = #{hiShlb}  
+  	  	</if>
+  	  	<if test="lnye != null" >
+  	 		   and    LNYE  = #{lnye}  
+  	  	</if>
+  	  	<if test="djlsh != null" >
+  	 		   and    DJLSH  = #{djlsh}  
+  	  	</if>
+  	  	<if test="jslsh != null" >
+  	 		   and    JSLSH  = #{jslsh}  
+  	  	</if>
+  	  	<if test="cwsh != null" >
+  	 		   and    CWSH  = #{cwsh}  
+  	  	</if>
+  	  	<if test="csry != null" >
+  	 		   and    CSRY  = #{csry}  
+  	  	</if>
+  	  	<if test="fzybr != null" >
+  	 		   and    FZYBR  = #{fzybr}  
+  	  	</if>
+  	  	<if test="ydShbzkxx != null" >
+  	 		   and    YD_SHBZKXX  = #{ydShbzkxx}  
+  	  	</if>
+  	  	<if test="ydCbdxzqhdm != null" >
+  	 		   and    YD_CBDXZQHDM  = #{ydCbdxzqhdm}  
+  	  	</if>
+  	  	<if test="sbksbm != null" >
+  	 		   and    SBKSBM  = #{sbksbm}  
+  	  	</if>
+  	  	<if test="sfyzjg != null" >
+  	 		   and    SFYZJG  = #{sfyzjg}  
+  	  	</if>
+  	  	<if test="remote != null" >
+  	 		   and    remote  = #{remote}  
+  	  	</if>
+  	  	<if test="cwzjbz != null" >
+  	 		   and    cwzjbz  = #{cwzjbz}  
+  	  	</if>
+  	  	<if test="lockBak != null" >
+  	 		   and    LOCK_BAK  = #{lockBak}  
+  	  	</if>
+  	  	<if test="zfje != null" >
+  	 		   and    ZFJE  = #{zfje}  
+  	  	</if>
+  	  	<if test="zyzsqxh != null" >
+  	 		   and    zyzsqxh  = #{zyzsqxh}  
+  	  	</if>
+  	  	<if test="tradeid != null" >
+  	 		   and    tradeid  = #{tradeid}  
+  	  	</if>
+  	  	<if test="tradejsid != null" >
+  	 		   and    tradejsid  = #{tradejsid}  
+  	  	</if>
+  	  	<if test="ckbr != null" >
+  	 		   and    ckbr  = #{ckbr}  
+  	  	</if>
+  	  	<if test="csdSfmc != null" >
+  	 		   and    CSD_SFMC  = #{csdSfmc}  
+  	  	</if>
+  	  	<if test="csdSjmc != null" >
+  	 		   and    CSD_SJMC  = #{csdSjmc}  
+  	  	</if>
+  	  	<if test="csdXjmc != null" >
+  	 		   and    CSD_XJMC  = #{csdXjmc}  
+  	  	</if>
+  	  	<if test="jgSfmc != null" >
+  	 		   and    JG_SFMC  = #{jgSfmc}  
+  	  	</if>
+  	  	<if test="jgSjmc != null" >
+  	 		   and    JG_SJMC  = #{jgSjmc}  
+  	  	</if>
+  	  	<if test="xzzSfmc != null" >
+  	 		   and    XZZ_SFMC  = #{xzzSfmc}  
+  	  	</if>
+  	  	<if test="xzzSjmc != null" >
+  	 		   and    XZZ_SJMC  = #{xzzSjmc}  
+  	  	</if>
+  	  	<if test="xzzXjmc != null" >
+  	 		   and    XZZ_XJMC  = #{xzzXjmc}  
+  	  	</if>
+  	  	<if test="hkdzSfmc != null" >
+  	 		   and    HKDZ_SFMC  = #{hkdzSfmc}  
+  	  	</if>
+  	  	<if test="hkdzSjmc != null" >
+  	 		   and    HKDZ_SJMC  = #{hkdzSjmc}  
+  	  	</if>
+  	  	<if test="hkdzXjmc != null" >
+  	 		   and    HKDZ_XJMC  = #{hkdzXjmc}  
+  	  	</if>
+  	  	<if test="ywgm != null" >
+  	 		   and    YWGM  = #{ywgm}  
+  	  	</if>
+  	  	<if test="alergyDrugs != null" >
+  	 		   and    ALERGY_DRUGS  = #{alergyDrugs}  
+  	  	</if>
+  	  	<if test="bloodType != null" >
+  	 		   and    BLOOD_TYPE  = #{bloodType}  
+  	  	</if>
+  	  	<if test="bloodTypeRh != null" >
+  	 		   and    BLOOD_TYPE_RH  = #{bloodTypeRh}  
+  	  	</if>
+  	  	<if test="xzzJdmc != null" >
+  	 		   and    XZZ_JDMC  = #{xzzJdmc}  
+  	  	</if>
+  	  	<if test="hkdzJdmc != null" >
+  	 		   and    HKDZ_JDMC  = #{hkdzJdmc}  
+  	  	</if>
+  	  </where>  
+</delete>
+
+<delete id="deleteByByPrimaryKeys" parameterType="java.util.List">  
+    DELETE FROM  ZY_BRRY WHERE 
+		        ZYH 
+     IN  
+    <foreach collection="list" item="item" open="(" separator="," close=")">   
+        #{item}  
+    </foreach>  
+</delete>
+
+<select id="countByColum" resultType="java.lang.Integer" parameterType="com.sn.entity.ZyBrry" >
+select count(*) from ZY_BRRY
+ <where>  
+  	  	<if test="zyh != null" >
+  	 		       ZYH  = #{zyh}  
+  	  	</if>
+  	  	<if test="zyhm != null" >
+  	 		   and    ZYHM  = #{zyhm}  
+  	  	</if>
+  	  	<if test="bahm != null" >
+  	 		   and    BAHM  = #{bahm}  
+  	  	</if>
+  	  	<if test="mzhm != null" >
+  	 		   and    MZHM  = #{mzhm}  
+  	  	</if>
+  	  	<if test="brxz != null" >
+  	 		   and    BRXZ  = #{brxz}  
+  	  	</if>
+  	  	<if test="gfzh != null" >
+  	 		   and    GFZH  = #{gfzh}  
+  	  	</if>
+  	  	<if test="brxm != null" >
+  	 		   and    BRXM  = #{brxm}  
+  	  	</if>
+  	  	<if test="brxb != null" >
+  	 		   and    BRXB  = #{brxb}  
+  	  	</if>
+  	  	<if test="csny != null" >
+  	 		   and    CSNY  = #{csny}  
+  	  	</if>
+  	  	<if test="sfzh != null" >
+  	 		   and    SFZH  = #{sfzh}  
+  	  	</if>
+  	  	<if test="hyzk != null" >
+  	 		   and    HYZK  = #{hyzk}  
+  	  	</if>
+  	  	<if test="zydm != null" >
+  	 		   and    ZYDM  = #{zydm}  
+  	  	</if>
+  	  	<if test="sfdm != null" >
+  	 		   and    SFDM  = #{sfdm}  
+  	  	</if>
+  	  	<if test="jgdm != null" >
+  	 		   and    JGDM  = #{jgdm}  
+  	  	</if>
+  	  	<if test="mzdm != null" >
+  	 		   and    MZDM  = #{mzdm}  
+  	  	</if>
+  	  	<if test="gjdm != null" >
+  	 		   and    GJDM  = #{gjdm}  
+  	  	</if>
+  	  	<if test="dwbh != null" >
+  	 		   and    DWBH  = #{dwbh}  
+  	  	</if>
+  	  	<if test="gzdw != null" >
+  	 		   and    GZDW  = #{gzdw}  
+  	  	</if>
+  	  	<if test="dwdh != null" >
+  	 		   and    DWDH  = #{dwdh}  
+  	  	</if>
+  	  	<if test="dwyb != null" >
+  	 		   and    DWYB  = #{dwyb}  
+  	  	</if>
+  	  	<if test="hkdz != null" >
+  	 		   and    HKDZ  = #{hkdz}  
+  	  	</if>
+  	  	<if test="hkyb != null" >
+  	 		   and    HKYB  = #{hkyb}  
+  	  	</if>
+  	  	<if test="lxrm != null" >
+  	 		   and    LXRM  = #{lxrm}  
+  	  	</if>
+  	  	<if test="lxgx != null" >
+  	 		   and    LXGX  = #{lxgx}  
+  	  	</if>
+  	  	<if test="lxdz != null" >
+  	 		   and    LXDZ  = #{lxdz}  
+  	  	</if>
+  	  	<if test="lxdh != null" >
+  	 		   and    LXDH  = #{lxdh}  
+  	  	</if>
+  	  	<if test="pzhm != null" >
+  	 		   and    PZHM  = #{pzhm}  
+  	  	</if>
+  	  	<if test="sbhm != null" >
+  	 		   and    SBHM  = #{sbhm}  
+  	  	</if>
+  	  	<if test="dbrm != null" >
+  	 		   and    DBRM  = #{dbrm}  
+  	  	</if>
+  	  	<if test="dbgx != null" >
+  	 		   and    DBGX  = #{dbgx}  
+  	  	</if>
+  	  	<if test="zztx != null" >
+  	 		   and    ZZTX  = #{zztx}  
+  	  	</if>
+  	  	<if test="dbbz != null" >
+  	 		   and    DBBZ  = #{dbbz}  
+  	  	</if>
+  	  	<if test="brks != null" >
+  	 		   and    BRKS  = #{brks}  
+  	  	</if>
+  	  	<if test="brbq != null" >
+  	 		   and    BRBQ  = #{brbq}  
+  	  	</if>
+  	  	<if test="brch != null" >
+  	 		   and    BRCH  = #{brch}  
+  	  	</if>
+  	  	<if test="djrq != null" >
+  	 		   and    DJRQ  = #{djrq}  
+  	  	</if>
+  	  	<if test="ryrq != null" >
+  	 		   and    RYRQ  = #{ryrq}  
+  	  	</if>
+  	  	<if test="cyrq != null" >
+  	 		   and    CYRQ  = #{cyrq}  
+  	  	</if>
+  	  	<if test="cypb != null" >
+  	 		   and    CYPB  = #{cypb}  
+  	  	</if>
+  	  	<if test="cyfs != null" >
+  	 		   and    CYFS  = #{cyfs}  
+  	  	</if>
+  	  	<if test="czgh != null" >
+  	 		   and    CZGH  = #{czgh}  
+  	  	</if>
+  	  	<if test="ryqk != null" >
+  	 		   and    RYQK  = #{ryqk}  
+  	  	</if>
+  	  	<if test="brqk != null" >
+  	 		   and    BRQK  = #{brqk}  
+  	  	</if>
+  	  	<if test="hljb != null" >
+  	 		   and    HLJB  = #{hljb}  
+  	  	</if>
+  	  	<if test="ysdm != null" >
+  	 		   and    YSDM  = #{ysdm}  
+  	  	</if>
+  	  	<if test="brxx != null" >
+  	 		   and    BRXX  = #{brxx}  
+  	  	</if>
+  	  	<if test="hzks != null" >
+  	 		   and    HZKS  = #{hzks}  
+  	  	</if>
+  	  	<if test="jcks != null" >
+  	 		   and    JCKS  = #{jcks}  
+  	  	</if>
+  	  	<if test="mzys != null" >
+  	 		   and    MZYS  = #{mzys}  
+  	  	</if>
+  	  	<if test="zyys != null" >
+  	 		   and    ZYYS  = #{zyys}  
+  	  	</if>
+  	  	<if test="zsys != null" >
+  	 		   and    ZSYS  = #{zsys}  
+  	  	</if>
+  	  	<if test="zzys != null" >
+  	 		   and    ZZYS  = #{zzys}  
+  	  	</if>
+  	  	<if test="qzrq != null" >
+  	 		   and    QZRQ  = #{qzrq}  
+  	  	</if>
+  	  	<if test="ksrq != null" >
+  	 		   and    KSRQ  = #{ksrq}  
+  	  	</if>
+  	  	<if test="jsrq != null" >
+  	 		   and    JSRQ  = #{jsrq}  
+  	  	</if>
+  	  	<if test="jscs != null" >
+  	 		   and    JSCS  = #{jscs}  
+  	  	</if>
+  	  	<if test="jzrq != null" >
+  	 		   and    JZRQ  = #{jzrq}  
+  	  	</if>
+  	  	<if test="hzrq != null" >
+  	 		   and    HZRQ  = #{hzrq}  
+  	  	</if>
+  	  	<if test="xgpb != null" >
+  	 		   and    XGPB  = #{xgpb}  
+  	  	</if>
+  	  	<if test="bapb != null" >
+  	 		   and    BAPB  = #{bapb}  
+  	  	</if>
+  	  	<if test="brgl != null" >
+  	 		   and    BRGL  = #{brgl}  
+  	  	</if>
+  	  	<if test="brkl != null" >
+  	 		   and    BRKL  = #{brkl}  
+  	  	</if>
+  	  	<if test="bz != null" >
+  	 		   and    BZ  = #{bz}  
+  	  	</if>
+  	  	<if test="brqm != null" >
+  	 		   and    BRQM  = #{brqm}  
+  	  	</if>
+  	  	<if test="jtdh != null" >
+  	 		   and    JTDH  = #{jtdh}  
+  	  	</if>
+  	  	<if test="bxhm != null" >
+  	 		   and    BXHM  = #{bxhm}  
+  	  	</if>
+  	  	<if test="jgbm != null" >
+  	 		   and    JGBM  = #{jgbm}  
+  	  	</if>
+  	  	<if test="ryxz != null" >
+  	 		   and    RYXZ  = #{ryxz}  
+  	  	</if>
+  	  	<if test="cbxz != null" >
+  	 		   and    CBXZ  = #{cbxz}  
+  	  	</if>
+  	  	<if test="szys != null" >
+  	 		   and    SZYS  = #{szys}  
+  	  	</if>
+  	  	<if test="cfxj != null" >
+  	 		   and    CFXJ  = #{cfxj}  
+  	  	</if>
+  	  	<if test="rycs != null" >
+  	 		   and    RYCS  = #{rycs}  
+  	  	</if>
+  	  	<if test="lockFlag != null" >
+  	 		   and    LOCK_FLAG  = #{lockFlag}  
+  	  	</if>
+  	  	<if test="yjrq != null" >
+  	 		   and    yjrq  = #{yjrq}  
+  	  	</if>
+  	  	<if test="ryzd != null" >
+  	 		   and    RYZD  = #{ryzd}  
+  	  	</if>
+  	  	<if test="ybkh != null" >
+  	 		   and    ybkh  = #{ybkh}  
+  	  	</if>
+  	  	<if test="kye != null" >
+  	 		   and    KYE  = #{kye}  
+  	  	</if>
+  	  	<if test="scbz != null" >
+  	 		   and    scbz  = #{scbz}  
+  	  	</if>
+  	  	<if test="yszl != null" >
+  	 		   and    YSZL  = #{yszl}  
+  	  	</if>
+  	  	<if test="ysjs != null" >
+  	 		   and    YSJS  = #{ysjs}  
+  	  	</if>
+  	  	<if test="zkzt != null" >
+  	 		   and    ZKZT  = #{zkzt}  
+  	  	</if>
+  	  	<if test="rbqrq != null" >
+  	 		   and    RBQRQ  = #{rbqrq}  
+  	  	</if>
+  	  	<if test="kzhm != null" >
+  	 		   and    KZHM  = #{kzhm}  
+  	  	</if>
+  	  	<if test="hzylh != null" >
+  	 		   and    HZYLH  = #{hzylh}  
+  	  	</if>
+  	  	<if test="lxchns != null" >
+  	 		   and    LXCHNS  = #{lxchns}  
+  	  	</if>
+  	  	<if test="ljchns != null" >
+  	 		   and    LJCHNS  = #{ljchns}  
+  	  	</if>
+  	  	<if test="sftsb != null" >
+  	 		   and    SFTSB  = #{sftsb}  
+  	  	</if>
+  	  	<if test="jsdh != null" >
+  	 		   and    JSDH  = #{jsdh}  
+  	  	</if>
+  	  	<if test="nbcysh != null" >
+  	 		   and    NBCYSH  = #{nbcysh}  
+  	  	</if>
+  	  	<if test="shry != null" >
+  	 		   and    SHRY  = #{shry}  
+  	  	</if>
+  	  	<if test="cylx != null" >
+  	 		   and    CYLX  = #{cylx}  
+  	  	</if>
+  	  	<if test="zszhm != null" >
+  	 		   and    ZSZHM  = #{zszhm}  
+  	  	</if>
+  	  	<if test="zylx != null" >
+  	 		   and    ZYLX  = #{zylx}  
+  	  	</if>
+  	  	<if test="bxlx != null" >
+  	 		   and    BXLX  = #{bxlx}  
+  	  	</if>
+  	  	<if test="grzhye != null" >
+  	 		   and    GRZHYE  = #{grzhye}  
+  	  	</if>
+  	  	<if test="mzBzdx != null" >
+  	 		   and    MZ_BZDX  = #{mzBzdx}  
+  	  	</if>
+  	  	<if test="mzJzdx != null" >
+  	 		   and    MZ_JZDX  = #{mzJzdx}  
+  	  	</if>
+  	  	<if test="mzRylx != null" >
+  	 		   and    MZ_RYLX  = #{mzRylx}  
+  	  	</if>
+  	  	<if test="mzXsbz != null" >
+  	 		   and    MZ_XSBZ  = #{mzXsbz}  
+  	  	</if>
+  	  	<if test="rylxmc != null" >
+  	 		   and    RYLXMC  = #{rylxmc}  
+  	  	</if>
+  	  	<if test="xzqydm != null" >
+  	 		   and    XZQYDM  = #{xzqydm}  
+  	  	</if>
+  	  	<if test="cabzlx != null" >
+  	 		   and    CABZLX  = #{cabzlx}  
+  	  	</if>
+  	  	<if test="cajzlx != null" >
+  	 		   and    CAJZLX  = #{cajzlx}  
+  	  	</if>
+  	  	<if test="cahmlx != null" >
+  	 		   and    CAHMLX  = #{cahmlx}  
+  	  	</if>
+  	  	<if test="caxsbz != null" >
+  	 		   and    CAXSBZ  = #{caxsbz}  
+  	  	</if>
+  	  	<if test="cazh != null" >
+  	 		   and    CAZH  = #{cazh}  
+  	  	</if>
+  	  	<if test="cazjlx != null" >
+  	 		   and    CAZJLX  = #{cazjlx}  
+  	  	</if>
+  	  	<if test="cadxbz != null" >
+  	 		   and    CADXBZ  = #{cadxbz}  
+  	  	</if>
+  	  	<if test="cayldh != null" >
+  	 		   and    CAYLDH  = #{cayldh}  
+  	  	</if>
+  	  	<if test="hiSbbh != null" >
+  	 		   and    HI_SBBH  = #{hiSbbh}  
+  	  	</if>
+  	  	<if test="hiDylb != null" >
+  	 		   and    Hi_DYLB  = #{hiDylb}  
+  	  	</if>
+  	  	<if test="hiRylb != null" >
+  	 		   and    Hi_RYLB  = #{hiRylb}  
+  	  	</if>
+  	  	<if test="hiDblb != null" >
+  	 		   and    Hi_DBLB  = #{hiDblb}  
+  	  	</if>
+  	  	<if test="hiYflb != null" >
+  	 		   and    Hi_YFLB  = #{hiYflb}  
+  	  	</if>
+  	  	<if test="hiDqbm != null" >
+  	 		   and    Hi_DQBM  = #{hiDqbm}  
+  	  	</if>
+  	  	<if test="hiDqmc != null" >
+  	 		   and    Hi_DQMC  = #{hiDqmc}  
+  	  	</if>
+  	  	<if test="hiDwlx != null" >
+  	 		   and    Hi_DWLX  = #{hiDwlx}  
+  	  	</if>
+  	  	<if test="hiYwlx != null" >
+  	 		   and    HI_YWLX  = #{hiYwlx}  
+  	  	</if>
+  	  	<if test="hiRylx != null" >
+  	 		   and    HI_RYLX  = #{hiRylx}  
+  	  	</if>
+  	  	<if test="hiShlb != null" >
+  	 		   and    HI_SHLB  = #{hiShlb}  
+  	  	</if>
+  	  	<if test="lnye != null" >
+  	 		   and    LNYE  = #{lnye}  
+  	  	</if>
+  	  	<if test="djlsh != null" >
+  	 		   and    DJLSH  = #{djlsh}  
+  	  	</if>
+  	  	<if test="jslsh != null" >
+  	 		   and    JSLSH  = #{jslsh}  
+  	  	</if>
+  	  	<if test="cwsh != null" >
+  	 		   and    CWSH  = #{cwsh}  
+  	  	</if>
+  	  	<if test="csry != null" >
+  	 		   and    CSRY  = #{csry}  
+  	  	</if>
+  	  	<if test="fzybr != null" >
+  	 		   and    FZYBR  = #{fzybr}  
+  	  	</if>
+  	  	<if test="ydShbzkxx != null" >
+  	 		   and    YD_SHBZKXX  = #{ydShbzkxx}  
+  	  	</if>
+  	  	<if test="ydCbdxzqhdm != null" >
+  	 		   and    YD_CBDXZQHDM  = #{ydCbdxzqhdm}  
+  	  	</if>
+  	  	<if test="sbksbm != null" >
+  	 		   and    SBKSBM  = #{sbksbm}  
+  	  	</if>
+  	  	<if test="sfyzjg != null" >
+  	 		   and    SFYZJG  = #{sfyzjg}  
+  	  	</if>
+  	  	<if test="remote != null" >
+  	 		   and    remote  = #{remote}  
+  	  	</if>
+  	  	<if test="cwzjbz != null" >
+  	 		   and    cwzjbz  = #{cwzjbz}  
+  	  	</if>
+  	  	<if test="lockBak != null" >
+  	 		   and    LOCK_BAK  = #{lockBak}  
+  	  	</if>
+  	  	<if test="zfje != null" >
+  	 		   and    ZFJE  = #{zfje}  
+  	  	</if>
+  	  	<if test="zyzsqxh != null" >
+  	 		   and    zyzsqxh  = #{zyzsqxh}  
+  	  	</if>
+  	  	<if test="tradeid != null" >
+  	 		   and    tradeid  = #{tradeid}  
+  	  	</if>
+  	  	<if test="tradejsid != null" >
+  	 		   and    tradejsid  = #{tradejsid}  
+  	  	</if>
+  	  	<if test="ckbr != null" >
+  	 		   and    ckbr  = #{ckbr}  
+  	  	</if>
+  	  	<if test="csdSfmc != null" >
+  	 		   and    CSD_SFMC  = #{csdSfmc}  
+  	  	</if>
+  	  	<if test="csdSjmc != null" >
+  	 		   and    CSD_SJMC  = #{csdSjmc}  
+  	  	</if>
+  	  	<if test="csdXjmc != null" >
+  	 		   and    CSD_XJMC  = #{csdXjmc}  
+  	  	</if>
+  	  	<if test="jgSfmc != null" >
+  	 		   and    JG_SFMC  = #{jgSfmc}  
+  	  	</if>
+  	  	<if test="jgSjmc != null" >
+  	 		   and    JG_SJMC  = #{jgSjmc}  
+  	  	</if>
+  	  	<if test="xzzSfmc != null" >
+  	 		   and    XZZ_SFMC  = #{xzzSfmc}  
+  	  	</if>
+  	  	<if test="xzzSjmc != null" >
+  	 		   and    XZZ_SJMC  = #{xzzSjmc}  
+  	  	</if>
+  	  	<if test="xzzXjmc != null" >
+  	 		   and    XZZ_XJMC  = #{xzzXjmc}  
+  	  	</if>
+  	  	<if test="hkdzSfmc != null" >
+  	 		   and    HKDZ_SFMC  = #{hkdzSfmc}  
+  	  	</if>
+  	  	<if test="hkdzSjmc != null" >
+  	 		   and    HKDZ_SJMC  = #{hkdzSjmc}  
+  	  	</if>
+  	  	<if test="hkdzXjmc != null" >
+  	 		   and    HKDZ_XJMC  = #{hkdzXjmc}  
+  	  	</if>
+  	  	<if test="ywgm != null" >
+  	 		   and    YWGM  = #{ywgm}  
+  	  	</if>
+  	  	<if test="alergyDrugs != null" >
+  	 		   and    ALERGY_DRUGS  = #{alergyDrugs}  
+  	  	</if>
+  	  	<if test="bloodType != null" >
+  	 		   and    BLOOD_TYPE  = #{bloodType}  
+  	  	</if>
+  	  	<if test="bloodTypeRh != null" >
+  	 		   and    BLOOD_TYPE_RH  = #{bloodTypeRh}  
+  	  	</if>
+  	  	<if test="xzzJdmc != null" >
+  	 		   and    XZZ_JDMC  = #{xzzJdmc}  
+  	  	</if>
+  	  	<if test="hkdzJdmc != null" >
+  	 		   and    HKDZ_JDMC  = #{hkdzJdmc}  
+  	  	</if>
+    </where>  
+</select>
+
+<select id="selectAll"  resultMap="BaseResultMap"  >
+select * from ZY_BRRY 
+</select>
+
+  <!--   自定义方法区域 -->
+  
+  <select  id="selectLikeColum"  resultMap="BaseResultMap"   >
+		select  
+		 <include refid="Base_Column_List" />
+  	  from ZY_BRRY where    
+     #{0}   LIKE '' + #{0} + '%'     
+	</select>
+	
+	<select id="selectByCustom" resultMap="BaseResultMap" parameterType="com.sn.entity.ZyBrry" >
+    select 
+    <include refid="Base_Column_List" />
+    from ZY_BRRY
+      <where>  
+		 
+  	  	</where>
+	</select>
+	
+</mapper>

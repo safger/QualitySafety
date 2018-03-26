@@ -28,6 +28,8 @@
         <result property="major" column="major"  jdbcType="INTEGER" />
         <result property="serious" column="serious"  jdbcType="VARCHAR" />
         <result property="frequency" column="frequency"  jdbcType="VARCHAR" />
+        <result property="reporterId" column="reporterId"  jdbcType="VARCHAR" />
+        <result property="diagnosis" column="diagnosis"  jdbcType="VARCHAR" />
         <result property="risk" column="risk"  jdbcType="VARCHAR" />
         <result property="process" column="process"  jdbcType="VARCHAR" />
         <result property="processReturn" column="processReturn"  jdbcType="VARCHAR" />
@@ -62,6 +64,8 @@
          major ,
          serious ,
          frequency ,
+         reporterId ,
+         diagnosis ,
          risk ,
          process ,
          processReturn ,
@@ -108,6 +112,8 @@
          	          		major , 
          	          		serious , 
          	          		frequency , 
+         	          		reporterId , 
+         	          		diagnosis , 
          	          		risk , 
          	          		process , 
          	          		processReturn , 
@@ -141,6 +147,8 @@
    	 	   	 		#{major,jdbcType=INTEGER} , 
    	 	   	 		#{serious,jdbcType=VARCHAR} , 
    	 	   	 		#{frequency,jdbcType=VARCHAR} , 
+   	 	   	 		#{reporterId,jdbcType=VARCHAR} , 
+   	 	   	 		#{diagnosis,jdbcType=VARCHAR} , 
    	 	   	 		#{risk,jdbcType=VARCHAR} , 
    	 	   	 		#{process,jdbcType=VARCHAR} , 
    	 	   	 		#{processReturn,jdbcType=VARCHAR} , 
@@ -233,6 +241,12 @@
   	  	</if>
   	  	<if test="frequency != null" >
   	 	  frequency ,  
+  	  	</if>
+  	  	<if test="reporterId != null" >
+  	 	  reporterId ,  
+  	  	</if>
+  	  	<if test="diagnosis != null" >
+  	 	  diagnosis ,  
   	  	</if>
   	  	<if test="risk != null" >
   	 	  risk ,  
@@ -329,6 +343,12 @@
     	<if test="frequency != null" >
         	#{frequency,jdbcType=VARCHAR} , 
        </if>
+    	<if test="reporterId != null" >
+        	#{reporterId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="diagnosis != null" >
+        	#{diagnosis,jdbcType=VARCHAR} , 
+       </if>
     	<if test="risk != null" >
         	#{risk,jdbcType=VARCHAR} , 
        </if>
@@ -424,6 +444,12 @@
     	<if test="frequency != null" >
         	  frequency=#{frequency,jdbcType=VARCHAR} , 
        </if>
+    	<if test="reporterId != null" >
+        	  reporterId=#{reporterId,jdbcType=VARCHAR} , 
+       </if>
+    	<if test="diagnosis != null" >
+        	  diagnosis=#{diagnosis,jdbcType=VARCHAR} , 
+       </if>
     	<if test="risk != null" >
         	  risk=#{risk,jdbcType=VARCHAR} , 
        </if>
@@ -472,6 +498,8 @@
         	  major=#{major,jdbcType=INTEGER} , 
         	  serious=#{serious,jdbcType=VARCHAR} , 
         	  frequency=#{frequency,jdbcType=VARCHAR} , 
+        	  reporterId=#{reporterId,jdbcType=VARCHAR} , 
+        	  diagnosis=#{diagnosis,jdbcType=VARCHAR} , 
         	  risk=#{risk,jdbcType=VARCHAR} , 
         	  process=#{process,jdbcType=VARCHAR} , 
         	  processReturn=#{processReturn,jdbcType=VARCHAR} , 
@@ -563,6 +591,12 @@
   	  	</if>
   	  	<if test="frequency != null" >
   	 		   and    frequency  = #{frequency}  
+  	  	</if>
+  	  	<if test="reporterId != null" >
+  	 		   and    reporterId  = #{reporterId}  
+  	  	</if>
+  	  	<if test="diagnosis != null" >
+  	 		   and    diagnosis  = #{diagnosis}  
   	  	</if>
   	  	<if test="risk != null" >
   	 		   and    risk  = #{risk}  
@@ -662,6 +696,12 @@
   	  	</if>
   	  	<if test="frequency != null" >
   	 		   and    frequency  = #{frequency}  
+  	  	</if>
+  	  	<if test="reporterId != null" >
+  	 		   and    reporterId  = #{reporterId}  
+  	  	</if>
+  	  	<if test="diagnosis != null" >
+  	 		   and    diagnosis  = #{diagnosis}  
   	  	</if>
   	  	<if test="risk != null" >
   	 		   and    risk  = #{risk}  
@@ -771,6 +811,12 @@ select count(*) from bu_incident
   	  	<if test="frequency != null" >
   	 		   and    frequency  = #{frequency}  
   	  	</if>
+  	  	<if test="reporterId != null" >
+  	 		   and    reporterId  = #{reporterId}  
+  	  	</if>
+  	  	<if test="diagnosis != null" >
+  	 		   and    diagnosis  = #{diagnosis}  
+  	  	</if>
   	  	<if test="risk != null" >
   	 		   and    risk  = #{risk}  
   	  	</if>
@@ -808,9 +854,30 @@ select * from bu_incident
     select 
     <include refid="Base_Column_List" />
     from bu_incident
-      <where>  
-		 
+      <where>
+		  <if test="reporterId != null" >
+			  (  reporterId  = #{reporterId} or expert=#{expert} )
+		  </if>
+		  <if test="jobNumber != null" >
+			  and    JobNumber  = #{jobNumber}
+		  </if>
+		  <if test="eventLevel != null" >
+			  and    EventLevel  = #{eventLevel}
+		  </if>
+		  <if test="hospitalNumber != null" >
+			  and    HospitalNumber  = #{hospitalNumber}
+		  </if>
+		  <if test="patient != null" >
+			  and    patient  = #{patient}
+		  </if>
+		  <if test="classification != null" >
+			  and    classification  = #{classification}
+		  </if>
+		  <if test="risk != null" >
+			  and    risk  = #{risk}
+		  </if>
   	  	</where>
 	</select>
-	
+
+
 </mapper>

@@ -23,7 +23,8 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 			</list>
 		</property>
 	</bean>
-	
+
+
 	
 	
 	  <!-- 对模型视图添加前后缀 -->

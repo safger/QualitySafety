@@ -24,7 +24,7 @@ $.fn.AutoSelect.show = function(id, option) {
 	}
 	var sel = "";
 	for ( var b = 1; b <= num + 1; b++) {
-		sel = "<select  style='border: 1px solid #bfbfbf;height: 28px' name='" + option.name + "' id='" + id + "_" + b
+		sel = "<select  style='border: 1px solid #bfbfbf;height: 32px' name='" + option.name + "' id='" + id + "_" + b
 				+ "'><option value='-1'>请选择";
 		for ( var a = 0; a < option.data.length; a++) {
 			if (option.data[a].code.length == 3 * (b)

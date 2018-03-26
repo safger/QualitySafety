@@ -59,65 +59,13 @@
       <!-- COLOR PALETTE -->
       <div class="box box-default color-palette-box">
         <div class="box-header with-border">
-          <h3 class="box-title"><i class="fa fa-tag"></i>病区病人</h3> 
+          <h3 class="box-title"><i class="fa fa-tag"></i></h3>
                 
-            <span style="font-size: 12px;font-weight: bold;color: red;">友情提示：绿色的为一级护理，蓝色的为二级护理，红色的为特级护理</span>   
         </div>
         
         <div class="box-body">
         
-        <div class="row" style="margin-left: 5px;margin-bottom: 15px;width: 40%;float: left;">
-                <select id="bq" class="form-control select2" style="width: 100%;">
-                <c:forEach items="${tyy_list }" var="list">
-              	  <option value="${list.code }"  >${list.fullname }</option>
-                </c:forEach> 
-                </select>   
-       	 </div> 
-       	  <div class="row" style="margin-left: 15%;margin-bottom: 15px;width: 40%;float: left;">
-                <input style="float: left;" id="clinicnumber" name="clinicnumber" type="text" placeholder="请输入市民卡号或健康卡号" value=""   />
-                <button onclick="getHisp()" type="button" style="float: left;width: 150px;margin-left: 20px" class="btn btn-block btn-primary btn-sm">历史门诊病人</button>
-       	 </div>
-          <div class="row" style="clear: both;"  id="con"> 
-          	<c:forEach items="${pat_list }" var="list">
-          		<c:choose>
-					<c:when test="${list.careLevel=='一级护理'}">
-						<div class="col-sm-4 col-md-2" onclick="showPatient('${list.fuid}','${list.wardCode}')">
-			              <div class="color-palette-set">
-			                <div class="bg-green disabled color-palette"><span>病床号：${list.bedNo }</span></div>
-			                <div class="bg-green color-palette"><span>姓名：${list.patient }&nbsp;${list.sex}</span></div>
-			                <div class="bg-green-active color-palette"><span>${list.healthType }</span></div>
-			              </div>
-			            </div>
-					</c:when>
-					<c:when test="${list.careLevel=='二级护理'}"> 
-							<div class="col-sm-4 col-md-2" onclick="showPatient('${list.fuid}','${list.wardCode}')">
-				              <div class="color-palette-set">
-				                <div class="bg-light-blue disabled color-palette"><span>病床号：${list.bedNo }</span></div>
-				                <div class="bg-light-blue color-palette"><span>姓名：${list.patient }&nbsp;${list.sex}</span></div>
-				                <div class="bg-light-blue-active color-palette"><span>${list.healthType }</span></div>
-				              </div>
-				            </div>
-					</c:when>
-					<c:when test="${list.careLevel=='特级护理'}">
-							<div class="col-sm-4 col-md-2" onclick="showPatient('${list.fuid}','${list.wardCode}')">
-				              <div class="color-palette-set">
-				                <div class="bg-red disabled color-palette"><span>病床号：${list.bedNo }</span></div>
-				                <div class="bg-red color-palette"><span>姓名：${list.patient }&nbsp;${list.sex}</span></div>
-				                <div class="bg-red-active color-palette"><span>${list.healthType }</span></div>
-				              </div>
-				            </div> 
-					</c:when>
-					<c:otherwise>
-						<div class="col-sm-4 col-md-2" onclick="showPatient('${list.fuid}','${list.wardCode}')"> 
-				              <div class="color-palette-set">
-				                <div class="bg-gray disabled color-palette"><span>病床号：${list.bedNo }</span></div>
-				                <div class="bg-gray color-palette"><span>姓名：${list.patient }&nbsp;${list.sex}</span></div>
-				                <div class="bg-gray-active color-palette"><span>${list.healthType }</span></div>
-				              </div>
-				            </div>
-					</c:otherwise>
-				</c:choose>
-          	</c:forEach>
+
             
           </div>
         </div>

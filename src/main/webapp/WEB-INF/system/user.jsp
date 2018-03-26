@@ -147,12 +147,12 @@
 								<label>姓名</label> <input type="text" class="form-control"  name="realname" placeholder="请输入姓名">
 							</div>
 							</div>
-							 <div class="form-group">
+							<%-- <div class="form-group">
 								<label>用户类别</label> 
 								<div>
 								 <input type="radio" class="minimal" name="userType" checked="checked" value="001002" /> 病区医生 &nbsp;&nbsp; <input name="userType" class="minimal" type="radio" value="001001" /> 门诊医生
 								</div>	
-							</div> 
+							</div> --%>
 							<div class="form-group">
 								<label>手机</label> <input type="number" class="form-control"  name="mobile" placeholder="请输入手机">
 							</div>
@@ -288,8 +288,8 @@
 		 	                        	 re=true;
 		 	                          }else{
 		 	                        	 $.ajax({
-				 								url : "/safety/system/IsExist.html?username=" + $("input[name='username']").val() + "&time=" + new Date(),
-												async : false, 
+				 								url : "/system/IsExist.html?username=" + $("input[name='username']").val() + "&time=" + new Date(),
+												async : false,
 												dataType:"text",
 												success : function(data) {
 														if(data=='true'){
